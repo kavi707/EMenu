@@ -12,7 +12,6 @@ import java.util.Map;
 import java.util.Set;
 
 import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.SSLServerSocketFactory;
 
 import cz.msebera.android.httpclient.Header;
 import cz.msebera.android.httpclient.conn.ssl.SSLSocketFactory;
@@ -25,13 +24,21 @@ import cz.msebera.android.httpclient.conn.ssl.X509HostnameVerifier;
 public class AsyncApiConnector implements IApiConnector {
 
     private String requestUrl;
-    private JSONObject reqParams;
     private String httpCommonResponse  = "NULL";
 
     private AsyncHttpClient asyncHttpClient;
+    private ResponseHandler asyncResponseHandler = new ResponseHandler();
 
+    /**
+     * Method for sending HTTP GET requests to api asynchronously
+     * @param url End point url (String)
+     * @param additionalHeaders Request HTTP headers (Map<String, String> - header key & header value)
+     * @param responseHandlerType If this is an async call then type of the response handler
+     * @return Json String object
+     */
     @Override
-    public String sendHttpGetRequest(String url, Map<String, String> additionalHeaders) {
+    public String sendHttpGetRequest(String url, Map<String, String> additionalHeaders,
+                                     final int responseHandlerType) {
 
         Log.d("AsyncApiConnector", "AsyncApiConnector:sendHttpGetRequest");
         this.requestUrl = url;
@@ -42,6 +49,7 @@ public class AsyncApiConnector implements IApiConnector {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 httpCommonResponse = new String(responseBody);
+                asyncResponseHandler.apiResponseHandler(responseHandlerType, httpCommonResponse);
             }
 
             @Override
@@ -53,8 +61,16 @@ public class AsyncApiConnector implements IApiConnector {
         return httpCommonResponse;
     }
 
+    /**
+     * Method for sending HTTP DELETE requests to api asynchronously
+     * @param url End point url (String)
+     * @param additionalHeaders Request HTTP headers (Map<String, String> - header key & header value)
+     * @param responseHandlerType If this is an async call then type of the response handler
+     * @return Json String object
+     */
     @Override
-    public String sendHttpDeleteRequest(String url, Map<String, String> additionalHeaders) {
+    public String sendHttpDeleteRequest(String url, Map<String, String> additionalHeaders,
+                                        final int responseHandlerType) {
 
         Log.d("AsyncApiConnector", "AsyncApiConnector:sendHttpDeleteRequest");
         this.requestUrl = url;
@@ -65,6 +81,7 @@ public class AsyncApiConnector implements IApiConnector {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 httpCommonResponse = new String(responseBody);
+                asyncResponseHandler.apiResponseHandler(responseHandlerType, httpCommonResponse);
             }
 
             @Override
@@ -76,8 +93,17 @@ public class AsyncApiConnector implements IApiConnector {
         return httpCommonResponse;
     }
 
+    /**
+     * Method for sending HTTP POST requests to api asynchronously
+     * @param url End point url (String)
+     * @param additionalHeaders Request HTTP headers (Map<String, String> - header key & header value)
+     * @param reqParams Request body params (RequestParams - header key & header value)
+     * @param responseHandlerType If this is an async call then type of the response handler
+     * @return Json String object
+     */
     @Override
-    public String sendHttpJsonPostRequest(String url, Map<String, String> additionalHeaders, RequestParams reqParams) {
+    public String sendHttpJsonPostRequest(String url, Map<String, String> additionalHeaders,
+                                          RequestParams reqParams, final int responseHandlerType) {
 
         Log.d("AsyncApiConnector", "AsyncApiConnector:sendHttpJsonPostRequest");
         this.requestUrl = url;
@@ -87,7 +113,8 @@ public class AsyncApiConnector implements IApiConnector {
         asyncHttpClient.post(requestUrl, reqParams, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-
+                httpCommonResponse = new String(responseBody);
+                asyncResponseHandler.apiResponseHandler(responseHandlerType, httpCommonResponse);
             }
 
             @Override
@@ -99,8 +126,17 @@ public class AsyncApiConnector implements IApiConnector {
         return null;
     }
 
+    /**
+     * Method for sending HTTP PUT  requests to api asynchronously
+     * @param url End point url (String)
+     * @param additionalHeaders Request HTTP headers (Map<String, String> - header key & header value)
+     * @param reqParams Request body params (RequestParams - header key & header value)
+     * @param responseHandlerType If this is an async call then type of the response handler
+     * @return Json String object
+     */
     @Override
-    public String sendHttpJsonPutRequest(String url, Map<String, String> additionalHeaders, RequestParams reqParams) {
+    public String sendHttpJsonPutRequest(String url, Map<String, String> additionalHeaders,
+                                         RequestParams reqParams, final int responseHandlerType) {
 
         Log.d("AsyncApiConnector", "AsyncApiConnector:sendHttpJsonPutRequest");
         this.requestUrl = url;
@@ -110,7 +146,8 @@ public class AsyncApiConnector implements IApiConnector {
         asyncHttpClient.put(requestUrl, reqParams, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-
+                httpCommonResponse = new String(responseBody);
+                asyncResponseHandler.apiResponseHandler(responseHandlerType, httpCommonResponse);
             }
 
             @Override

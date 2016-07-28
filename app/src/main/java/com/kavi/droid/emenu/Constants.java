@@ -13,4 +13,8 @@ public class Constants {
     public static final String HTTP_POST = "POST";
     public static final String HTTP_PUT = "PUT";
     public static final String HTTP_DELETE = "DELETE";
+
+    public static final int USER_LOGIN = 101;
+    public static final int CREATE_USER = 102;
+    public static final int UPDATE_USER = 103;
 }

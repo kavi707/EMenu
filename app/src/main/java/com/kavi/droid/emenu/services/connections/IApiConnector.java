@@ -14,36 +14,40 @@ import java.util.Map;
 public interface IApiConnector {
 
     /**
-     *
-     * @param url
-     * @param additionalHeaders
-     * @return
+     * Method for sending HTTP GET requests to api
+     * @param url End point url (String)
+     * @param additionalHeaders Request HTTP headers (Map<String, String> - header key & header value)
+     * @param responseHandlerType If this is an async call then type of the response handler
+     * @return Json String object
      */
-    String sendHttpGetRequest(String url, Map<String, String> additionalHeaders);
+    String sendHttpGetRequest(String url, Map<String, String> additionalHeaders, int responseHandlerType);
 
     /**
-     *
-     * @param url
-     * @param additionalHeaders
-     * @return
+     * Method for sending HTTP DELETE requests to api
+     * @param url End point url (String)
+     * @param additionalHeaders Request HTTP headers (Map<String, String> - header key & header value)
+     * @param responseHandlerType If this is an async call then type of the response handler
+     * @return Json String object
      */
-    String sendHttpDeleteRequest(String url, Map<String, String> additionalHeaders);
+    String sendHttpDeleteRequest(String url, Map<String, String> additionalHeaders, int responseHandlerType);
 
     /**
-     *
-     * @param url
-     * @param additionalHeaders
-     * @param reqParams
-     * @return
+     * Method for sending HTTP POST requests to api
+     * @param url End point url (String)
+     * @param additionalHeaders Request HTTP headers (Map<String, String> - header key & header value)
+     * @param reqParams Request body params (RequestParams - header key & header value)
+     * @param responseHandlerType If this is an async call then type of the response handler
+     * @return Json String object
      */
-    String sendHttpJsonPostRequest(String url, Map<String, String> additionalHeaders, RequestParams reqParams);
+    String sendHttpJsonPostRequest(String url, Map<String, String> additionalHeaders, RequestParams reqParams, int responseHandlerType);
 
     /**
-     *
-     * @param url
-     * @param additionalHeaders
-     * @param reqParams
-     * @return
+     * Method for sending HTTP PUT  requests to api
+     * @param url End point url (String)
+     * @param additionalHeaders Request HTTP headers (Map<String, String> - header key & header value)
+     * @param reqParams Request body params (RequestParams - header key & header value)
+     * @param responseHandlerType If this is an async call then type of the response handler
+     * @return Json String object
      */
-    String sendHttpJsonPutRequest(String url, Map<String, String> additionalHeaders, RequestParams reqParams);
+    String sendHttpJsonPutRequest(String url, Map<String, String> additionalHeaders, RequestParams reqParams, int responseHandlerType);
 }
