@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
                 IApiConnector apiConnector = new SyncApiConnector();
                 String url = "https://brandsmacker.com/Services/SurveyService.svc/Brand?industryId=1";
-                String response = apiConnector.sendHttpGetRequest(url, null);
+                String response = apiConnector.sendHttpGetRequest(url, null, 0);
 
                 Log.d("EMLog", ">>>>>>>>>>>>>>>>>>>>> Sync Data " + response);
             }
@@ -66,6 +66,6 @@ public class MainActivity extends AppCompatActivity {
     private void getAsyncData() {
         IApiConnector apiConnector = new AsyncApiConnector();
         String url = "https://brandsmacker.com/Services/SurveyService.svc/Brand?industryId=1";
-        apiConnector.sendHttpGetRequest(url, null);
+        apiConnector.sendHttpGetRequest(url, null, 0);
     }
 }

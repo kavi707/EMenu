@@ -9,20 +9,11 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".activities.MainActivity">
 
-    <Button
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sync"
-        android:id="@+id/syncButton"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="149dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ASync"
-        android:id="@+id/asyncButton"
+        android:id="@+id/companyLogoImageView"
+        android:src="@mipmap/ic_launcher"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

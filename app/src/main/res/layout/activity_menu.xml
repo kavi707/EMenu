@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MenuActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/categoryItemRelativeLayout"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/itemListRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/categoryItemRelativeLayout"
+            android:layout_toEndOf="@+id/categoryItemRelativeLayout"
+            android:layout_toLeftOf="@+id/checkListRelativeLayout"
+            android:layout_toStartOf="@+id/checkListRelativeLayout">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <ImageButton
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/specialOfferImageBtn"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="Medium Text"
+                    android:id="@+id/searchTextView"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_toLeftOf="@+id/specialOfferImageBtn"
+                    android:layout_toStartOf="@+id/specialOfferImageBtn" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/checkListRelativeLayout"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
