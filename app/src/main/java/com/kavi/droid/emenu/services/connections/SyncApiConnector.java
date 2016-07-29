@@ -2,12 +2,9 @@ package com.kavi.droid.emenu.services.connections;
 
 import android.util.Log;
 
-import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import com.loopj.android.http.SyncHttpClient;
-
-import org.json.JSONObject;
 
 import java.util.Map;
 import java.util.Set;
@@ -25,7 +22,6 @@ import cz.msebera.android.httpclient.conn.ssl.X509HostnameVerifier;
 public class SyncApiConnector implements IApiConnector {
 
     private String requestUrl;
-    private JSONObject reqParams;
     private String httpCommonResponse  = "NULL";
 
     private SyncHttpClient syncHttpClient;

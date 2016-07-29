@@ -20,7 +20,16 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"/>
+                android:layout_height="100dp"
+                android:background="@color/lightOrange"
+                android:id="@+id/logoImageView" />
+
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/categoryListView"
+                android:layout_below="@+id/logoImageView"
+                android:layout_centerHorizontal="true" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -35,7 +44,8 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp">
+                android:layout_height="100dp"
+                android:id="@+id/itemHeadingRelativeLayout">
 
                 <ImageButton
                     android:layout_width="100dp"
@@ -58,6 +68,14 @@
                     android:layout_toLeftOf="@+id/specialOfferImageBtn"
                     android:layout_toStartOf="@+id/specialOfferImageBtn" />
             </RelativeLayout>
+
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/foodItemListView"
+                android:layout_below="@+id/itemHeadingRelativeLayout"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -69,10 +87,146 @@
             android:layout_alignParentEnd="true">
 
             <RelativeLayout
+                android:id="@+id/checkListHeadingRelativeLayout"
                 android:layout_width="match_parent"
                 android:layout_height="100dp">
 
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/settingsImageButton"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:id="@+id/midTextView"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TABLE 00"
+                    android:textColor="@color/lightOrange"
+                    android:textStyle="bold"
+                    android:id="@+id/tableNumTextView"
+                    android:layout_marginLeft="20dp"
+                    android:layout_alignTop="@+id/midTextView"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SEATED 3.45"
+                    android:id="@+id/seatedTextView"
+                    android:layout_marginLeft="20dp"
+                    android:layout_below="@+id/tableNumTextView"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
             </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/checkListCallerRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@color/lightOrange"
+                android:layout_below="@+id/checkListHeadingRelativeLayout"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SERVED BY"
+                    android:id="@+id/servedByTextView"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="JHON DOE"
+                    android:id="@+id/personNameTextView"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/servedByTextView"
+                    android:layout_alignLeft="@+id/servedByTextView"
+                    android:layout_alignStart="@+id/servedByTextView" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CALL"
+                    android:id="@+id/callBtn"
+                    android:layout_marginRight="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/footerLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="vertical"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/lightOrange">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TOTAL"
+                        android:textColor="@color/white"
+                        android:id="@+id/totalLabelTextView"
+                        android:layout_marginLeft="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$0.00"
+                        android:id="@+id/totalAmtTextView"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:layout_marginRight="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+                <ImageButton
+                    android:id="@+id/placeOrderImageBtn"
+                    android:layout_width="match_parent"
+                    android:background="@color/darkOrange"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkoutItemListView"
+                android:layout_below="@+id/checkListCallerRelativeLayout"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_above="@+id/footerLinearLayout" />
         </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>

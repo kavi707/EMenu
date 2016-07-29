@@ -6,7 +6,8 @@ import android.os.Bundle;
 import com.kavi.droid.emenu.R;
 
 /**
- * Created by kwijewardana on 7/28/16.
+ * Created by kavi707 on 7/28/16.
+ * @author Kavimal Wijewardana <kavi707@gmail.com>
  */
 public class MenuActivity extends Activity {
 

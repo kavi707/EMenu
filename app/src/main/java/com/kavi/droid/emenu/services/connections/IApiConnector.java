@@ -2,8 +2,6 @@ package com.kavi.droid.emenu.services.connections;
 
 import com.loopj.android.http.RequestParams;
 
-import org.json.JSONObject;
-
 import java.util.Map;
 
 /**
