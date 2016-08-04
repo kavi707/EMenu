@@ -9,4 +9,6 @@
 
     <color name="lightOrange">#f1fa7854</color>
     <color name="darkOrange">#f1fa4917</color>
+    <color name="lightPurple">#f17e619c</color>
+    <color name="darkPurple">#f1503978</color>
 </resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/welcome_banner">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/welcomeImageView"
+                android:src="@drawable/welcome_txt"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-- RESTAURANT NAME --"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:id="@+id/restaurantNameTextView"
+                android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="VIEW MENU"
+                android:id="@+id/viewMenuButton"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:textSize="23dp"
+                android:background="@drawable/style_em_btn_round_corner"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
