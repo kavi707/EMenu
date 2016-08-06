@@ -7,6 +7,11 @@
 
     <color name="white">#f1ffffff</color>
     <color name="black">#f1000000</color>
+    <color name="menuBackground">#EDEDED</color>
+
+    <color name="colorGreyLight">#b5c7c7c7</color>
+    <color name="colorGrey">#C7C7C7</color>
+    <color name="colorDarkGrey">#767676</color>
 
     <color name="lightOrange">#f1fa7854</color>
     <color name="darkOrange">#f1fa4917</color>

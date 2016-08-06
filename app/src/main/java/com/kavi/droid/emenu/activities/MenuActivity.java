@@ -5,6 +5,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -27,6 +29,8 @@ public class MenuActivity extends Activity {
     private ListView categoryListView;
     private ListView checkoutItemListView;
     private TextView selectedCategoryNameTextView;
+    private EditText searchEditText;
+    private ImageButton searchImageButton;
 
     private Context context = this;
 
@@ -51,6 +55,8 @@ public class MenuActivity extends Activity {
         categoryListView = (ListView) findViewById(R.id.categoryListView);
         foodItemListView = (ListView) findViewById(R.id.foodItemListView);
         selectedCategoryNameTextView = (TextView) findViewById(R.id.selectedCategoryNameTextView);
+        searchEditText = (EditText) findViewById(R.id.searchEditText);
+        searchImageButton = (ImageButton) findViewById(R.id.searchImageButton);
 
         loadCategoryItems();
         loadFoodItems();
