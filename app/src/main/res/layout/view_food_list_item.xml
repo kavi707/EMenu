@@ -29,6 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Food item name"
+            android:textSize="15dp"
             android:id="@+id/foodItemNameTextView"
             android:layout_weight="0.87" />
 
@@ -54,21 +55,21 @@
                 <RadioButton
                     android:id="@+id/smallRadioBtn"
                     android:text="SMALL"
-                    android:textSize="10dp"
+                    android:textSize="8dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <RadioButton
                     android:id="@+id/mediumRadioBtn"
                     android:text="MEDIUM"
-                    android:textSize="10dp"
+                    android:textSize="8dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <RadioButton
                     android:id="@+id/largeRadioBtn"
                     android:text="LARGE"
-                    android:textSize="10dp"
+                    android:textSize="8dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </RadioGroup>

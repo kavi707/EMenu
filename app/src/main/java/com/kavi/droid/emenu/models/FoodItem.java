@@ -16,6 +16,7 @@ public class FoodItem {
     private String thumbImgUrlOne;
     private String thumbImgUrlTwo;
     private String imgUrl;
+    private boolean isSelected;
 
     public String getId() {
         return id;
@@ -95,5 +96,13 @@ public class FoodItem {
 
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
+    }
+
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(boolean selected) {
+        isSelected = selected;
     }
 }

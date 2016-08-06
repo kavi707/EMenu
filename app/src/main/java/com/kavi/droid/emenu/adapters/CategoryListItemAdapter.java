@@ -19,6 +19,7 @@ public class CategoryListItemAdapter extends BaseAdapter {
 
     private List<Category> categoryList;
     private Context context;
+    public static int selectedItemPosition;
 
     public CategoryListItemAdapter(List<Category> categoryList, Context context) {
         this.categoryList = categoryList;
@@ -47,6 +48,12 @@ public class CategoryListItemAdapter extends BaseAdapter {
             categoryListItemView = (CategoryListItemView) View.inflate(context, R.layout.view_categoty_list_item, null);
         } else {
             categoryListItemView = (CategoryListItemView) convertView;
+        }
+
+        if (selectedItemPosition == position) {
+            categoryListItemView.setBackgroundColor(context.getResources().getColor(R.color.categorySelectedBlue));
+        } else {
+            categoryListItemView.setBackgroundColor(context.getResources().getColor(R.color.categoryBlue));
         }
 
         categoryListItemView.setCategory(categoryList.get(position));
