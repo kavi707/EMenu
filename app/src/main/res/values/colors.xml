@@ -2,13 +2,16 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <!--<color name="colorAccent">#FF4081</color>-->
+    <color name="colorAccent">#9D6BA6</color>
 
     <color name="white">#f1ffffff</color>
     <color name="black">#f1000000</color>
 
     <color name="lightOrange">#f1fa7854</color>
     <color name="darkOrange">#f1fa4917</color>
-    <color name="lightPurple">#f17e619c</color>
-    <color name="darkPurple">#f1503978</color>
+    <color name="lightPurple">#9D6BA6</color>
+    <color name="darkPurple">#582C61</color>
+    <color name="categoryBlue">#283345</color>
+    <color name="categorySelectedBlue">#182335</color>
 </resources>
