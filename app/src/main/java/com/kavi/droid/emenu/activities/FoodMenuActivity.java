@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.kavi.droid.emenu.R;
@@ -31,6 +32,7 @@ public class FoodMenuActivity extends AppCompatActivity {
     private TextView selectedCategoryNameTextView;
     private EditText searchEditText;
     private ImageButton searchImageButton;
+    private RelativeLayout checkListRelativeLayout;
 
     private Context context = this;
 
@@ -66,6 +68,7 @@ public class FoodMenuActivity extends AppCompatActivity {
         selectedCategoryNameTextView = (TextView) findViewById(R.id.selectedCategoryNameTextView);
         searchEditText = (EditText) findViewById(R.id.searchEditText);
         searchImageButton = (ImageButton) findViewById(R.id.searchImageButton);
+        checkListRelativeLayout = (RelativeLayout) findViewById(R.id.checkListRelativeLayout);
 
         // Load all food categories from server and show those in list view
         loadCategoryItems();
@@ -94,6 +97,13 @@ public class FoodMenuActivity extends AppCompatActivity {
                     }
                 }
                 loadFoodItemGridView(filterFoodItemList);
+            }
+        });
+
+        checkListRelativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
     }
@@ -127,7 +137,7 @@ public class FoodMenuActivity extends AppCompatActivity {
     private void loadFoodItems() {
         // TODO - Replace with server values
         FoodItem sampleFoodItem;
-        for (int j = 0; j < 8; j++) {
+        for (int j = 0; j < 16; j++) {
             sampleFoodItem = new FoodItem();
             sampleFoodItem.setId("food00" + j);
             sampleFoodItem.setName("Food " + j);

@@ -15,21 +15,21 @@
             android:id="@+id/categoryItemRelativeLayout"
             android:layout_width="130dp"
             android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:background="@color/categoryBlue">
 
             <ImageView
+                android:id="@+id/logoImageView"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="@color/lightPurple"
-                android:id="@+id/logoImageView" />
+                android:layout_height="80dp"
+                android:background="@color/lightPurple" />
 
             <ListView
+                android:id="@+id/categoryListView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/categoryListView"
                 android:layout_below="@+id/logoImageView"
                 android:layout_centerHorizontal="true" />
         </RelativeLayout>
@@ -39,104 +39,194 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
-            android:background="@color/menuBackground"
-            android:layout_toRightOf="@+id/categoryItemRelativeLayout"
             android:layout_toEndOf="@+id/categoryItemRelativeLayout"
-            android:layout_toLeftOf="@+id/checkListRelativeLayout"
-            android:layout_toStartOf="@+id/checkListRelativeLayout">
+            android:layout_toRightOf="@+id/categoryItemRelativeLayout"
+            android:background="@color/menuBackground">
 
             <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
                 android:id="@+id/itemHeadingRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
                 android:background="@color/white">
 
-                <ImageButton
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:id="@+id/specialOfferImageBtn"
-                    android:src="@drawable/special_offers_icon"
-                    android:background="@color/white"
-                    android:layout_marginTop="-25dp"
-                    android:layout_alignParentTop="true"
+                <RelativeLayout
+                    android:id="@+id/checkListRelativeLayout"
+                    android:layout_width="180dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true" />
+                    android:layout_alignParentTop="true"
+                    android:background="@color/lightGreen"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginLeft="5dp">
+
+                            <TextView
+                                android:id="@+id/viewOrderLabelTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="VIEW ORDER"
+                                android:textColor="@color/white"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/orderAmtTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2000 LKR"
+                                android:textColor="@color/white"
+                                android:textSize="12dp"
+                                android:textStyle="normal" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="5dp"/>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/tableNumRelativeLayout"
+                    android:layout_width="140dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_toLeftOf="@+id/checkListRelativeLayout"
+                    android:layout_toStartOf="@+id/checkListRelativeLayout">
+
+                    <TextView
+                        android:id="@+id/midTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true" />
+
+                    <TextView
+                        android:id="@+id/tableNumTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignTop="@+id/midTextView"
+                        android:layout_marginLeft="20dp"
+                        android:text="TABLE 00"
+                        android:textColor="@color/lightPurple"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_below="@+id/tableNumTextView">
+
+                        <ImageView
+                            android:src="@drawable/tick_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/seatedTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SEATED 3.45" />
+
+                    </LinearLayout>
+                </RelativeLayout>
 
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:hint="Search Foods, Drinks, etc"
                     android:id="@+id/searchEditText"
                     style="@style/EMenu.EditText"
-                    android:paddingLeft="10dp"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_toLeftOf="@+id/specialOfferImageBtn"
-                    android:layout_toStartOf="@+id/specialOfferImageBtn" />
-
-                <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/searchImageButton"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/search_icon"
-                    android:background="@android:color/transparent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toLeftOf="@+id/tableNumRelativeLayout"
+                    android:layout_toStartOf="@+id/tableNumRelativeLayout"
+                    android:hint="Search Foods, Drinks, etc"
+                    android:paddingLeft="10dp" />
+
+                <ImageButton
+                    android:id="@+id/searchImageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/searchEditText"
                     android:layout_alignRight="@+id/searchEditText"
-                    android:layout_alignEnd="@+id/searchEditText" />
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/search_icon" />
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/categoryNameRelativeLayout"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:id="@+id/categoryNameRelativeLayout"
-                android:layout_below="@+id/itemHeadingRelativeLayout"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" >
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/itemHeadingRelativeLayout">
 
                 <TextView
+                    android:id="@+id/selectedCategoryNameTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Selected Category"
-                    android:id="@+id/selectedCategoryNameTextView"
-                    android:textSize="22dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_centerVertical="true"
                     android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="Selected Category"
+                    android:textSize="22dp" />
 
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true">
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:orientation="horizontal">
 
                     <Button
+                        android:id="@+id/allBtn"
                         android:layout_width="60dp"
                         android:layout_height="wrap_content"
                         android:text="ALL"
-                        android:textSize="12dp"
-                        android:id="@+id/allBtn" />
+                        android:textSize="12dp" />
 
                     <Button
+                        android:id="@+id/chickenBtn"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:text="CHICKEN"
-                        android:textSize="12dp"
-                        android:id="@+id/chickenBtn" />
+                        android:textSize="12dp" />
 
                     <Button
+                        android:id="@+id/fishBtn"
                         android:layout_width="60dp"
                         android:layout_height="wrap_content"
                         android:text="FISH"
-                        android:textSize="12dp"
-                        android:id="@+id/fishBtn" />
+                        android:textSize="12dp" />
                 </LinearLayout>
             </RelativeLayout>
 
@@ -145,15 +235,15 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/categoryNameRelativeLayout"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
                 android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:columnWidth="150dp"
                 android:gravity="center"
-                android:horizontalSpacing="5dp"
-                android:verticalSpacing="5dp"
                 android:numColumns="auto_fit"
-                android:stretchMode="columnWidth" />
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="10dp"
+                android:horizontalSpacing="10dp"/>
         </RelativeLayout>
 
         <!--<RelativeLayout

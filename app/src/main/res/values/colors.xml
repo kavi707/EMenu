@@ -17,6 +17,7 @@
     <color name="darkOrange">#f1fa4917</color>
     <color name="lightPurple">#9D6BA6</color>
     <color name="darkPurple">#582C61</color>
+    <color name="lightGreen">#17A52F</color>
     <color name="categoryBlue">#283345</color>
     <color name="categorySelectedBlue">#182335</color>
 </resources>
