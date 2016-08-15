@@ -41,7 +41,7 @@ public class TableSelectActivity extends Activity {
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent menuIntent = new Intent(TableSelectActivity.this, MenuActivity.class);
+                Intent menuIntent = new Intent(TableSelectActivity.this, FoodMenuActivity.class);
                 startActivity(menuIntent);
             }
         });
