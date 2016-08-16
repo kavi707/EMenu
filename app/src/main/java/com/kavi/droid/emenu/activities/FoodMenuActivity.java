@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.GridView;
@@ -19,6 +20,7 @@ import com.kavi.droid.emenu.R;
 import com.kavi.droid.emenu.adapters.CategoryListItemAdapter;
 import com.kavi.droid.emenu.adapters.FoodGridItemAdapter;
 import com.kavi.droid.emenu.adapters.FoodListItemAdapter;
+import com.kavi.droid.emenu.dialogs.SingleItemDialog;
 import com.kavi.droid.emenu.models.Category;
 import com.kavi.droid.emenu.models.FoodItem;
 
@@ -103,7 +105,10 @@ public class FoodMenuActivity extends AppCompatActivity {
         checkListRelativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                SingleItemDialog singleItemDialog = new SingleItemDialog(context);
+                singleItemDialog.show();
+                Window window = singleItemDialog.getWindow();
+                window.setLayout(RelativeLayout.LayoutParams.FILL_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
             }
         });
     }
