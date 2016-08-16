@@ -17,6 +17,7 @@
             android:id="@+id/singleItemImageView"
             android:layout_width="match_parent"
             android:layout_height="330dp"
+            android:src="@drawable/sample_single_item"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
