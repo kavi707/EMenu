@@ -21,6 +21,7 @@ import com.kavi.droid.emenu.R;
 import com.kavi.droid.emenu.adapters.CategoryListItemAdapter;
 import com.kavi.droid.emenu.adapters.FoodGridItemAdapter;
 import com.kavi.droid.emenu.adapters.FoodListItemAdapter;
+import com.kavi.droid.emenu.dialogs.CartListDialog;
 import com.kavi.droid.emenu.dialogs.SingleItemDialog;
 import com.kavi.droid.emenu.models.Category;
 import com.kavi.droid.emenu.models.FoodItem;
@@ -106,7 +107,6 @@ public class FoodMenuActivity extends AppCompatActivity {
         foodItemGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.d("Log>>>>>>>>>>>", "clicked");
                 SingleItemDialog singleItemDialog = new SingleItemDialog(context);
                 singleItemDialog.show();
                 Window window = singleItemDialog.getWindow();
@@ -117,7 +117,8 @@ public class FoodMenuActivity extends AppCompatActivity {
         checkListRelativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                CartListDialog cartListDialog = new CartListDialog(context);
+                cartListDialog.show();
             }
         });
     }
