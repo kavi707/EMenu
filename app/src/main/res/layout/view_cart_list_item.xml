@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.kavi.droid.emenu.views.CartListItemView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGrey"
+        android:layout_alignParentBottom="true"/>
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/cartListItemImageView"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/style_em_img_view_round_corner"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="x2"
+        android:textSize="16dp"
+        android:gravity="center"
+        android:layout_marginTop="2dp"
+        android:id="@+id/cartListItemQtyTextView"
+        android:layout_below="@+id/cartListItemImageView"
+        android:layout_alignRight="@+id/cartListItemImageView"
+        android:layout_alignEnd="@+id/cartListItemImageView"
+        android:layout_alignLeft="@+id/cartListItemImageView"
+        android:layout_alignStart="@+id/cartListItemImageView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LKR"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:id="@+id/currencyTextView"
+        android:layout_marginRight="20dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3000"
+        android:textSize="26dp"
+        android:textStyle="bold"
+        android:id="@+id/cartItemAmountTextView"
+        android:layout_marginRight="5dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/currencyTextView"
+        android:layout_toStartOf="@+id/currencyTextView" />
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/cartItemAmountTextView"
+        android:layout_toStartOf="@+id/cartItemAmountTextView"
+        android:layout_toRightOf="@+id/cartListItemImageView"
+        android:layout_toEndOf="@+id/cartListItemImageView">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Item Name"
+            android:textSize="26dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/cartItemNameTextView"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Item Comments"
+            android:textSize="18dp"
+            android:id="@+id/cartItemDescriptionTextView"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/cartItemNameTextView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+</com.kavi.droid.emenu.views.CartListItemView>
