@@ -22,6 +22,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".activities.SelectTableActivity"
+            android:screenOrientation="landscape" />
+        <activity
             android:name=".activities.TableSelectActivity"
             android:screenOrientation="landscape" />
         <activity
