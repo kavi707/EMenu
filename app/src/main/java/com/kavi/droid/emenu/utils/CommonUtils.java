@@ -23,24 +23,6 @@ import java.util.Map;
 public class CommonUtils {
 
     /**
-     * This is object keep all user selected results in each places.
-     * This use to created final survey submission request.
-     *
-     * @key industry: Industry Object
-     * @key selectedBrand: Brand Object
-     * @key selectedChannel: Channel Object
-     * @key customerJourney: Journey Object
-     * @key productId: String value
-     * @key effortRating: int value
-     * @key sentimentRating: int value
-     * @key recommendationRating: int value
-     * @key satisfactionRating: int value
-     * @key ratingList: ArrayList
-     * @key comments: String value
-     */
-    public static Map<String, Object> userSurveyValues = new HashMap<>();
-
-    /**
      * check the internet connection in the device for running application
      * @param context
      * @return boolean

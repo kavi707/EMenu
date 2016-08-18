@@ -82,12 +82,14 @@
                                 android:id="@+id/mediumRadioBtn"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
                                 android:text="Medium" />
 
                             <RadioButton
                                 android:id="@+id/largeRadioBtn"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
                                 android:text="Large" />
 
                         </RadioGroup>
@@ -99,8 +101,8 @@
                             android:gravity="center_vertical">
 
                             <ImageButton
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
                                 android:layout_marginRight="10dp"
                                 android:id="@+id/plusQtyImageBtn"
                                 android:layout_centerVertical="true"
@@ -119,8 +121,8 @@
                                 android:layout_toStartOf="@+id/plusQtyImageBtn" />
 
                             <ImageButton
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
                                 android:layout_marginRight="10dp"
                                 android:id="@+id/minusQtyImageBtn"
                                 android:layout_centerVertical="true"
@@ -130,9 +132,10 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="LKR 1500"
-                                android:textSize="24dp"
-                                android:layout_marginRight="30dp"
+                                android:text="1500 LKR"
+                                android:textSize="22dp"
+                                android:layout_marginRight="20dp"
+                                android:gravity="center"
                                 android:id="@+id/amountTextView"
                                 android:layout_centerVertical="true"
                                 android:layout_toLeftOf="@+id/minusQtyImageBtn"

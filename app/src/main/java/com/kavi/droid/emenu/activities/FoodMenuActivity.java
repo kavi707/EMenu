@@ -1,6 +1,7 @@
 package com.kavi.droid.emenu.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -25,9 +26,11 @@ import com.kavi.droid.emenu.dialogs.CartListDialog;
 import com.kavi.droid.emenu.dialogs.SingleItemDialog;
 import com.kavi.droid.emenu.models.Category;
 import com.kavi.droid.emenu.models.FoodItem;
+import com.kavi.droid.emenu.utils.CommonUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class FoodMenuActivity extends AppCompatActivity {
 
@@ -47,6 +50,8 @@ public class FoodMenuActivity extends AppCompatActivity {
     private List<FoodItem> allFoodItemList = new ArrayList<>();
     private List<FoodItem> foodItemList = new ArrayList<>(); // showing food items list in the grid
     private FoodGridItemAdapter foodGridItemAdapter;
+    private CommonUtils commonUtils = new CommonUtils();
+    private Map<String, Integer> deviceDimensions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +78,10 @@ public class FoodMenuActivity extends AppCompatActivity {
         searchEditText = (EditText) findViewById(R.id.searchEditText);
         searchImageButton = (ImageButton) findViewById(R.id.searchImageButton);
         checkListRelativeLayout = (RelativeLayout) findViewById(R.id.checkListRelativeLayout);
+
+        deviceDimensions = commonUtils.getDeviceWidthAndHeight(FoodMenuActivity.this);
+        Log.d("Width", String.valueOf(deviceDimensions.get("width")));
+        Log.d("Height", String.valueOf(deviceDimensions.get("height")));
 
         // Load all food categories from server and show those in list view
         loadCategoryItems();
@@ -110,7 +119,10 @@ public class FoodMenuActivity extends AppCompatActivity {
                 SingleItemDialog singleItemDialog = new SingleItemDialog(context);
                 singleItemDialog.show();
                 Window window = singleItemDialog.getWindow();
-                window.setLayout(RelativeLayout.LayoutParams.FILL_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+
+                Double dialogWidth = deviceDimensions.get("width") * 0.8;
+
+                window.setLayout(dialogWidth.intValue(), RelativeLayout.LayoutParams.WRAP_CONTENT);
             }
         });
 
