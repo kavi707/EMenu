@@ -3,7 +3,6 @@ package com.kavi.droid.emenu.adapters;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +46,7 @@ public class NumberPickerItemAdapter extends RecyclerView.Adapter<NumberPickerIt
             holder.numberTextView.setTextColor(context.getResources().getColor(R.color.lightPurple));
             holder.numberTextView.setTextSize(100);
             holder.numberTextView.setTypeface(Typeface.DEFAULT);
-            holder.pickerItemLinearLayout.setBackground(context.getResources().getDrawable(R.drawable.table_select_box));
+            holder.pickerItemLinearLayout.setBackground(context.getResources().getDrawable(R.drawable.background_table_select_box));
         } else {
             holder.numberTextView.setTextColor(context.getResources().getColor(R.color.colorDarkGrey));
             holder.numberTextView.setTextSize(80);

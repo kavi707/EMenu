@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="140dp"
     android:layout_height="140dp"
-    android:background="@drawable/table_select_box">
+    android:background="@drawable/background_table_select_box">
 
     <TextView
         android:id="@+id/selectedNumberTextView"

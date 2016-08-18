@@ -68,6 +68,7 @@
                         android:orientation="horizontal">
 
                         <ImageView
+                            android:src="@drawable/icon_view_order"
                             android:layout_width="30dp"
                             android:layout_height="30dp" />
 
@@ -99,6 +100,7 @@
                         <ImageView
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:src="@drawable/icon_view_order_arrow"
                             android:layout_marginLeft="5dp"/>
                     </LinearLayout>
                 </RelativeLayout>
@@ -140,7 +142,7 @@
                         android:layout_below="@+id/tableNumTextView">
 
                         <ImageView
-                            android:src="@drawable/tick_icon"
+                            android:src="@drawable/icon_tick"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
@@ -176,7 +178,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="10dp"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/search_icon" />
+                    android:src="@drawable/icon_search" />
             </RelativeLayout>
 
             <RelativeLayout

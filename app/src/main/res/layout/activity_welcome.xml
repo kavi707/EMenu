@@ -8,7 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/welcome_banner">
+        android:background="@drawable/background_welcome_banner">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -21,7 +21,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/welcomeImageView"
-                android:src="@drawable/welcome_txt"
+                android:src="@drawable/txt_welcome"
                 android:layout_gravity="center_horizontal" />
 
             <TextView
