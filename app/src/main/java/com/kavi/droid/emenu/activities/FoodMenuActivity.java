@@ -3,6 +3,7 @@ package com.kavi.droid.emenu.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -28,7 +29,10 @@ import com.kavi.droid.emenu.models.Category;
 import com.kavi.droid.emenu.models.FoodItem;
 import com.kavi.droid.emenu.utils.CommonUtils;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
@@ -40,25 +44,50 @@ public class FoodMenuActivity extends AppCompatActivity {
     private EditText searchEditText;
     private ImageButton searchImageButton;
     private RelativeLayout checkListRelativeLayout;
+    private TextView tableNumTextView;
+    private TextView seatedTextView;
 
     private Context context = this;
 
     private List<Category> allCategoryList = new ArrayList<>();
     private List<Category> categoryList = new ArrayList<>();
-    private CategoryListItemAdapter categoryListItemAdapter;
-
     private List<FoodItem> allFoodItemList = new ArrayList<>();
     private List<FoodItem> foodItemList = new ArrayList<>(); // showing food items list in the grid
-    private FoodGridItemAdapter foodGridItemAdapter;
     private CommonUtils commonUtils = new CommonUtils();
+
+    private FoodGridItemAdapter foodGridItemAdapter;
+    private CategoryListItemAdapter categoryListItemAdapter;
     private Map<String, Integer> deviceDimensions;
+    private String selectedTableNumber;
+    private CountDownTimer newTimer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_menu);
 
+        extractIntentExtras(savedInstanceState);
         setUpViews();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (newTimer != null)
+            newTimer.cancel();
+    }
+
+    private void extractIntentExtras(Bundle savedInstanceState) {
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if(extras == null) {
+                selectedTableNumber = null;
+            } else {
+                selectedTableNumber = extras.getString("SELECTED_TABLE_NUMBER");
+            }
+        }
+
+        Log.d("BSLog","FoodMenuActivity:extractIntentExtras / selectedTableNumber: " + selectedTableNumber);
     }
 
     private void setUpViews() {
@@ -78,6 +107,11 @@ public class FoodMenuActivity extends AppCompatActivity {
         searchEditText = (EditText) findViewById(R.id.searchEditText);
         searchImageButton = (ImageButton) findViewById(R.id.searchImageButton);
         checkListRelativeLayout = (RelativeLayout) findViewById(R.id.checkListRelativeLayout);
+        tableNumTextView = (TextView) findViewById(R.id.tableNumTextView);
+        seatedTextView = (TextView) findViewById(R.id.seatedTextView);
+
+        tableNumTextView.setText("TABLE " + selectedTableNumber);
+        showsCurrentTime();
 
         deviceDimensions = commonUtils.getDeviceWidthAndHeight(FoodMenuActivity.this);
         Log.d("Width", String.valueOf(deviceDimensions.get("width")));
@@ -134,6 +168,23 @@ public class FoodMenuActivity extends AppCompatActivity {
                 cartListDialog.show();
             }
         });
+    }
+
+    private void showsCurrentTime() {
+
+        newTimer = new CountDownTimer(1000000000, 1000) {
+            @Override
+            public void onTick(long l) {
+                Calendar calendar = Calendar.getInstance();
+                seatedTextView.setText("SEATED " + Calendar.HOUR + ":" + calendar.get(Calendar.MINUTE));
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        };
+        newTimer.start();
     }
 
     private void loadCategoryListView(List<Category> categoryList) {

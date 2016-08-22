@@ -46,6 +46,7 @@ public class TableSelectActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent menuIntent = new Intent(TableSelectActivity.this, FoodMenuActivity.class);
+                menuIntent.putExtra("SELECTED_TABLE_NUMBER", selectedNumberTextView.getText().toString());
                 startActivity(menuIntent);
             }
         });
