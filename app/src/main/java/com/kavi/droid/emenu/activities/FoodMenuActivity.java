@@ -120,9 +120,10 @@ public class FoodMenuActivity extends AppCompatActivity {
                 singleItemDialog.show();
                 Window window = singleItemDialog.getWindow();
 
-                Double dialogWidth = deviceDimensions.get("width") * 0.8;
+                Double dialogWidth = deviceDimensions.get("width") * 0.75;
+                Double dialogHeight = deviceDimensions.get("height") * 0.9;
 
-                window.setLayout(dialogWidth.intValue(), RelativeLayout.LayoutParams.WRAP_CONTENT);
+                window.setLayout(dialogWidth.intValue(), dialogHeight.intValue());
             }
         });
 
