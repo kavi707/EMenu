@@ -6,8 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.kavi.droid.emenu.R;
 import com.kavi.droid.emenu.adapters.NumberPickerItemAdapter;
@@ -21,7 +23,8 @@ import java.util.ArrayList;
 public class TableSelectActivity extends Activity {
 
     private Button continueBtn;
-    private RecyclerView horizontalListView;
+    private RecyclerView horizontalRecycleView;
+    private TextView selectedNumberTextView;
 
     private Context context = this;
 
@@ -36,7 +39,8 @@ public class TableSelectActivity extends Activity {
     private void setUpViews() {
 
         continueBtn = (Button) findViewById(R.id.continueBtn);
-        horizontalListView = (RecyclerView) findViewById(R.id.numberPicker);
+        horizontalRecycleView = (RecyclerView) findViewById(R.id.numberPicker);
+        selectedNumberTextView = (TextView) findViewById(R.id.selectedNumberTextView);
 
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,11 +50,8 @@ public class TableSelectActivity extends Activity {
             }
         });
 
-        ArrayList<String> horizontalList= new ArrayList<>();
+        final ArrayList<String> horizontalList= new ArrayList<>();
 
-        horizontalList.add("");
-        horizontalList.add("");
-        horizontalList.add("");
         horizontalList.add("01");
         horizontalList.add("02");
         horizontalList.add("03");
@@ -71,15 +72,18 @@ public class TableSelectActivity extends Activity {
         horizontalList.add("18");
         horizontalList.add("19");
         horizontalList.add("20");
-        horizontalList.add("");
-        horizontalList.add("");
-        horizontalList.add("");
 
         NumberPickerItemAdapter numberPickerItemAdapter = new NumberPickerItemAdapter(horizontalList, context);
 
-        LinearLayoutManager horizontalLayoutManagaer
+        LinearLayoutManager horizontalLayoutManager
                 = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
-        horizontalListView.setLayoutManager(horizontalLayoutManagaer);
-        horizontalListView.setAdapter(numberPickerItemAdapter);
+        horizontalRecycleView.setLayoutManager(horizontalLayoutManager);
+        horizontalRecycleView.setAdapter(numberPickerItemAdapter);
+        numberPickerItemAdapter.SetOnItemClickListener(new NumberPickerItemAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                selectedNumberTextView.setText(horizontalList.get(position));
+            }
+        });
     }
 }
