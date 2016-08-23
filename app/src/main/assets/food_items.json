@@ -1,0 +1,167 @@
+[
+  {
+    "ItemCode":"ITM0001",
+    "ItemName":"Special Nasi Goreng with Fried Chicken",
+    "Description":"Fried rice with pappadum, fried chicken, sambal and fried egg.",
+    "NutritionInfo":"",
+    "Price":1200,
+    "MainCategoryId":"MCat001",
+    "SubcategoryId":"SCatL003",
+    "ThumbImageUrl":"",
+    "ImageUrl":""
+  },
+  {
+    "ItemCode":"ITM0002",
+    "ItemName":"Hainan Curry Chicken Chop",
+    "Description":"Deep-fried chicken coated with curry sauce, served with chicken rice, fried egg and sliced cucumbers.",
+    "NutritionInfo":"",
+    "Price":1450,
+    "MainCategoryId":"MCat001",
+    "SubcategoryId":"SCatL003",
+    "ThumbImageUrl":"",
+    "ImageUrl":""
+  },
+  {
+    "ItemCode":"ITM0003",
+    "ItemName":"Oriental Beef Chop",
+    "Description":"Deep-fried beef coated with black pepper sauce, served with beef rice, fried egg and sliced cucumber.",
+    "NutritionInfo":"",
+    "Price":1350,
+    "MainCategoryId":"MCat001",
+    "SubcategoryId":"SCatL004",
+    "ThumbImageUrl":"",
+    "ImageUrl":""
+  },
+  {
+    "ItemCode":"ITM0004",
+    "ItemName":"Biryani Rice with Prawns",
+    "Description":"Deep-fried prawns coated with black pepper sauce, served with rice, fried egg and sliced cucumber.",
+    "NutritionInfo":"",
+    "Price":1500,
+    "MainCategoryId":"MCat001",
+    "SubcategoryId":"SCatL007",
+    "ThumbImageUrl":"",
+    "ImageUrl":""
+  },
+  {
+    "ItemCode":"ITM0005",
+    "ItemName":"Nasi Lemak with Veg Curry",
+    "Description":"Nasi Lemak comes with aromatic coconut milk infused in steamed rice served with curry chicken, fried anchovies, fried peanuts, hard boiled egg, our delicious daily made spicy sambal and cucumber slices.*Gluten free",
+    "NutritionInfo":"",
+    "Price":900,
+    "MainCategoryId":"MCat001",
+    "SubcategoryId":"SCatL001",
+    "ThumbImageUrl":"",
+    "ImageUrl":""
+  },
+  {
+    "ItemCode":"ITM0006",
+    "ItemName":"Special Biryani Rice with Sambal Eggplant, Fried pork",
+    "Description":"Pappa special Nasi Biryani comes with aromatic Indian spiced rice, a medley of sambal eggplant, fried pork and sambal prawns.",
+    "NutritionInfo":"",
+    "Price":1100,
+    "MainCategoryId":"MCat001",
+    "SubcategoryId":"SCatL005",
+    "ThumbImageUrl":"",
+    "ImageUrl":""
+  },
+  {
+    "ItemCode":"ITM0007",
+    "ItemName":"Pan Mee Noodle Soup",
+    "Description":"Flour noodles in freshly boiled  anchovy based soup. Served with minced seafood, fried anchovies, mushrooms, spinach and topped with half boiled egg (pan mee soup chilli on the side).",
+    "NutritionInfo":"",
+    "Price":600,
+    "MainCategoryId":"MCat002",
+    "SubcategoryId":"SCatL006",
+    "ThumbImageUrl":"",
+    "ImageUrl":""
+  },
+  {
+    "ItemCode":"ITM0008",
+    "ItemName":"Fried Rice Noodles",
+    "Description":"Wok-fried rice starch noodles with chicken slices, prawns, egg, bean sprouts, chives and red chilli. This dish is spicy.",
+    "NutritionInfo":"",
+    "Price":900,
+    "MainCategoryId":"MCat002",
+    "SubcategoryId":"SCatL003",
+    "ThumbImageUrl":"",
+    "ImageUrl":""
+  },
+  {
+    "ItemCode":"ITM0009",
+    "ItemName":"Chilli Pan Mee",
+    "Description":"Dry flour noodles served with minced crab, fried anchovies, chilli pan mee chilli, mushrooms, fried shallots, spinach and topped with half boiled egg. Stir well before consuming.",
+    "NutritionInfo":"",
+    "Price":1200,
+    "MainCategoryId":"MCat002",
+    "SubcategoryId":"SCatL008",
+    "ThumbImageUrl":"",
+    "ImageUrl":""
+  },
+  {
+    "ItemCode":"ITM0010",
+    "ItemName":"Dry Curry Egg Noodles with Curry",
+    "Description":"Egg noodles doused in rich curry gravy and served with curry, chop sum and red chilli.",
+    "NutritionInfo":"",
+    "Price":600,
+    "MainCategoryId":"MCat002",
+    "SubcategoryId":"SCatL001",
+    "ThumbImageUrl":"",
+    "ImageUrl":""
+  },
+  {
+    "ItemCode":"ITM0011",
+    "ItemName":"Ipoh Koay Teow Soup with Prawns",
+    "Description":"Thin flat rice noodles in our freshly boiled daily chicken soup and prawn head broth. Topped with prawns, chicken slices, bean sprouts, chives and red chilli.",
+    "NutritionInfo":"",
+    "Price":1400,
+    "MainCategoryId":"MCat002",
+    "SubcategoryId":"SCatL006",
+    "ThumbImageUrl":"",
+    "ImageUrl":""
+  },
+  {
+    "ItemCode":"ITM0012",
+    "ItemName":"Crispy Egg Noodles",
+    "Description":"Wok-fried egg noodles with egg gravy, prawns, fish cakes and chicken slices.",
+    "NutritionInfo":"",
+    "Price":950,
+    "MainCategoryId":"MCat002",
+    "SubcategoryId":"SCatL003",
+    "ThumbImageUrl":"",
+    "ImageUrl":""
+  },
+  {
+    "ItemCode":"ITM0013",
+    "ItemName":"Vegetable Spring Roll With Plum Sauce",
+    "Description":"4 Pieces - Serves 2.",
+    "NutritionInfo":"",
+    "Price":300,
+    "MainCategoryId":"MCat003",
+    "SubcategoryId":"SCatL001",
+    "ThumbImageUrl":"",
+    "ImageUrl":""
+  },
+  {
+    "ItemCode":"ITM0014",
+    "ItemName":"Chicken Won Ton With Plum Sauce",
+    "Description":"4 Pieces - Serves 2.",
+    "NutritionInfo":"",
+    "Price":450,
+    "MainCategoryId":"MCat003",
+    "SubcategoryId":"SCatL003",
+    "ThumbImageUrl":"",
+    "ImageUrl":""
+  },
+  {
+    "ItemCode":"ITM0015",
+    "ItemName":"French Fries",
+    "Description":"Serves 2.",
+    "NutritionInfo":"",
+    "Price":350,
+    "MainCategoryId":"MCat003",
+    "SubcategoryId":"SCatL001",
+    "ThumbImageUrl":"",
+    "ImageUrl":""
+  }
+]

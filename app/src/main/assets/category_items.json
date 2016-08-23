@@ -1,0 +1,47 @@
+[
+  {
+    "CategoryId":"MCat001",
+    "CategoryName":"Appetizers & Side Dishes",
+    "iconUrl":""
+  },
+  {
+    "CategoryId":"MCat002",
+    "CategoryName":"Pizza",
+    "iconUrl":""
+  },
+  {
+    "CategoryId":"MCat003",
+    "CategoryName":"Pasta",
+    "iconUrl":""
+  },
+  {
+    "CategoryId":"MCat004",
+    "CategoryName":"Rice",
+    "iconUrl":""
+  },
+  {
+    "CategoryId":"MCat005",
+    "CategoryName":"Noodles",
+    "iconUrl":""
+  },
+  {
+    "CategoryId":"MCat006",
+    "CategoryName":"Soups",
+    "iconUrl":""
+  },
+  {
+    "CategoryId":"MCat007",
+    "CategoryName":"Bread",
+    "iconUrl":""
+  },
+  {
+    "CategoryId":"MCat008",
+    "CategoryName":"Desserts",
+    "iconUrl":""
+  },
+  {
+    "CategoryId":"MCat009",
+    "CategoryName":"Roti",
+    "iconUrl":""
+  }
+]
