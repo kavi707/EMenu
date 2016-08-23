@@ -1,38 +1,38 @@
 [
   {
-    "SubCategoryId":"SCatL001",
+    "SubCategoryId":"SCAT001",
     "SubCatName":"Vegetarian"
   },
   {
-    "SubCategoryId":"SCatL002",
+    "SubCategoryId":"SCAT002",
     "SubCatName":"Fish"
   },
   {
-    "SubCategoryId":"SCatL003",
+    "SubCategoryId":"SCAT003",
     "SubCatName":"Chicken"
   },
   {
-    "SubCategoryId":"SCatL004",
+    "SubCategoryId":"SCAT004",
     "SubCatName":"Beef"
   },
   {
-    "SubCategoryId":"SCatL005",
+    "SubCategoryId":"SCAT005",
     "SubCatName":"Pork"
   },
   {
-    "SubCategoryId":"SCatL006",
+    "SubCategoryId":"SCAT006",
     "SubCatName":"Seafood"
   },
   {
-    "SubCategoryId":"SCatL007",
+    "SubCategoryId":"SCAT007",
     "SubCatName":"Prawns"
   },
   {
-    "SubCategoryId":"SCatL008",
+    "SubCategoryId":"SCAT008",
     "SubCatName":"Crabs"
   },
   {
-    "SubCategoryId":"SCatL009",
+    "SubCategoryId":"SCAT009",
     "SubCatName":"Specialities"
   }
 ]

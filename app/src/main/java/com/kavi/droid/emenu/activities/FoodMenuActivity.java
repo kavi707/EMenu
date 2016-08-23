@@ -29,8 +29,13 @@ import com.kavi.droid.emenu.models.Category;
 import com.kavi.droid.emenu.models.FoodItem;
 import com.kavi.droid.emenu.utils.CommonUtils;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.w3c.dom.Text;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -202,38 +207,48 @@ public class FoodMenuActivity extends AppCompatActivity {
     private void loadCategoryItems() {
 
         // TODO - Replace with server values
-        Category sampleCategory;
-        for (int i = 0; i < 3; i++) {
-            sampleCategory = new Category();
-            sampleCategory.setId("cat00" + i);
-            sampleCategory.setCategoryName("Category " + i);
+        String jsonString = loadJsonStringFromAssets("category_items.json");
+        try {
+            JSONArray jsonArray = new JSONArray(jsonString);
+            JSONObject jsonData;
+            Category sampleCategory;
+            for (int i = 0; i < jsonArray.length(); i++) {
+                jsonData = jsonArray.getJSONObject(i);
 
-            allCategoryList.add(sampleCategory);
+                sampleCategory = new Category();
+                sampleCategory.setId(jsonData.getString("CategoryId"));
+                sampleCategory.setCategoryName(jsonData.getString("CategoryName"));
+
+                allCategoryList.add(sampleCategory);
+            }
+
+            loadCategoryListView(allCategoryList);
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
-        loadCategoryListView(allCategoryList);
     }
 
     private void loadFoodItems() {
         // TODO - Replace with server values
-        FoodItem sampleFoodItem;
-        for (int j = 0; j < 16; j++) {
-            sampleFoodItem = new FoodItem();
-            sampleFoodItem.setId("food00" + j);
-            sampleFoodItem.setName("Food " + j);
-            if (j < 3)
-                sampleFoodItem.setCategoryId("cat000");
-            else if (j >= 3 && j < 5)
-                sampleFoodItem.setCategoryId("cat001");
-            else
-                sampleFoodItem.setCategoryId("cat002");
+        String jsonString = loadJsonStringFromAssets("food_items.json");
+        try {
+            JSONArray jsonArray = new JSONArray(jsonString);
+            JSONObject jsonData;
+            FoodItem sampleFoodItem;
+            for (int i = 0; i < jsonArray.length(); i++) {
+                jsonData = jsonArray.getJSONObject(i);
 
-            sampleFoodItem.setPrice(1500);
-            if (j < 5)
-                sampleFoodItem.setRating(j);
-            else
-                sampleFoodItem.setRating(j - 5);
+                sampleFoodItem = new FoodItem();
+                sampleFoodItem.setId(jsonData.getString("ItemCode"));
+                sampleFoodItem.setName(jsonData.getString("ItemName"));
+                sampleFoodItem.setCategoryId(jsonData.getString("MainCategoryId"));
+                sampleFoodItem.setPrice(jsonData.getDouble("Price"));
+                sampleFoodItem.setRating(jsonData.getInt("Rating"));
 
-            allFoodItemList.add(sampleFoodItem);
+                allFoodItemList.add(sampleFoodItem);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
     }
 
@@ -253,5 +268,31 @@ public class FoodMenuActivity extends AppCompatActivity {
             }
         }
         loadFoodItemGridView(filterFoodItemList);
+    }
+
+    /**
+     * TODO - This method must remove after service integration
+     * This read json file in assets and return json string
+     * @param fileName json file name
+     * @return JsonString
+     */
+    private String loadJsonStringFromAssets(String fileName) {
+        String jsonString = null;
+
+        try {
+            InputStream is = getAssets().open(fileName);
+
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+
+            jsonString = new String(buffer, "UTF-8");
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        return jsonString;
     }
 }
