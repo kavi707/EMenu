@@ -218,6 +218,7 @@ public class FoodMenuActivity extends AppCompatActivity {
                 sampleCategory = new Category();
                 sampleCategory.setId(jsonData.getString("CategoryId"));
                 sampleCategory.setCategoryName(jsonData.getString("CategoryName"));
+                sampleCategory.setCategoryImageUrl(jsonData.getString("iconUrl"));
 
                 allCategoryList.add(sampleCategory);
             }
