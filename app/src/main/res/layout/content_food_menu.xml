@@ -152,7 +152,7 @@
                             android:id="@+id/seatedTextView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="SEATED 3.45" />
+                            android:text="SEATED 12.00" />
 
                     </LinearLayout>
                 </RelativeLayout>
