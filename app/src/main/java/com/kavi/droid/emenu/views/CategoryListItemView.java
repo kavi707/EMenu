@@ -47,8 +47,8 @@ public class CategoryListItemView extends RelativeLayout {
         // TODO - Remove this after service integration
         if (category.getCategoryImageUrl().equals("icon_category_toppick"))
             categoryImageView.setImageDrawable(getResources().getDrawable(R.drawable.icon_category_toppick));
-        else if (category.getCategoryImageUrl().equals("icon_category_appertizer"))
-            categoryImageView.setImageDrawable(getResources().getDrawable(R.drawable.icon_category_appertizer));
+        else if (category.getCategoryImageUrl().equals("icon_category_appitizer"))
+            categoryImageView.setImageDrawable(getResources().getDrawable(R.drawable.icon_category_appitizer));
         else if (category.getCategoryImageUrl().equals("icon_category_pizza"))
             categoryImageView.setImageDrawable(getResources().getDrawable(R.drawable.icon_category_pizza));
         else if (category.getCategoryImageUrl().equals("icon_category_rice"))
@@ -57,6 +57,12 @@ public class CategoryListItemView extends RelativeLayout {
             categoryImageView.setImageDrawable(getResources().getDrawable(R.drawable.icon_category_noodle));
         else if (category.getCategoryImageUrl().equals("icon_category_soup"))
             categoryImageView.setImageDrawable(getResources().getDrawable(R.drawable.icon_category_soup));
+        else if (category.getCategoryImageUrl().equals("icon_category_pasta"))
+            categoryImageView.setImageDrawable(getResources().getDrawable(R.drawable.icon_category_pasta));
+        else if (category.getCategoryImageUrl().equals("icon_category_dessert"))
+            categoryImageView.setImageDrawable(getResources().getDrawable(R.drawable.icon_category_dessert));
+        else if (category.getCategoryImageUrl().equals("icon_category_burger"))
+            categoryImageView.setImageDrawable(getResources().getDrawable(R.drawable.icon_category_burger));
         else
             categoryImageView.setImageDrawable(null);
     }

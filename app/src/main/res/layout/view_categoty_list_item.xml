@@ -6,7 +6,7 @@
     android:background="@color/categoryBlue">
 
     <RelativeLayout
-        android:layout_width="140dp"
+        android:layout_width="150dp"
         android:layout_height="130dp"
         android:gravity="center">
 

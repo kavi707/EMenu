@@ -7,7 +7,7 @@
   {
     "CategoryId":"MCAT001",
     "CategoryName":"Appetizers & Side Dishes",
-    "iconUrl":"icon_category_appertizer"
+    "iconUrl":"icon_category_appitizer"
   },
   {
     "CategoryId":"MCAT002",
@@ -17,7 +17,7 @@
   {
     "CategoryId":"MCAT003",
     "CategoryName":"Pasta",
-    "iconUrl":""
+    "iconUrl":"icon_category_pasta"
   },
   {
     "CategoryId":"MCAT004",
@@ -36,17 +36,12 @@
   },
   {
     "CategoryId":"MCAT007",
-    "CategoryName":"Bread",
-    "iconUrl":""
+    "CategoryName":"Burger",
+    "iconUrl":"icon_category_burger"
   },
   {
     "CategoryId":"MCAT008",
     "CategoryName":"Desserts",
-    "iconUrl":""
-  },
-  {
-    "CategoryId":"MCAT009",
-    "CategoryName":"Roti",
-    "iconUrl":""
+    "iconUrl":"icon_category_dessert"
   }
 ]

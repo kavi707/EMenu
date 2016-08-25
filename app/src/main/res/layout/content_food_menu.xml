@@ -13,7 +13,7 @@
 
         <RelativeLayout
             android:id="@+id/categoryItemRelativeLayout"
-            android:layout_width="140dp"
+            android:layout_width="150dp"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -31,6 +31,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/logoImageView"
+                android:divider="@color/categorySelectedBlue"
+                android:dividerHeight="2dp"
                 android:layout_centerHorizontal="true" />
         </RelativeLayout>
 
