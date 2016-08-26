@@ -143,8 +143,8 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="1500 LKR"
-                                android:textSize="18dp"
+                                android:text="00 LKR"
+                                android:textSize="15dp"
                                 android:layout_marginRight="20dp"
                                 android:gravity="center"
                                 android:id="@+id/amountTextView"
@@ -166,7 +166,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
                     android:text="Item Name"
-                    android:textSize="22dp" />
+                    android:textSize="30dp" />
 
                 <TextView
                     android:id="@+id/itemDescriptionTextView"
@@ -180,7 +180,8 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"
-                    android:text="Item Description" />
+                    android:text="Item Description"
+                    android:textSize="20dp"/>
             </RelativeLayout>
 
             <RelativeLayout

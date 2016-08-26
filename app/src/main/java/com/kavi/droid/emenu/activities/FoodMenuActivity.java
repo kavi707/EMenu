@@ -156,6 +156,7 @@ public class FoodMenuActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 SingleItemDialog singleItemDialog = new SingleItemDialog(context);
+                singleItemDialog.setFoodItem(foodItemList.get(position));
                 singleItemDialog.show();
                 Window window = singleItemDialog.getWindow();
 
@@ -242,7 +243,9 @@ public class FoodMenuActivity extends AppCompatActivity {
                 sampleFoodItem = new FoodItem();
                 sampleFoodItem.setId(jsonData.getString("ItemCode"));
                 sampleFoodItem.setName(jsonData.getString("ItemName"));
+                sampleFoodItem.setDescription(jsonData.getString("Description"));
                 sampleFoodItem.setCategoryId(jsonData.getString("MainCategoryId"));
+                sampleFoodItem.setImgUrl(jsonData.getString("ImageUrl"));
                 sampleFoodItem.setThumbImgUrlOne(jsonData.getString("ThumbImageUrl"));
                 sampleFoodItem.setPrice(jsonData.getDouble("Price"));
                 sampleFoodItem.setRating(jsonData.getInt("Rating"));

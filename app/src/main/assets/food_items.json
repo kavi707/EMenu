@@ -9,7 +9,7 @@
     "SubcategoryId":"SCAT003",
     "Rating":5,
     "ThumbImageUrl":"img_itm_001",
-    "ImageUrl":""
+    "ImageUrl":"img_itm_full_001"
   },
   {
     "ItemCode":"ITM0002",
@@ -21,7 +21,7 @@
     "SubcategoryId":"SCAT003",
     "Rating":3,
     "ThumbImageUrl":"img_itm_002",
-    "ImageUrl":""
+    "ImageUrl":"img_itm_full_002"
   },
   {
     "ItemCode":"ITM0003",
@@ -33,7 +33,7 @@
     "SubcategoryId":"SCAT004",
     "Rating":5,
     "ThumbImageUrl":"img_itm_003",
-    "ImageUrl":""
+    "ImageUrl":"img_itm_full_003"
   },
   {
     "ItemCode":"ITM0004",
@@ -45,7 +45,7 @@
     "SubcategoryId":"SCAT007",
     "Rating":4,
     "ThumbImageUrl":"img_itm_004",
-    "ImageUrl":""
+    "ImageUrl":"img_itm_full_004"
   },
   {
     "ItemCode":"ITM0005",
@@ -57,7 +57,7 @@
     "SubcategoryId":"SCAT001",
     "Rating":5,
     "ThumbImageUrl":"img_itm_005",
-    "ImageUrl":""
+    "ImageUrl":"img_itm_full_005"
   },
   {
     "ItemCode":"ITM0006",
@@ -69,7 +69,7 @@
     "SubcategoryId":"SCAT005",
     "Rating":4,
     "ThumbImageUrl":"img_itm_006",
-    "ImageUrl":""
+    "ImageUrl":"img_itm_full_006"
   },
   {
     "ItemCode":"ITM0007",
@@ -81,7 +81,7 @@
     "SubcategoryId":"SCAT006",
     "Rating":3,
     "ThumbImageUrl":"img_itm_007",
-    "ImageUrl":""
+    "ImageUrl":"img_itm_full_007"
   },
   {
     "ItemCode":"ITM0008",
@@ -93,7 +93,7 @@
     "SubcategoryId":"SCAT003",
     "Rating":5,
     "ThumbImageUrl":"img_itm_008",
-    "ImageUrl":""
+    "ImageUrl":"img_itm_full_008"
   },
   {
     "ItemCode":"ITM0009",
@@ -105,7 +105,7 @@
     "SubcategoryId":"SCAT008",
     "Rating":4,
     "ThumbImageUrl":"img_itm_009",
-    "ImageUrl":""
+    "ImageUrl":"img_itm_full_009"
   },
   {
     "ItemCode":"ITM0010",
@@ -117,7 +117,7 @@
     "SubcategoryId":"SCAT001",
     "Rating":4,
     "ThumbImageUrl":"img_itm_010",
-    "ImageUrl":""
+    "ImageUrl":"img_itm_full_010"
   },
   {
     "ItemCode":"ITM0011",
@@ -129,7 +129,7 @@
     "SubcategoryId":"SCAT006",
     "Rating":5,
     "ThumbImageUrl":"img_itm_011",
-    "ImageUrl":""
+    "ImageUrl":"img_itm_full_011"
   },
   {
     "ItemCode":"ITM0012",
@@ -141,7 +141,7 @@
     "SubcategoryId":"SCAT003",
     "Rating":5,
     "ThumbImageUrl":"img_itm_012",
-    "ImageUrl":""
+    "ImageUrl":"img_itm_full_012"
   },
   {
     "ItemCode":"ITM0013",
@@ -153,7 +153,7 @@
     "SubcategoryId":"SCAT001",
     "Rating":3,
     "ThumbImageUrl":"img_itm_013",
-    "ImageUrl":""
+    "ImageUrl":"img_itm_full_013"
   },
   {
     "ItemCode":"ITM0014",
@@ -165,7 +165,7 @@
     "SubcategoryId":"SCAT003",
     "Rating":4,
     "ThumbImageUrl":"img_itm_014",
-    "ImageUrl":""
+    "ImageUrl":"img_itm_full_014"
   },
   {
     "ItemCode":"ITM0015",
@@ -177,6 +177,6 @@
     "SubcategoryId":"SCAT001",
     "Rating":3,
     "ThumbImageUrl":"img_itm_015",
-    "ImageUrl":""
+    "ImageUrl":"img_itm_full_015"
   }
 ]
