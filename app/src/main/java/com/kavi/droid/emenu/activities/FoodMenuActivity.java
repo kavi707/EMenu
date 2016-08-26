@@ -246,7 +246,8 @@ public class FoodMenuActivity extends AppCompatActivity {
                 sampleFoodItem.setDescription(jsonData.getString("Description"));
                 sampleFoodItem.setCategoryId(jsonData.getString("MainCategoryId"));
                 sampleFoodItem.setImgUrl(jsonData.getString("ImageUrl"));
-                sampleFoodItem.setThumbImgUrlOne(jsonData.getString("ThumbImageUrl"));
+                sampleFoodItem.setThumbImgUrlOne(jsonData.getString("ThumbImgUrlOne"));
+                sampleFoodItem.setThumbImgUrlTwo(jsonData.getString("ThumbImgUrlTwo"));
                 sampleFoodItem.setPrice(jsonData.getDouble("Price"));
                 sampleFoodItem.setRating(jsonData.getInt("Rating"));
 

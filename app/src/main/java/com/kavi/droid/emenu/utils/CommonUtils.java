@@ -7,6 +7,9 @@ import android.net.NetworkInfo;
 import android.util.Log;
 import android.view.Display;
 
+import com.kavi.droid.emenu.models.CartItem;
+import com.kavi.droid.emenu.models.FoodItem;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -21,6 +24,11 @@ import java.util.Map;
  * @author Kavimal Wijewardana <kavi707@gmail.com>
  */
 public class CommonUtils {
+
+    /**
+     * Selected food item list added to cart
+     */
+    public static List<CartItem> selectedCartItemList = new ArrayList<>();
 
     /**
      * check the internet connection in the device for running application

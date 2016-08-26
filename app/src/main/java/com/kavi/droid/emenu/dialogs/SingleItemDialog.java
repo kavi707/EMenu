@@ -5,12 +5,15 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kavi.droid.emenu.R;
+import com.kavi.droid.emenu.models.CartItem;
 import com.kavi.droid.emenu.models.FoodItem;
+import com.kavi.droid.emenu.utils.CommonUtils;
 
 import org.w3c.dom.Text;
 
@@ -25,6 +28,7 @@ public class SingleItemDialog extends Dialog {
     private TextView itemNameTextView;
     private TextView itemDescriptionTextView;
     private TextView amountTextView;
+    private Button addToCartBtn;
 
     private Context context;
     private FoodItem foodItem;
@@ -50,6 +54,7 @@ public class SingleItemDialog extends Dialog {
         itemNameTextView = (TextView) findViewById(R.id.itemNameTextView);
         itemDescriptionTextView = (TextView) findViewById(R.id.itemDescriptionTextView);
         amountTextView = (TextView) findViewById(R.id.amountTextView);
+        addToCartBtn = (Button) findViewById(R.id.addToCartBtn);
 
         itemNameTextView.setText(foodItem.getName());
         itemDescriptionTextView.setText(foodItem.getDescription());
@@ -92,6 +97,22 @@ public class SingleItemDialog extends Dialog {
         closeImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                dismiss();
+            }
+        });
+
+        addToCartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                CartItem cartItem = new CartItem();
+                cartItem.setName(foodItem.getName());
+                cartItem.setAmount(foodItem.getPrice());
+                cartItem.setImageUrl(foodItem.getThumbImgUrlTwo());
+                cartItem.setQty(2);
+
+                CommonUtils.selectedCartItemList.add(cartItem);
+
                 dismiss();
             }
         });

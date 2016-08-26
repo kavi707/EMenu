@@ -51,6 +51,42 @@ public class CartListItemView extends RelativeLayout {
         cartItemDescriptionTextView.setText(cartItem.getComments());
         cartListItemQtyTextView.setText("x" + String.valueOf(cartItem.getQty()));
         cartItemAmountTextView.setText(String.valueOf(cartItem.getAmount()));
-        imageLoadingManager.loadImageToImageView(cartItem.getImageUrl(), cartListItemImageView);
+
+        // TODO - Uncomment this after service integration
+        //imageLoadingManager.loadImageToImageView(cartItem.getImageUrl(), cartListItemImageView);
+
+        // TODO - Remove this after service integration
+        if (cartItem.getImageUrl().equals("img_cart_itm_001"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_001));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_002"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_002));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_003"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_002));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_004"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_004));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_005"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_005));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_006"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_006));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_007"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_007));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_008"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_008));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_009"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_009));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_010"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_010));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_011"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_011));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_012"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_012));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_013"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_013));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_014"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_014));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_015"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_015));
+        else
+            cartListItemImageView.setImageDrawable(null);
     }
 }

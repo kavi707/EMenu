@@ -1,9 +1,14 @@
 package com.kavi.droid.emenu.dialogs;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -14,6 +19,8 @@ import com.kavi.droid.emenu.adapters.CartListItemAdapter;
 import com.kavi.droid.emenu.adapters.CategoryListItemAdapter;
 import com.kavi.droid.emenu.models.CartItem;
 import com.kavi.droid.emenu.models.Category;
+import com.kavi.droid.emenu.models.FoodItem;
+import com.kavi.droid.emenu.utils.CommonUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,10 +34,9 @@ public class CartListDialog extends Dialog {
     private ListView cartListView;
     private RelativeLayout drinksRelativeLayout;
     private TextView totalAmtTextView;
-    private ImageButton placeOrderImageBtn;
+    private Button placeOrderBtn;
 
     private Context context;
-    private List<CartItem> cartItemList = new ArrayList<>();
     private CartListItemAdapter cartListItemAdapter;
 
     public CartListDialog(Context context) {
@@ -52,31 +58,46 @@ public class CartListDialog extends Dialog {
         cartListView = (ListView) findViewById(R.id.cartItemListView);
         drinksRelativeLayout = (RelativeLayout) findViewById(R.id.drinksRelativeLayout);
         totalAmtTextView = (TextView) findViewById(R.id.totalAmtTextView);
-        placeOrderImageBtn = (ImageButton) findViewById(R.id.placeOrderImageBtn);
+        placeOrderBtn = (Button) findViewById(R.id.placeOrderBtn);
 
         // Load the cart items
-        loadCartListItems();
+        loadCartItemListView(CommonUtils.selectedCartItemList);
+
+        cartListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                final int itemPosition = position;
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                        context);
+                alertDialogBuilder.setTitle("Remove");
+                alertDialogBuilder.setMessage("Are you sure to remove '"+
+                        CommonUtils.selectedCartItemList.get(position).getName() +"' from list?")
+                        .setPositiveButton("YES", new OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                                CommonUtils.selectedCartItemList.remove(CommonUtils.selectedCartItemList.get(itemPosition));
+                                dialogInterface.cancel();
+
+                                // Load the cart items
+                                loadCartItemListView(CommonUtils.selectedCartItemList);
+                            }
+                        })
+                        .setNegativeButton("NO", new OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.cancel();
+                            }
+                        });
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.show();
+            }
+        });
     }
 
     private void loadCartItemListView(List<CartItem> cartItemList) {
-        this.cartItemList = cartItemList;
         cartListItemAdapter = new CartListItemAdapter(cartItemList, context);
         cartListView.setAdapter(cartListItemAdapter);
-    }
-
-    private void loadCartListItems() {
-
-        // TODO - Replace with selected item list from menu
-        CartItem sampleCartItem;
-        for (int i = 0; i < 3; i++) {
-            sampleCartItem = new CartItem();
-            sampleCartItem.setQty(i+1);
-            sampleCartItem.setName("Cart Item " + i);
-            sampleCartItem.setComments("Cart Item comments " + i);
-            sampleCartItem.setAmount(3000);
-
-            cartItemList.add(sampleCartItem);
-        }
-        loadCartItemListView(cartItemList);
     }
 }
