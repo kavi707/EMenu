@@ -8,7 +8,7 @@
     "MainCategoryId":"MCAT004",
     "SubcategoryId":"SCAT003",
     "Rating":5,
-    "ThumbImageUrl":"",
+    "ThumbImageUrl":"img_itm_001",
     "ImageUrl":""
   },
   {
@@ -20,7 +20,7 @@
     "MainCategoryId":"MCAT004",
     "SubcategoryId":"SCAT003",
     "Rating":3,
-    "ThumbImageUrl":"",
+    "ThumbImageUrl":"img_itm_002",
     "ImageUrl":""
   },
   {
@@ -32,7 +32,7 @@
     "MainCategoryId":"MCAT004",
     "SubcategoryId":"SCAT004",
     "Rating":5,
-    "ThumbImageUrl":"",
+    "ThumbImageUrl":"img_itm_003",
     "ImageUrl":""
   },
   {
@@ -44,7 +44,7 @@
     "MainCategoryId":"MCAT004",
     "SubcategoryId":"SCAT007",
     "Rating":4,
-    "ThumbImageUrl":"",
+    "ThumbImageUrl":"img_itm_004",
     "ImageUrl":""
   },
   {
@@ -56,7 +56,7 @@
     "MainCategoryId":"MCAT004",
     "SubcategoryId":"SCAT001",
     "Rating":5,
-    "ThumbImageUrl":"",
+    "ThumbImageUrl":"img_itm_005",
     "ImageUrl":""
   },
   {
@@ -68,7 +68,7 @@
     "MainCategoryId":"MCAT004",
     "SubcategoryId":"SCAT005",
     "Rating":4,
-    "ThumbImageUrl":"",
+    "ThumbImageUrl":"img_itm_006",
     "ImageUrl":""
   },
   {
@@ -80,7 +80,7 @@
     "MainCategoryId":"MCAT005",
     "SubcategoryId":"SCAT006",
     "Rating":3,
-    "ThumbImageUrl":"",
+    "ThumbImageUrl":"img_itm_007",
     "ImageUrl":""
   },
   {
@@ -92,7 +92,7 @@
     "MainCategoryId":"MCAT005",
     "SubcategoryId":"SCAT003",
     "Rating":5,
-    "ThumbImageUrl":"",
+    "ThumbImageUrl":"img_itm_008",
     "ImageUrl":""
   },
   {
@@ -104,7 +104,7 @@
     "MainCategoryId":"MCAT005",
     "SubcategoryId":"SCAT008",
     "Rating":4,
-    "ThumbImageUrl":"",
+    "ThumbImageUrl":"img_itm_009",
     "ImageUrl":""
   },
   {
@@ -116,7 +116,7 @@
     "MainCategoryId":"MCAT005",
     "SubcategoryId":"SCAT001",
     "Rating":4,
-    "ThumbImageUrl":"",
+    "ThumbImageUrl":"img_itm_010",
     "ImageUrl":""
   },
   {
@@ -128,7 +128,7 @@
     "MainCategoryId":"MCAT005",
     "SubcategoryId":"SCAT006",
     "Rating":5,
-    "ThumbImageUrl":"",
+    "ThumbImageUrl":"img_itm_011",
     "ImageUrl":""
   },
   {
@@ -140,7 +140,7 @@
     "MainCategoryId":"MCAT005",
     "SubcategoryId":"SCAT003",
     "Rating":5,
-    "ThumbImageUrl":"",
+    "ThumbImageUrl":"img_itm_012",
     "ImageUrl":""
   },
   {
@@ -152,7 +152,7 @@
     "MainCategoryId":"MCAT001",
     "SubcategoryId":"SCAT001",
     "Rating":3,
-    "ThumbImageUrl":"",
+    "ThumbImageUrl":"img_itm_013",
     "ImageUrl":""
   },
   {
@@ -164,7 +164,7 @@
     "MainCategoryId":"MCAT001",
     "SubcategoryId":"SCAT003",
     "Rating":4,
-    "ThumbImageUrl":"",
+    "ThumbImageUrl":"img_itm_014",
     "ImageUrl":""
   },
   {
@@ -176,7 +176,7 @@
     "MainCategoryId":"MCAT001",
     "SubcategoryId":"SCAT001",
     "Rating":3,
-    "ThumbImageUrl":"",
+    "ThumbImageUrl":"img_itm_015",
     "ImageUrl":""
   }
 ]

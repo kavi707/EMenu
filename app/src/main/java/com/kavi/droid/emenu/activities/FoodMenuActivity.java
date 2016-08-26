@@ -181,7 +181,7 @@ public class FoodMenuActivity extends AppCompatActivity {
             @Override
             public void onTick(long l) {
                 Calendar calendar = Calendar.getInstance();
-                seatedTextView.setText("SEATED " + Calendar.HOUR + ":" + calendar.get(Calendar.MINUTE));
+                seatedTextView.setText("SEATED " + calendar.get(Calendar.HOUR) + ":" + calendar.get(Calendar.MINUTE));
             }
 
             @Override
@@ -243,6 +243,7 @@ public class FoodMenuActivity extends AppCompatActivity {
                 sampleFoodItem.setId(jsonData.getString("ItemCode"));
                 sampleFoodItem.setName(jsonData.getString("ItemName"));
                 sampleFoodItem.setCategoryId(jsonData.getString("MainCategoryId"));
+                sampleFoodItem.setThumbImgUrlOne(jsonData.getString("ThumbImageUrl"));
                 sampleFoodItem.setPrice(jsonData.getDouble("Price"));
                 sampleFoodItem.setRating(jsonData.getInt("Rating"));
 
