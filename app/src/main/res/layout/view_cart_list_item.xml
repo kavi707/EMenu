@@ -20,8 +20,7 @@
             android:layout_height="60dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="15dp"
-            android:scaleType="fitXY"
-            android:background="@drawable/style_em_img_view_round_corner" />
+            android:scaleType="fitXY"/>
 
         <TextView
             android:id="@+id/cartListItemQtyTextView"
@@ -37,29 +36,56 @@
             android:text="x2"
             android:textSize="16dp" />
 
-        <TextView
-            android:id="@+id/currencyTextView"
+        <LinearLayout
+            android:id="@+id/itemPriceLinearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="20dp"
-            android:text="LKR"
-            android:textSize="16dp"
-            android:textStyle="bold" />
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp">
 
-        <TextView
-            android:id="@+id/cartItemAmountTextView"
+            <TextView
+                android:id="@+id/cartItemAmountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3000"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/currencyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LKR"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="3dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/itemRemoveLinearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="5dp"
-            android:layout_toLeftOf="@+id/currencyTextView"
-            android:layout_toStartOf="@+id/currencyTextView"
-            android:text="3000"
-            android:textSize="26dp"
-            android:textStyle="bold" />
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginRight="15dp"
+            android:layout_alignBottom="@+id/cartListItemQtyTextView"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/icon_minus_2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:text="Remove"/>
+        </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -67,10 +93,11 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_toEndOf="@+id/cartListItemImageView"
-            android:layout_toLeftOf="@+id/cartItemAmountTextView"
+            android:layout_toLeftOf="@+id/itemPriceLinearLayout"
             android:layout_toRightOf="@+id/cartListItemImageView"
-            android:layout_toStartOf="@+id/cartItemAmountTextView"
-            android:orientation="vertical">
+            android:layout_toStartOf="@+id/itemPriceLinearLayout"
+            android:orientation="vertical"
+            android:id="@+id/detailRelativeLayout">
 
             <TextView
                 android:id="@+id/cartItemNameTextView"
@@ -82,7 +109,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="15dp"
                 android:text="Item Name"
-                android:textSize="22dp" />
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/cartItemDescriptionTextView"
@@ -95,7 +122,7 @@
                 android:layout_below="@+id/cartItemNameTextView"
                 android:layout_marginTop="5dp"
                 android:text="Item Comments"
-                android:textSize="16dp" />
+                android:textSize="14dp" />
         </RelativeLayout>
     </RelativeLayout>
 </com.kavi.droid.emenu.views.CartListItemView>
