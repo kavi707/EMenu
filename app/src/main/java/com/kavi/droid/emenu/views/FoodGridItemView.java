@@ -47,7 +47,7 @@ public class FoodGridItemView extends RelativeLayout {
         this.foodItem = foodItem;
 
         foodNameTextView.setText(foodItem.getName());
-        priceTextView.setText(String.valueOf(foodItem.getPrice()));
+        priceTextView.setText((int)foodItem.getPrice() + " LKR");
         itemRatingBar.setRating(foodItem.getRating());
 
         // TODO - Uncomment this after service integration

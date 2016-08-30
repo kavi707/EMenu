@@ -23,8 +23,8 @@
 
         <!-- TODO Need to change this to ImageButton-->
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:id="@+id/addItemToCartBtn"
             android:src="@drawable/icon_add_item_to_cart"
             android:background="@android:color/transparent"
@@ -61,7 +61,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:gravity="center"
-            android:text="$ 38.00"
+            android:text="100 LKR"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@color/lightOrange"
             android:textSize="20dp"
