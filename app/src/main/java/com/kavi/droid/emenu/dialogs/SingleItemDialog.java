@@ -58,7 +58,7 @@ public class SingleItemDialog extends Dialog {
 
         itemNameTextView.setText(foodItem.getName());
         itemDescriptionTextView.setText(foodItem.getDescription());
-        amountTextView.setText(String.valueOf(foodItem.getPrice()));
+        amountTextView.setText("Rs. " + foodItem.getPrice());
 
         // TODO - Remove this after service integration
         if (foodItem.getImgUrl().equals("img_itm_full_001"))

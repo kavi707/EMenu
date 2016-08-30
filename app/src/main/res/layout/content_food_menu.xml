@@ -96,9 +96,9 @@
                                     android:id="@+id/orderAmtTextView"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="2000 LKR"
+                                    android:text="NET TOTAL Rs. 2000"
                                     android:textColor="@color/white"
-                                    android:textSize="12dp"
+                                    android:textSize="10dp"
                                     android:textStyle="normal" />
                             </LinearLayout>
 
@@ -117,7 +117,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_toLeftOf="@+id/greenRelativeLayout"
                         android:layout_toStartOf="@+id/greenRelativeLayout"
-                        android:background="@color/lightRed">
+                        android:background="@color/darkRed">
 
                         <ImageView
                             android:layout_width="60dp"
