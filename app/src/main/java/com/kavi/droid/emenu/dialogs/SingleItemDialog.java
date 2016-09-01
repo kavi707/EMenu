@@ -8,9 +8,11 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.kavi.droid.emenu.Constants;
 import com.kavi.droid.emenu.R;
 import com.kavi.droid.emenu.models.CartItem;
 import com.kavi.droid.emenu.models.FoodItem;
@@ -34,11 +36,19 @@ public class SingleItemDialog extends Dialog {
     private ImageButton plusImageButton;
     private ImageButton minusImageButton;
 
+    private LinearLayout smallRadioLinearLayout;
+    private ImageView smallRadioImageView;
+    private LinearLayout mediumRadioLinearLayout;
+    private ImageView mediumRadioImageView;
+    private LinearLayout largeRadioLinearLayout;
+    private ImageView largeRadioImageView;
+
     private Context context;
     private FoodItem foodItem;
     OnSingleItemDialogResult mSingleItemDialogResult;
 
     private int qty = 1;
+    private int itemSize = Constants.ITEM_SIZE_SMALL;
 
     public SingleItemDialog(Context context) {
         super(context);
@@ -74,6 +84,14 @@ public class SingleItemDialog extends Dialog {
         addToCartBtn = (Button) findViewById(R.id.addToCartBtn);
         plusImageButton = (ImageButton) findViewById(R.id.plusImageButton);
         minusImageButton = (ImageButton) findViewById(R.id.minusImageButton);
+
+        smallRadioLinearLayout = (LinearLayout) findViewById(R.id.smallRadioLinearLayout);
+        mediumRadioLinearLayout = (LinearLayout) findViewById(R.id.mediumRadioLinearLayout);
+        largeRadioLinearLayout = (LinearLayout) findViewById(R.id.largeRadioLinearLayout);
+
+        smallRadioImageView = (ImageView) findViewById(R.id.smallRadioImageView);
+        mediumRadioImageView = (ImageView) findViewById(R.id.mediumRadioImageView);
+        largeRadioImageView = (ImageView) findViewById(R.id.largeRadioImageView);
 
         itemNameTextView.setText(foodItem.getName());
         itemDescriptionTextView.setText(foodItem.getDescription());
@@ -157,6 +175,36 @@ public class SingleItemDialog extends Dialog {
                 CommonUtils.selectedCartItemList.add(cartItem);
                 mSingleItemDialogResult.addItemToCart(true);
                 dismiss();
+            }
+        });
+
+        smallRadioLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                itemSize = Constants.ITEM_SIZE_SMALL;
+                smallRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected));
+                mediumRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected_non));
+                largeRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected_non));
+            }
+        });
+
+        mediumRadioLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                itemSize = Constants.ITEM_SIZE_MEDIUM;
+                smallRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected_non));
+                mediumRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected));
+                largeRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected_non));
+            }
+        });
+
+        largeRadioLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                itemSize = Constants.ITEM_SIZE_LARGE;
+                smallRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected_non));
+                mediumRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected_non));
+                largeRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected));
             }
         });
     }
