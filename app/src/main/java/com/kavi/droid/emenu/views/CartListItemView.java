@@ -50,7 +50,7 @@ public class CartListItemView extends RelativeLayout {
         cartItemNameTextView.setText(cartItem.getName());
         cartItemDescriptionTextView.setText(cartItem.getComments());
         cartListItemQtyTextView.setText("x" + String.valueOf(cartItem.getQty()));
-        cartItemAmountTextView.setText(String.valueOf(cartItem.getAmount()));
+        cartItemAmountTextView.setText(String.valueOf((int)cartItem.getAmount()));
 
         // TODO - Uncomment this after service integration
         //imageLoadingManager.loadImageToImageView(cartItem.getImageUrl(), cartListItemImageView);

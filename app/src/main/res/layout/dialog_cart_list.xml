@@ -48,9 +48,11 @@
         android:layout_alignParentStart="true"
         android:layout_above="@+id/placeOrderRelativeLayout" />
 
+
+    <!-- TODO - Increase the height to 170dp to see the drinks section -->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="120dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -58,7 +60,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:background="@color/lightPurple"
             android:layout_above="@+id/placeOrderBtn"
             android:layout_alignParentLeft="true"
@@ -70,6 +72,7 @@
                 android:layout_height="wrap_content"
                 android:text="TOTAL"
                 android:textColor="@color/white"
+                android:textSize="20dp"
                 android:id="@+id/totalLabelTextView"
                 android:layout_marginLeft="20dp"
                 android:layout_centerVertical="true"
@@ -79,10 +82,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="$0.00"
-                android:id="@+id/totalAmtTextView"
+                android:text="Rs. 0.00"
                 android:textColor="@color/white"
                 android:textStyle="bold"
+                android:textSize="20dp"
+                android:id="@+id/totalAmtTextView"
                 android:layout_marginRight="20dp"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
@@ -94,7 +98,9 @@
             android:layout_height="70dp"
             android:text="PLACE ORDER"
             android:textColor="@color/white"
-            android:textSize="24dp"
+            android:textSize="22dp"
+            android:gravity="right|center_vertical"
+            android:paddingRight="20dp"
             android:id="@+id/placeOrderBtn"
             android:background="@color/darkPurple"
             android:layout_alignParentBottom="true"

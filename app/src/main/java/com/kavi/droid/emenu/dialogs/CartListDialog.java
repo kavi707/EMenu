@@ -39,6 +39,8 @@ public class CartListDialog extends Dialog {
     private Context context;
     private CartListItemAdapter cartListItemAdapter;
 
+    private CommonUtils commonUtils = new CommonUtils();
+
     public CartListDialog(Context context) {
         super(context);
         this.context = context;
@@ -63,6 +65,8 @@ public class CartListDialog extends Dialog {
         // Load the cart items
         loadCartItemListView(CommonUtils.selectedCartItemList);
 
+        totalAmtTextView.setText("Rs. " + String.valueOf((int)commonUtils.getItemTotalAmt()));
+
         cartListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -82,6 +86,8 @@ public class CartListDialog extends Dialog {
 
                                 // Load the cart items
                                 loadCartItemListView(CommonUtils.selectedCartItemList);
+
+                                totalAmtTextView.setText("Rs. " + String.valueOf((int)commonUtils.getItemTotalAmt()));
                             }
                         })
                         .setNegativeButton("NO", new OnClickListener() {
@@ -92,6 +98,13 @@ public class CartListDialog extends Dialog {
                         });
                 AlertDialog alertDialog = alertDialogBuilder.create();
                 alertDialog.show();
+            }
+        });
+
+        placeOrderBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dismiss();
             }
         });
     }

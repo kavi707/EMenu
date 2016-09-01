@@ -52,6 +52,7 @@ public class FoodMenuActivity extends AppCompatActivity {
     private RelativeLayout redRelativeLayout;
     private TextView tableNumTextView;
     private TextView seatedTextView;
+    private TextView orderAmtTextView;
 
     private Context context = this;
 
@@ -116,6 +117,7 @@ public class FoodMenuActivity extends AppCompatActivity {
         redRelativeLayout = (RelativeLayout) findViewById(R.id.redRelativeLayout);
         tableNumTextView = (TextView) findViewById(R.id.tableNumTextView);
         seatedTextView = (TextView) findViewById(R.id.seatedTextView);
+        orderAmtTextView = (TextView) findViewById(R.id.orderAmtTextView);
 
         tableNumTextView.setText("TABLE " + selectedTableNumber);
         showsCurrentTime();
@@ -159,6 +161,13 @@ public class FoodMenuActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 SingleItemDialog singleItemDialog = new SingleItemDialog(context);
                 singleItemDialog.setFoodItem(foodItemList.get(position));
+                singleItemDialog.setSingleItemDialogResult(new SingleItemDialog.OnSingleItemDialogResult() {
+                    @Override
+                    public void addItemToCart(boolean isItemAddedToCart) {
+                        if (isItemAddedToCart)
+                            orderAmtTextView.setText("NET TOTAL Rs. " + (int) commonUtils.getItemTotalAmt());
+                    }
+                });
                 singleItemDialog.show();
                 Window window = singleItemDialog.getWindow();
 

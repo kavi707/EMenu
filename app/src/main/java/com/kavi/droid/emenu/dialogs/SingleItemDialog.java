@@ -36,6 +36,7 @@ public class SingleItemDialog extends Dialog {
 
     private Context context;
     private FoodItem foodItem;
+    OnSingleItemDialogResult mSingleItemDialogResult;
 
     private int qty = 1;
 
@@ -51,6 +52,15 @@ public class SingleItemDialog extends Dialog {
         setContentView(R.layout.dialog_single_item);
 
         setUpView();
+    }
+
+    // Callback Interface
+    public interface OnSingleItemDialogResult {
+        void addItemToCart(boolean isItemAddedToCart);
+    }
+
+    public void setSingleItemDialogResult (OnSingleItemDialogResult dialogResult) {
+        mSingleItemDialogResult = dialogResult;
     }
 
     private void setUpView() {
@@ -129,6 +139,7 @@ public class SingleItemDialog extends Dialog {
         closeImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mSingleItemDialogResult.addItemToCart(false);
                 dismiss();
             }
         });
@@ -144,7 +155,7 @@ public class SingleItemDialog extends Dialog {
                 cartItem.setQty(qty);
 
                 CommonUtils.selectedCartItemList.add(cartItem);
-
+                mSingleItemDialogResult.addItemToCart(true);
                 dismiss();
             }
         });

@@ -67,4 +67,20 @@ public class CommonUtils {
 
         return deviceWidthHeight;
     }
+
+    /**
+     * Calculate food amount total
+     * @return double value
+     */
+    public double getItemTotalAmt() {
+
+        double totalAmt = 0;
+        if (selectedCartItemList != null) {
+            for(CartItem cartItem: selectedCartItemList) {
+                totalAmt = totalAmt + cartItem.getAmount();
+            }
+        }
+
+        return totalAmt;
+    }
 }
