@@ -18,6 +18,7 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.kavi.droid.emenu.R;
 import com.kavi.droid.emenu.adapters.CategoryListItemAdapter;
@@ -48,7 +49,8 @@ public class FoodMenuActivity extends AppCompatActivity {
     private TextView selectedCategoryNameTextView;
     private EditText searchEditText;
     private ImageButton searchImageButton;
-    private RelativeLayout checkListRelativeLayout;
+    private RelativeLayout greenRelativeLayout;
+    private RelativeLayout redRelativeLayout;
     private TextView tableNumTextView;
     private TextView seatedTextView;
 
@@ -111,7 +113,8 @@ public class FoodMenuActivity extends AppCompatActivity {
         selectedCategoryNameTextView = (TextView) findViewById(R.id.selectedCategoryNameTextView);
         searchEditText = (EditText) findViewById(R.id.searchEditText);
         searchImageButton = (ImageButton) findViewById(R.id.searchImageButton);
-        checkListRelativeLayout = (RelativeLayout) findViewById(R.id.checkListRelativeLayout);
+        greenRelativeLayout = (RelativeLayout) findViewById(R.id.greenRelativeLayout);
+        redRelativeLayout = (RelativeLayout) findViewById(R.id.redRelativeLayout);
         tableNumTextView = (TextView) findViewById(R.id.tableNumTextView);
         seatedTextView = (TextView) findViewById(R.id.seatedTextView);
 
@@ -167,11 +170,18 @@ public class FoodMenuActivity extends AppCompatActivity {
             }
         });
 
-        checkListRelativeLayout.setOnClickListener(new View.OnClickListener() {
+        greenRelativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 CartListDialog cartListDialog = new CartListDialog(context);
                 cartListDialog.show();
+            }
+        });
+
+        redRelativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, "Calling to waiter", Toast.LENGTH_LONG).show();
             }
         });
     }
