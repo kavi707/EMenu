@@ -8,7 +8,6 @@ import android.widget.BaseAdapter;
 import com.kavi.droid.emenu.R;
 import com.kavi.droid.emenu.models.CartItem;
 import com.kavi.droid.emenu.views.CartListItemView;
-import com.kavi.droid.emenu.views.FoodListItemView;
 
 import java.util.List;
 

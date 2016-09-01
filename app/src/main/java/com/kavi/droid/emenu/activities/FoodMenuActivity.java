@@ -23,7 +23,6 @@ import android.widget.Toast;
 import com.kavi.droid.emenu.R;
 import com.kavi.droid.emenu.adapters.CategoryListItemAdapter;
 import com.kavi.droid.emenu.adapters.FoodGridItemAdapter;
-import com.kavi.droid.emenu.adapters.FoodListItemAdapter;
 import com.kavi.droid.emenu.dialogs.CartListDialog;
 import com.kavi.droid.emenu.dialogs.SingleItemDialog;
 import com.kavi.droid.emenu.models.Category;
