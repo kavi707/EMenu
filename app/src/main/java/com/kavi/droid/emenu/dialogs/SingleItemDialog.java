@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.kavi.droid.emenu.R;
 import com.kavi.droid.emenu.models.CartItem;
@@ -28,10 +29,15 @@ public class SingleItemDialog extends Dialog {
     private TextView itemNameTextView;
     private TextView itemDescriptionTextView;
     private TextView amountTextView;
+    private TextView qtyTextView;
     private Button addToCartBtn;
+    private ImageButton plusImageButton;
+    private ImageButton minusImageButton;
 
     private Context context;
     private FoodItem foodItem;
+
+    private int qty = 1;
 
     public SingleItemDialog(Context context) {
         super(context);
@@ -54,11 +60,37 @@ public class SingleItemDialog extends Dialog {
         itemNameTextView = (TextView) findViewById(R.id.itemNameTextView);
         itemDescriptionTextView = (TextView) findViewById(R.id.itemDescriptionTextView);
         amountTextView = (TextView) findViewById(R.id.amountTextView);
+        qtyTextView = (TextView) findViewById(R.id.qtyTextView);
         addToCartBtn = (Button) findViewById(R.id.addToCartBtn);
+        plusImageButton = (ImageButton) findViewById(R.id.plusImageButton);
+        minusImageButton = (ImageButton) findViewById(R.id.minusImageButton);
 
         itemNameTextView.setText(foodItem.getName());
         itemDescriptionTextView.setText(foodItem.getDescription());
-        amountTextView.setText("Rs. " + foodItem.getPrice());
+        amountTextView.setText("Rs. " + (int)foodItem.getPrice());
+        qtyTextView.setText(qty + "X");
+
+        plusImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                qty = qty + 1;
+                qtyTextView.setText(qty + "X");
+                amountTextView.setText("Rs. " + (int)(foodItem.getPrice() * qty));
+            }
+        });
+
+        minusImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (qty > 1) {
+                    qty = qty - 1;
+                    qtyTextView.setText(qty + "X");
+                    amountTextView.setText("Rs. " + (int)(foodItem.getPrice() * qty));
+                } else {
+                    Toast.makeText(context, "Please selecte valid quantity", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
         // TODO - Remove this after service integration
         if (foodItem.getImgUrl().equals("img_itm_full_001"))
@@ -107,9 +139,9 @@ public class SingleItemDialog extends Dialog {
 
                 CartItem cartItem = new CartItem();
                 cartItem.setName(foodItem.getName());
-                cartItem.setAmount(foodItem.getPrice());
+                cartItem.setAmount(foodItem.getPrice() * qty);
                 cartItem.setImageUrl(foodItem.getThumbImgUrlTwo());
-                cartItem.setQty(2);
+                cartItem.setQty(qty);
 
                 CommonUtils.selectedCartItemList.add(cartItem);
 
