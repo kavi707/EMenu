@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 
 import com.kavi.droid.emenu.R;
 import com.kavi.droid.emenu.models.Category;
@@ -50,10 +51,13 @@ public class CategoryListItemAdapter extends BaseAdapter {
             categoryListItemView = (CategoryListItemView) convertView;
         }
 
+        ImageView arrowImageView = (ImageView) categoryListItemView.findViewById(R.id.categoryArrowImageView);
         if (selectedItemPosition == position) {
             categoryListItemView.setBackgroundColor(context.getResources().getColor(R.color.categorySelectedBlue));
+            arrowImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_category_arrow));
         } else {
             categoryListItemView.setBackgroundColor(context.getResources().getColor(R.color.categoryBlue));
+            arrowImageView.setImageDrawable(null);
         }
 
         categoryListItemView.setCategory(categoryList.get(position));
