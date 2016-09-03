@@ -16,7 +16,7 @@
         <ImageView
             android:id="@+id/singleItemImageView"
             android:layout_width="match_parent"
-            android:layout_height="330dp"
+            android:layout_height="340dp"
             android:src="@drawable/img_sample_single_item"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -111,7 +111,7 @@
                 <Button
                     android:id="@+id/addToCartBtn"
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="55dp"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentLeft="true"
@@ -124,7 +124,7 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="45dp"
                     android:layout_above="@+id/addToCartBtn"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
@@ -160,8 +160,8 @@
                         android:gravity="center">
 
                         <ImageButton
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
                             android:background="@drawable/icon_minus"
                             android:id="@+id/minusImageButton" />
 
@@ -169,15 +169,15 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="1X"
-                            android:textSize="24dp"
+                            android:textSize="28dp"
                             android:textColor="@color/white"
                             android:layout_marginRight="15dp"
                             android:layout_marginLeft="15dp"
                             android:id="@+id/qtyTextView" />
 
                         <ImageButton
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
                             android:background="@drawable/icon_plus"
                             android:id="@+id/plusImageButton" />
                     </LinearLayout>
@@ -186,8 +186,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="@color/white"
-                        android:layout_marginLeft="50dp"
-                        android:layout_marginRight="50dp"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginRight="35dp"
                         android:id="@+id/lineSeparatorTextView"
                         android:layout_gravity="center_horizontal" />
 
@@ -207,8 +207,8 @@
                             android:layout_alignStart="@+id/mediumRadioLinearLayout">
 
                             <ImageView
-                                android:layout_width="25dp"
-                                android:layout_height="25dp"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
                                 android:id="@+id/smallRadioImageView"
                                 android:src="@drawable/icon_tick_selected"/>
 
@@ -216,8 +216,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Small"
+                                android:textSize="20dp"
                                 android:textColor="@color/white"
-                                android:layout_marginLeft="5dp"
+                                android:layout_marginLeft="10dp"
                                 android:id="@+id/smallRadioTextView" />
 
                         </LinearLayout>
@@ -234,8 +235,8 @@
                             android:gravity="center">
 
                             <ImageView
-                                android:layout_width="25dp"
-                                android:layout_height="25dp"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
                                 android:id="@+id/mediumRadioImageView"
                                 android:src="@drawable/icon_tick_selected_non"/>
 
@@ -243,8 +244,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Medium"
+                                android:textSize="20dp"
                                 android:textColor="@color/white"
-                                android:layout_marginLeft="5dp"
+                                android:layout_marginLeft="10dp"
                                 android:id="@+id/mediumRadioTextView" />
                         </LinearLayout>
 
@@ -259,8 +261,8 @@
                             android:layout_alignStart="@+id/mediumRadioLinearLayout">
 
                             <ImageView
-                                android:layout_width="25dp"
-                                android:layout_height="25dp"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
                                 android:id="@+id/largeRadioImageView"
                                 android:src="@drawable/icon_tick_selected_non"/>
 
@@ -268,8 +270,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Large"
+                                android:textSize="20dp"
                                 android:textColor="@color/white"
-                                android:layout_marginLeft="5dp"
+                                android:layout_marginLeft="10dp"
                                 android:id="@+id/largeRadioTextView" />
 
                         </LinearLayout>
