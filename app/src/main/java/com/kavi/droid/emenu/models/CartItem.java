@@ -10,6 +10,7 @@ public class CartItem {
     private String name;
     private String comments;
     private double amount;
+    private int portion;
     private int qty;
 
     public String getImageUrl() {
@@ -42,6 +43,14 @@ public class CartItem {
 
     public void setAmount(double amount) {
         this.amount = amount;
+    }
+
+    public int getPortion() {
+        return portion;
+    }
+
+    public void setPortion(int portion) {
+        this.portion = portion;
     }
 
     public int getQty() {

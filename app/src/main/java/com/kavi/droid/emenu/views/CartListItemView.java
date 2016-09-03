@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.kavi.droid.emenu.Constants;
 import com.kavi.droid.emenu.R;
 import com.kavi.droid.emenu.models.CartItem;
 import com.kavi.droid.emenu.services.imageLoader.ImageLoadingManager;
@@ -21,6 +22,7 @@ public class CartListItemView extends RelativeLayout {
     private TextView cartItemNameTextView;
     private TextView cartItemDescriptionTextView;
     private TextView cartItemAmountTextView;
+    private TextView cartItemPortionTextView;
 
     private CartItem cartItem;
     private ImageLoadingManager imageLoadingManager = new ImageLoadingManager();
@@ -38,6 +40,7 @@ public class CartListItemView extends RelativeLayout {
         cartItemNameTextView = (TextView) findViewById(R.id.cartItemNameTextView);
         cartItemDescriptionTextView = (TextView) findViewById(R.id.cartItemDescriptionTextView);
         cartItemAmountTextView = (TextView) findViewById(R.id.cartItemAmountTextView);
+        cartItemPortionTextView = (TextView) findViewById(R.id.cartItemPortionTextView);
     }
 
     public CartItem getCartItem() {
@@ -48,9 +51,22 @@ public class CartListItemView extends RelativeLayout {
         this.cartItem = cartItem;
 
         cartItemNameTextView.setText(cartItem.getName());
-        cartItemDescriptionTextView.setText(cartItem.getComments());
+        if (cartItem.getComments() != null && !cartItem.getComments().equals("")) {
+            cartItemDescriptionTextView.setVisibility(VISIBLE);
+            cartItemDescriptionTextView.setText(cartItem.getComments());
+        } else {
+            cartItemDescriptionTextView.setVisibility(INVISIBLE);
+        }
         cartListItemQtyTextView.setText("x" + String.valueOf(cartItem.getQty()));
         cartItemAmountTextView.setText(String.valueOf((int)cartItem.getAmount()));
+
+        if (cartItem.getPortion() == Constants.ITEM_PORTION_SMALL) {
+            cartItemPortionTextView.setText("SMALL");
+        } else if (cartItem.getPortion() == Constants.ITEM_PORTION_MEDIUM) {
+            cartItemPortionTextView.setText("MEDIUM");
+        } else if (cartItem.getPortion() == Constants.ITEM_PORTION_LARGE) {
+            cartItemPortionTextView.setText("LARGE");
+        }
 
         // TODO - Uncomment this after service integration
         //imageLoadingManager.loadImageToImageView(cartItem.getImageUrl(), cartListItemImageView);

@@ -48,7 +48,7 @@ public class SingleItemDialog extends Dialog {
     OnSingleItemDialogResult mSingleItemDialogResult;
 
     private int qty = 1;
-    private int itemSize = Constants.ITEM_SIZE_SMALL;
+    private int itemPortion = Constants.ITEM_PORTION_SMALL;
 
     public SingleItemDialog(Context context) {
         super(context);
@@ -170,6 +170,7 @@ public class SingleItemDialog extends Dialog {
                 cartItem.setName(foodItem.getName());
                 cartItem.setAmount(foodItem.getPrice() * qty);
                 cartItem.setImageUrl(foodItem.getThumbImgUrlTwo());
+                cartItem.setPortion(itemPortion);
                 cartItem.setQty(qty);
 
                 CommonUtils.selectedCartItemList.add(cartItem);
@@ -181,7 +182,7 @@ public class SingleItemDialog extends Dialog {
         smallRadioLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                itemSize = Constants.ITEM_SIZE_SMALL;
+                itemPortion = Constants.ITEM_PORTION_SMALL;
                 smallRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected));
                 mediumRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected_non));
                 largeRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected_non));
@@ -191,7 +192,7 @@ public class SingleItemDialog extends Dialog {
         mediumRadioLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                itemSize = Constants.ITEM_SIZE_MEDIUM;
+                itemPortion = Constants.ITEM_PORTION_MEDIUM;
                 smallRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected_non));
                 mediumRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected));
                 largeRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected_non));
@@ -201,7 +202,7 @@ public class SingleItemDialog extends Dialog {
         largeRadioLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                itemSize = Constants.ITEM_SIZE_LARGE;
+                itemPortion = Constants.ITEM_PORTION_LARGE;
                 smallRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected_non));
                 mediumRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected_non));
                 largeRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected));
