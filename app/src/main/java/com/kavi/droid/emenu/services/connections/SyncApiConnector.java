@@ -108,12 +108,12 @@ public class SyncApiConnector implements IApiConnector {
         syncHttpClient.post(requestUrl, reqParams, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-
+                httpCommonResponse = new String(responseBody);
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-
+                httpCommonResponse = new String(responseBody);
             }
         });
 
@@ -140,12 +140,12 @@ public class SyncApiConnector implements IApiConnector {
         syncHttpClient.put(requestUrl, reqParams, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-
+                httpCommonResponse = new String(responseBody);
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-
+                httpCommonResponse = new String(responseBody);
             }
         });
 
