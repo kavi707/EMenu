@@ -39,9 +39,10 @@
 
         <ImageView
             android:id="@+id/categoryArrowImageView"
-            android:layout_width="13dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:scaleType="fitXY"
+            android:src="@drawable/icon_category_arrow"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
