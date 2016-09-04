@@ -45,9 +45,10 @@ public class ApiCalls {
      * Get defined tables in UserGrid
      * @param taskMethod Guide the interface to select Sync or Async style
      * @param accessToken UserGrid Authentication access token
+     * @param entityLimit Entity count limitation
      * @return JsonString Return string json response
      */
-    public String getTables(String taskMethod, String accessToken) {
+    public String getTables(String taskMethod, String accessToken, int entityLimit) {
 
         String response = null;
         IApiConnector apiConnector;
@@ -55,11 +56,11 @@ public class ApiCalls {
         if (taskMethod.equals(Constants.ASYNC_METHOD)) {
             apiConnector = new AsyncApiConnector();
             response = apiConnector.sendHttpGetRequest(Constants.BASE_URL + Constants.GET_TABLES_URL +
-                    "?access_token=" + accessToken, null, Constants.GET_TABLES);
+                    "?access_token=" + accessToken + "&limit=" + entityLimit, null, Constants.GET_TABLES);
         } else if (taskMethod.equals(Constants.SYNC_METHOD)) {
             apiConnector = new SyncApiConnector();
             response = apiConnector.sendHttpGetRequest(Constants.BASE_URL + Constants.GET_TABLES_URL +
-                    "?access_token=" + accessToken, null, Constants.GET_TABLES);
+                    "?access_token=" + accessToken + "&limit=" + entityLimit, null, Constants.GET_TABLES);
         }
 
         return response;

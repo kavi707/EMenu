@@ -12,20 +12,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kavi.droid.emenu.R;
+import com.kavi.droid.emenu.models.Table;
 
 import java.util.List;
 
 /**
  * Created by kavi707 on 8/9/16.
+ * @author Kavimal Wijewardana <kavi707@gmail.com>
  */
 public class NumberPickerItemAdapter extends RecyclerView.Adapter<NumberPickerItemAdapter.PickerItemViewHolder> {
 
-    private List<String> horizontalList;
+    private List<Table> tableList;
     private Context context;
     OnItemClickListener mItemClickListener;
 
-    public NumberPickerItemAdapter(List<String> horizontalList, Context context) {
-        this.horizontalList = horizontalList;
+    public NumberPickerItemAdapter(List<Table> tableList, Context context) {
+        this.tableList = tableList;
         this.context = context;
     }
 
@@ -42,7 +44,7 @@ public class NumberPickerItemAdapter extends RecyclerView.Adapter<NumberPickerIt
     public void onBindViewHolder(PickerItemViewHolder holder, int position) {
         final PickerItemViewHolder viewHolder = holder;
         final int viewPosition = position;
-        holder.numberTextView.setText(horizontalList.get(position));
+        holder.numberTextView.setText(tableList.get(position).getNumber());
 
         holder.numberTextView.setTextColor(context.getResources().getColor(R.color.colorDarkGrey));
         holder.numberTextView.setTextSize(80);
@@ -59,7 +61,7 @@ public class NumberPickerItemAdapter extends RecyclerView.Adapter<NumberPickerIt
 
     @Override
     public int getItemCount() {
-        return horizontalList.size();
+        return tableList.size();
     }
 
     public interface OnItemClickListener {

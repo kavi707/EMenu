@@ -9,6 +9,7 @@ public class Table {
     private String tableUUID;
     private String id;
     private String number;
+    private int status;
 
     public String getTableUUID() {
         return tableUUID;
@@ -32,5 +33,13 @@ public class Table {
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 }

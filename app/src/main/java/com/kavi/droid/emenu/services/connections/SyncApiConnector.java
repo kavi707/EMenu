@@ -117,7 +117,7 @@ public class SyncApiConnector implements IApiConnector {
             }
         });
 
-        return null;
+        return httpCommonResponse;
     }
 
     /**
@@ -149,7 +149,7 @@ public class SyncApiConnector implements IApiConnector {
             }
         });
 
-        return null;
+        return httpCommonResponse;
     }
 
     /**

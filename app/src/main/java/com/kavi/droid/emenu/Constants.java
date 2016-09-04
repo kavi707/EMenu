@@ -6,6 +6,10 @@ package com.kavi.droid.emenu;
  */
 public class Constants {
 
+    // TODO - Hardcoded username/password
+    public static final String USERNAME = "kavi707";
+    public static final String PASSWORD = "V1qaz2wsx@";
+
     public static final String ASYNC_METHOD = "ASYNC";
     public static final String SYNC_METHOD = "SYNC";
 
@@ -23,5 +27,6 @@ public class Constants {
     public static final String BASE_URL = "https://api.usergrid.com";
     public static final String GET_TOKEN_URL = "/kavi707/carrot/token";
     public static final String GET_TABLES_URL = "/kavi707/carrot/tables";
+    public static final int ENTITY_LIMIT_TABLES = 50;
     public static final String UPDATE_TABLE_STATUS_URL = "/kavi707/carrot/tables/";
 }
