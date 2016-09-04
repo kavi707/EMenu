@@ -27,14 +27,14 @@ public class ApiCalls {
         requestParams.add("password", password);
         requestParams.add("grant_type", "password");
 
+        String url = Constants.BASE_URL + Constants.GET_TOKEN_URL;
+
         if (taskMethod.equals(Constants.ASYNC_METHOD)) {
             apiConnector = new AsyncApiConnector();
-            response = apiConnector.sendHttpJsonPostRequest(Constants.BASE_URL + Constants.GET_TOKEN_URL,
-                    null, requestParams, Constants.GET_TOKEN);
+            response = apiConnector.sendHttpJsonPostRequest(url, null, requestParams, Constants.GET_TOKEN);
         } else if (taskMethod.equals(Constants.SYNC_METHOD)) {
             apiConnector = new SyncApiConnector();
-            response = apiConnector.sendHttpJsonPostRequest(Constants.BASE_URL + Constants.GET_TOKEN_URL,
-                    null, requestParams, Constants.GET_TOKEN);
+            response = apiConnector.sendHttpJsonPostRequest(url, null, requestParams, Constants.GET_TOKEN);
         }
 
         return response;
@@ -53,14 +53,15 @@ public class ApiCalls {
         String response = null;
         IApiConnector apiConnector;
 
+        String url = Constants.BASE_URL + Constants.GET_TABLES_URL +
+                "?access_token=" + accessToken + "&limit=" + entityLimit;
+
         if (taskMethod.equals(Constants.ASYNC_METHOD)) {
             apiConnector = new AsyncApiConnector();
-            response = apiConnector.sendHttpGetRequest(Constants.BASE_URL + Constants.GET_TABLES_URL +
-                    "?access_token=" + accessToken + "&limit=" + entityLimit, null, Constants.GET_TABLES);
+            response = apiConnector.sendHttpGetRequest(url, null, Constants.GET_TABLES);
         } else if (taskMethod.equals(Constants.SYNC_METHOD)) {
             apiConnector = new SyncApiConnector();
-            response = apiConnector.sendHttpGetRequest(Constants.BASE_URL + Constants.GET_TABLES_URL +
-                    "?access_token=" + accessToken + "&limit=" + entityLimit, null, Constants.GET_TABLES);
+            response = apiConnector.sendHttpGetRequest(url, null, Constants.GET_TABLES);
         }
 
         return response;
@@ -83,14 +84,15 @@ public class ApiCalls {
         RequestParams requestParams = new RequestParams();
         requestParams.put("Status", tableStatus);
 
+        String url = Constants.BASE_URL + Constants.UPDATE_TABLE_STATUS_URL +
+                tableUUID + "?access_token=" + accessToken;
+
         if (taskMethod.equals(Constants.ASYNC_METHOD)) {
             apiConnector = new AsyncApiConnector();
-            response = apiConnector.sendHttpJsonPostRequest(Constants.BASE_URL + Constants.UPDATE_TABLE_STATUS_URL +
-                    tableUUID + "?access_token=" + accessToken, null, requestParams, Constants.UPDATE_TABLE_STATUS);
+            response = apiConnector.sendHttpJsonPutRequest(url, null, requestParams, Constants.UPDATE_TABLE_STATUS);
         } else if (taskMethod.equals(Constants.SYNC_METHOD)) {
             apiConnector = new SyncApiConnector();
-            response = apiConnector.sendHttpJsonPostRequest(Constants.BASE_URL + Constants.UPDATE_TABLE_STATUS_URL +
-                    tableUUID + "?access_token=" + accessToken, null, requestParams, Constants.UPDATE_TABLE_STATUS);
+            response = apiConnector.sendHttpJsonPutRequest(url, null, requestParams, Constants.UPDATE_TABLE_STATUS);
         }
 
         return response;

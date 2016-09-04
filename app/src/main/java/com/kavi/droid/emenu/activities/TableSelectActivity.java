@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -44,6 +45,8 @@ public class TableSelectActivity extends Activity {
     private ApiCalls apiCalls = new ApiCalls();
     private CommonUtils commonUtils = new CommonUtils();
     private List<Table> tableList = new ArrayList<>();
+    private boolean isTableSelect = false;
+    private Table selectedTable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +65,15 @@ public class TableSelectActivity extends Activity {
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent menuIntent = new Intent(TableSelectActivity.this, FoodMenuActivity.class);
-                menuIntent.putExtra("SELECTED_TABLE_NUMBER", selectedNumberTextView.getText().toString());
-                startActivity(menuIntent);
+
+                if (isTableSelect) {
+                    Intent menuIntent = new Intent(TableSelectActivity.this, FoodMenuActivity.class);
+                    menuIntent.putExtra("SELECTED_TABLE_NUMBER", selectedNumberTextView.getText().toString());
+                    CommonUtils.selectedTable = selectedTable;
+                    startActivity(menuIntent);
+                } else {
+                    Toast.makeText(context, "Please select a table number to continue", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
@@ -162,6 +171,8 @@ public class TableSelectActivity extends Activity {
             numberPickerItemAdapter.SetOnItemClickListener(new NumberPickerItemAdapter.OnItemClickListener() {
                 @Override
                 public void onItemClick(View view, int position) {
+                    isTableSelect = true;
+                    selectedTable = tableList.get(position);
                     selectedNumberTextView.setText(tableList.get(position).getNumber());
                 }
             });

@@ -150,7 +150,7 @@ public class AsyncApiConnector implements IApiConnector {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-
+                httpCommonResponse = new String(responseBody);
             }
         });
 

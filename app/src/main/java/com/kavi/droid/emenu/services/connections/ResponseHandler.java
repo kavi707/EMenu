@@ -1,5 +1,7 @@
 package com.kavi.droid.emenu.services.connections;
 
+import android.util.Log;
+
 import com.kavi.droid.emenu.Constants;
 
 /**
@@ -20,6 +22,10 @@ public class ResponseHandler {
             case Constants.UPDATE_USER:
                 userUpdateHandler(response);
                 break;
+            case Constants.UPDATE_TABLE_STATUS:
+                updateTableStatusHandler(response);
+                break;
+
         }
     }
 
@@ -32,6 +38,10 @@ public class ResponseHandler {
     }
 
     private void userUpdateHandler(String response) {
+        //TODO - Handle the user update async response
+    }
+
+    private void updateTableStatusHandler(String response) {
         //TODO - Handle the user update async response
     }
 }

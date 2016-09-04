@@ -9,6 +9,7 @@ import android.view.Display;
 
 import com.kavi.droid.emenu.models.CartItem;
 import com.kavi.droid.emenu.models.FoodItem;
+import com.kavi.droid.emenu.models.Table;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,6 +30,11 @@ public class CommonUtils {
      * Selected food item list added to cart
      */
     public static List<CartItem> selectedCartItemList = new ArrayList<>();
+
+    /**
+     * Selected table
+     */
+    public static Table selectedTable;
 
     /**
      * check the internet connection in the device for running application

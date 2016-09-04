@@ -53,7 +53,7 @@
                     android:id="@+id/selectedNumberTextView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="01"
+                    android:text="--"
                     android:textStyle="normal"
                     android:textSize="100dp"
                     android:textColor="@color/lightPurple"
