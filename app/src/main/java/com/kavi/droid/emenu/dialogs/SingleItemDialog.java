@@ -95,7 +95,7 @@ public class SingleItemDialog extends Dialog {
 
         itemNameTextView.setText(foodItem.getName());
         itemDescriptionTextView.setText(foodItem.getDescription());
-        amountTextView.setText("Rs. " + (int)foodItem.getPrice());
+        amountTextView.setText("Rs. " + (int)foodItem.getItemPrices().getSmallPrice());
         qtyTextView.setText(qty + "X");
 
         plusImageButton.setOnClickListener(new View.OnClickListener() {
@@ -103,7 +103,12 @@ public class SingleItemDialog extends Dialog {
             public void onClick(View view) {
                 qty = qty + 1;
                 qtyTextView.setText(qty + "X");
-                amountTextView.setText("Rs. " + (int)(foodItem.getPrice() * qty));
+                if (itemPortion == Constants.ITEM_PORTION_SMALL)
+                    amountTextView.setText("Rs. " + (int)(foodItem.getItemPrices().getSmallPrice() * qty));
+                else if (itemPortion == Constants.ITEM_PORTION_MEDIUM)
+                    amountTextView.setText("Rs. " + (int)(foodItem.getItemPrices().getMediumPrice() * qty));
+                else if (itemPortion == Constants.ITEM_PORTION_LARGE)
+                    amountTextView.setText("Rs. " + (int)(foodItem.getItemPrices().getLargePrice() * qty));
             }
         });
 
@@ -113,7 +118,12 @@ public class SingleItemDialog extends Dialog {
                 if (qty > 1) {
                     qty = qty - 1;
                     qtyTextView.setText(qty + "X");
-                    amountTextView.setText("Rs. " + (int)(foodItem.getPrice() * qty));
+                    if (itemPortion == Constants.ITEM_PORTION_SMALL)
+                        amountTextView.setText("Rs. " + (int)(foodItem.getItemPrices().getSmallPrice() * qty));
+                    else if (itemPortion == Constants.ITEM_PORTION_MEDIUM)
+                        amountTextView.setText("Rs. " + (int)(foodItem.getItemPrices().getMediumPrice() * qty));
+                    else if (itemPortion == Constants.ITEM_PORTION_LARGE)
+                        amountTextView.setText("Rs. " + (int)(foodItem.getItemPrices().getLargePrice() * qty));
                 } else {
                     Toast.makeText(context, "Please selecte valid quantity", Toast.LENGTH_LONG).show();
                 }
@@ -151,6 +161,18 @@ public class SingleItemDialog extends Dialog {
             singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_014));
         else if (foodItem.getImgUrl().equals("img_itm_full_015"))
             singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_015));
+        else if (foodItem.getImgUrl().equals("img_itm_full_016"))
+            singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_016));
+        else if (foodItem.getImgUrl().equals("img_itm_full_017"))
+            singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_017));
+        else if (foodItem.getImgUrl().equals("img_itm_full_018"))
+            singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_018));
+        else if (foodItem.getImgUrl().equals("img_itm_full_019"))
+            singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_019));
+        else if (foodItem.getImgUrl().equals("img_itm_full_020"))
+            singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_020));
+        else if (foodItem.getImgUrl().equals("img_itm_full_021"))
+            singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_021));
         else
             singleItemImageView.setImageDrawable(null);
 
@@ -168,7 +190,7 @@ public class SingleItemDialog extends Dialog {
 
                 CartItem cartItem = new CartItem();
                 cartItem.setName(foodItem.getName());
-                cartItem.setAmount(foodItem.getPrice() * qty);
+                cartItem.setAmount(foodItem.getItemPrices().getSmallPrice() * qty);
                 cartItem.setImageUrl(foodItem.getThumbImgUrlTwo());
                 cartItem.setPortion(itemPortion);
                 cartItem.setQty(qty);
@@ -183,6 +205,7 @@ public class SingleItemDialog extends Dialog {
             @Override
             public void onClick(View view) {
                 itemPortion = Constants.ITEM_PORTION_SMALL;
+                amountTextView.setText("Rs. " + (int)foodItem.getItemPrices().getSmallPrice() * qty);
                 smallRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected));
                 mediumRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected_non));
                 largeRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected_non));
@@ -193,6 +216,7 @@ public class SingleItemDialog extends Dialog {
             @Override
             public void onClick(View view) {
                 itemPortion = Constants.ITEM_PORTION_MEDIUM;
+                amountTextView.setText("Rs. " + (int)foodItem.getItemPrices().getMediumPrice() * qty);
                 smallRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected_non));
                 mediumRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected));
                 largeRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected_non));
@@ -203,6 +227,7 @@ public class SingleItemDialog extends Dialog {
             @Override
             public void onClick(View view) {
                 itemPortion = Constants.ITEM_PORTION_LARGE;
+                amountTextView.setText("Rs. " + (int)foodItem.getItemPrices().getLargePrice() * qty);
                 smallRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected_non));
                 mediumRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected_non));
                 largeRadioImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.icon_tick_selected));

@@ -12,7 +12,7 @@ public class FoodItem {
     private int rating;
     private String categoryId;
     private String option; // VEG/CHICKEN/FISH
-    private double price;
+    private Price itemPrices;
     private String thumbImgUrlOne;
     private String thumbImgUrlTwo;
     private String imgUrl;
@@ -66,12 +66,12 @@ public class FoodItem {
         this.option = option;
     }
 
-    public double getPrice() {
-        return price;
+    public Price getItemPrices() {
+        return itemPrices;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setItemPrices(Price itemPrices) {
+        this.itemPrices = itemPrices;
     }
 
     public String getThumbImgUrlOne() {

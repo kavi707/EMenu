@@ -47,7 +47,7 @@ public class FoodGridItemView extends RelativeLayout {
         this.foodItem = foodItem;
 
         foodNameTextView.setText(foodItem.getName());
-        priceTextView.setText("Rs. " + (int)foodItem.getPrice());
+        priceTextView.setText("Rs. " + (int)foodItem.getItemPrices().getSmallPrice());
         itemRatingBar.setRating(foodItem.getRating());
 
         // TODO - Uncomment this after service integration
@@ -84,6 +84,18 @@ public class FoodGridItemView extends RelativeLayout {
             foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_014));
         else if (foodItem.getThumbImgUrlOne().equals("img_itm_015"))
             foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_015));
+        else if (foodItem.getThumbImgUrlOne().equals("img_itm_016"))
+            foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_016));
+        else if (foodItem.getThumbImgUrlOne().equals("img_itm_017"))
+            foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_017));
+        else if (foodItem.getThumbImgUrlOne().equals("img_itm_018"))
+            foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_018));
+        else if (foodItem.getThumbImgUrlOne().equals("img_itm_019"))
+            foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_019));
+        else if (foodItem.getThumbImgUrlOne().equals("img_itm_020"))
+            foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_020));
+        else if (foodItem.getThumbImgUrlOne().equals("img_itm_021"))
+            foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_021));
         else
             foodItemImageView.setImageDrawable(null);
     }

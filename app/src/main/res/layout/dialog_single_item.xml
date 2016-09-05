@@ -24,10 +24,11 @@
             android:scaleType="fitXY" />
 
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:id="@+id/closeImageButton"
-            android:src="@drawable/icon_cross"
+            android:src="@drawable/icon_close_cross"
+            android:scaleType="fitXY"
             android:background="@android:color/transparent"
             android:layout_marginRight="3dp"
             android:layout_alignParentTop="true"

@@ -4,7 +4,11 @@
     "ItemName":"Special Nasi Goreng with Fried Chicken",
     "Description":"Fried rice with pappadum, fried chicken, sambal and fried egg.",
     "NutritionInfo":"",
-    "Price":1200,
+    "Price":{
+      "Small":840,
+      "Medium":1200,
+      "Large":1440
+    },
     "MainCategoryId":"MCAT004",
     "SubcategoryId":"SCAT003",
     "Rating":5,
@@ -17,7 +21,11 @@
     "ItemName":"Hainan Curry Chicken Chop",
     "Description":"Deep-fried chicken coated with curry sauce, served with chicken rice, fried egg and sliced cucumbers.",
     "NutritionInfo":"",
-    "Price":1450,
+    "Price":{
+      "Small":1015,
+      "Medium":14501740,
+      "Large":1440
+    },
     "MainCategoryId":"MCAT004",
     "SubcategoryId":"SCAT003",
     "Rating":3,
@@ -30,7 +38,11 @@
     "ItemName":"Oriental Beef Chop",
     "Description":"Deep-fried beef coated with black pepper sauce, served with beef rice, fried egg and sliced cucumber.",
     "NutritionInfo":"",
-    "Price":1350,
+    "Price":{
+      "Small":945,
+      "Medium":1350,
+      "Large":1620
+    },
     "MainCategoryId":"MCAT004",
     "SubcategoryId":"SCAT004",
     "Rating":5,
@@ -43,7 +55,11 @@
     "ItemName":"Biryani Rice with Prawns",
     "Description":"Deep-fried prawns coated with black pepper sauce, served with rice, fried egg and sliced cucumber.",
     "NutritionInfo":"",
-    "Price":1500,
+    "Price":{
+      "Small":1050,
+      "Medium":1500,
+      "Large":1800
+    },
     "MainCategoryId":"MCAT004",
     "SubcategoryId":"SCAT007",
     "Rating":4,
@@ -56,7 +72,11 @@
     "ItemName":"Nasi Lemak with Veg Curry",
     "Description":"Nasi Lemak comes with aromatic coconut milk infused in steamed rice served with curry chicken, fried anchovies, fried peanuts, hard boiled egg, our delicious daily made spicy sambal and cucumber slices.*Gluten free",
     "NutritionInfo":"",
-    "Price":900,
+    "Price":{
+      "Small":630,
+      "Medium":900,
+      "Large":1080
+    },
     "MainCategoryId":"MCAT004",
     "SubcategoryId":"SCAT001",
     "Rating":5,
@@ -69,7 +89,11 @@
     "ItemName":"Special Biryani Rice with Sambal Eggplant, Fried pork",
     "Description":"Pappa special Nasi Biryani comes with aromatic Indian spiced rice, a medley of sambal eggplant, fried pork and sambal prawns.",
     "NutritionInfo":"",
-    "Price":1100,
+    "Price":{
+      "Small":770,
+      "Medium":1100,
+      "Large":1320
+    },
     "MainCategoryId":"MCAT004",
     "SubcategoryId":"SCAT005",
     "Rating":4,
@@ -82,7 +106,11 @@
     "ItemName":"Pan Mee Noodle Soup",
     "Description":"Flour noodles in freshly boiled  anchovy based soup. Served with minced seafood, fried anchovies, mushrooms, spinach and topped with half boiled egg (pan mee soup chilli on the side).",
     "NutritionInfo":"",
-    "Price":600,
+    "Price":{
+      "Small":420,
+      "Medium":600,
+      "Large":720
+    },
     "MainCategoryId":"MCAT005",
     "SubcategoryId":"SCAT006",
     "Rating":3,
@@ -95,7 +123,11 @@
     "ItemName":"Fried Rice Noodles",
     "Description":"Wok-fried rice starch noodles with chicken slices, prawns, egg, bean sprouts, chives and red chilli. This dish is spicy.",
     "NutritionInfo":"",
-    "Price":900,
+    "Price":{
+      "Small":630,
+      "Medium":900,
+      "Large":1080
+    },
     "MainCategoryId":"MCAT005",
     "SubcategoryId":"SCAT003",
     "Rating":5,
@@ -108,7 +140,11 @@
     "ItemName":"Chilli Pan Mee",
     "Description":"Dry flour noodles served with minced crab, fried anchovies, chilli pan mee chilli, mushrooms, fried shallots, spinach and topped with half boiled egg. Stir well before consuming.",
     "NutritionInfo":"",
-    "Price":1200,
+    "Price":{
+      "Small":840,
+      "Medium":1200,
+      "Large":1440
+    },
     "MainCategoryId":"MCAT005",
     "SubcategoryId":"SCAT008",
     "Rating":4,
@@ -121,7 +157,11 @@
     "ItemName":"Dry Curry Egg Noodles with Curry",
     "Description":"Egg noodles doused in rich curry gravy and served with curry, chop sum and red chilli.",
     "NutritionInfo":"",
-    "Price":600,
+    "Price":{
+      "Small":420,
+      "Medium":600,
+      "Large":720
+    },
     "MainCategoryId":"MCAT005",
     "SubcategoryId":"SCAT001",
     "Rating":4,
@@ -134,7 +174,11 @@
     "ItemName":"Ipoh Koay Teow Soup with Prawns",
     "Description":"Thin flat rice noodles in our freshly boiled daily chicken soup and prawn head broth. Topped with prawns, chicken slices, bean sprouts, chives and red chilli.",
     "NutritionInfo":"",
-    "Price":1400,
+    "Price":{
+      "Small":920,
+      "Medium":1400,
+      "Large":1680
+    },
     "MainCategoryId":"MCAT005",
     "SubcategoryId":"SCAT006",
     "Rating":5,
@@ -147,7 +191,11 @@
     "ItemName":"Crispy Egg Noodles",
     "Description":"Wok-fried egg noodles with egg gravy, prawns, fish cakes and chicken slices.",
     "NutritionInfo":"",
-    "Price":950,
+    "Price":{
+      "Small":665,
+      "Medium":950,
+      "Large":1140
+    },
     "MainCategoryId":"MCAT005",
     "SubcategoryId":"SCAT003",
     "Rating":5,
@@ -160,7 +208,11 @@
     "ItemName":"Vegetable Spring Roll With Plum Sauce",
     "Description":"4 Pieces - Serves 2.",
     "NutritionInfo":"",
-    "Price":300,
+    "Price":{
+      "Small":210,
+      "Medium":300,
+      "Large":360
+    },
     "MainCategoryId":"MCAT001",
     "SubcategoryId":"SCAT001",
     "Rating":3,
@@ -173,7 +225,11 @@
     "ItemName":"Chicken Won Ton With Plum Sauce",
     "Description":"4 Pieces - Serves 2.",
     "NutritionInfo":"",
-    "Price":450,
+    "Price":{
+      "Small":315,
+      "Medium":450,
+      "Large":540
+    },
     "MainCategoryId":"MCAT001",
     "SubcategoryId":"SCAT003",
     "Rating":4,
@@ -186,12 +242,118 @@
     "ItemName":"French Fries",
     "Description":"Serves 2.",
     "NutritionInfo":"",
-    "Price":350,
+    "Price":{
+      "Small":245,
+      "Medium":350,
+      "Large":420
+    },
     "MainCategoryId":"MCAT001",
     "SubcategoryId":"SCAT001",
     "Rating":3,
     "ThumbImgUrlOne":"img_itm_015",
     "ThumbImgUrlTwo":"img_cart_itm_015",
     "ImageUrl":"img_itm_full_015"
+  },
+  {
+    "ItemCode":"ITM0016",
+    "ItemName":"Margherita",
+    "Description":"Pizza with Basil & Mozzarella, Small - 9, Regular - 10, Large - 14",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":630,
+      "Medium":900,
+      "Large":1080
+    },
+    "MainCategoryId":"MCAT002",
+    "SubcategoryId":"SCAT001",
+    "Rating":3,
+    "ThumbImgUrlOne":"img_itm_016",
+    "ThumbImgUrlTwo":"img_cart_itm_016",
+    "ImageUrl":"img_itm_full_016"
+  },
+  {
+    "ItemCode":"ITM0017",
+    "ItemName":"Calzone - Folded Pizza",
+    "Description":"Stuffed with Ham, Mushroom & Mozzarella / Chicken, Mushroom & Mozzarella, Small - 9, Regular - 10, Large - 14",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":1050,
+      "Medium":1500,
+      "Large":1800
+    },
+    "MainCategoryId":"MCAT002",
+    "SubcategoryId":"SCAT003",
+    "Rating":4,
+    "ThumbImgUrlOne":"img_itm_017",
+    "ThumbImgUrlTwo":"img_cart_itm_017",
+    "ImageUrl":"img_itm_full_017"
+  },
+  {
+    "ItemCode":"ITM0018",
+    "ItemName":"Sorrentina",
+    "Description":"Pizza with Fresh Tomato, Basil & Buffalo Mozzarella, Small - 9, Regular - 10, Large - 14",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":840,
+      "Medium":1200,
+      "Large":1440
+    },
+    "MainCategoryId":"MCAT002",
+    "SubcategoryId":"SCAT001",
+    "Rating":3,
+    "ThumbImgUrlOne":"img_itm_018",
+    "ThumbImgUrlTwo":"img_cart_itm_018",
+    "ImageUrl":"img_itm_full_018"
+  },
+  {
+    "ItemCode":"ITM0019",
+    "ItemName":"Meat Fest",
+    "Description":"Ground Beef/Chicken, Ham, Chorizo Sausage, Bacon, Capers, Onion, Black Olives & Mozzarella, Small - 9, Regular - 10, Large - 14",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":945,
+      "Medium":1350,
+      "Large":1620
+    },
+    "MainCategoryId":"MCAT002",
+    "SubcategoryId":"SCAT003",
+    "Rating":3,
+    "ThumbImgUrlOne":"img_itm_019",
+    "ThumbImgUrlTwo":"img_cart_itm_019",
+    "ImageUrl":"img_itm_full_019"
+  },
+  {
+    "ItemCode":"ITM0020",
+    "ItemName":"Spicy Chicken",
+    "Description":"Chicken, Onion, Green Chilli, Bell Pepper, Black Olives & Mozarella, Small - 9, Regular - 10, Large - 14",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":910,
+      "Medium":1300,
+      "Large":1560
+    },
+    "MainCategoryId":"MCAT002",
+    "SubcategoryId":"SCAT003",
+    "Rating":4,
+    "ThumbImgUrlOne":"img_itm_020",
+    "ThumbImgUrlTwo":"img_cart_itm_020",
+    "ImageUrl":"img_itm_full_020"
+  },
+  {
+    "ItemCode":"ITM0021",
+    "ItemName":"Contadina",
+    "Description":"Grilled Aubergine, Grilled Zucchini, Grilled Bell Peppers & Mozzarella, Small - 9, Regular - 10, Large - 14",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":805,
+      "Medium":1150,
+      "Large":1380
+    },
+    "MainCategoryId":"MCAT002",
+    "SubcategoryId":"SCAT001",
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_021",
+    "ThumbImgUrlTwo":"img_cart_itm_021",
+    "ImageUrl":"img_itm_full_021"
   }
 ]

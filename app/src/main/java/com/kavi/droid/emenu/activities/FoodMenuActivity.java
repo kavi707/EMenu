@@ -27,6 +27,7 @@ import com.kavi.droid.emenu.dialogs.CartListDialog;
 import com.kavi.droid.emenu.dialogs.SingleItemDialog;
 import com.kavi.droid.emenu.models.Category;
 import com.kavi.droid.emenu.models.FoodItem;
+import com.kavi.droid.emenu.models.Price;
 import com.kavi.droid.emenu.utils.CommonUtils;
 
 import org.json.JSONArray;
@@ -171,7 +172,7 @@ public class FoodMenuActivity extends AppCompatActivity {
                 singleItemDialog.show();
                 Window window = singleItemDialog.getWindow();
 
-                Double dialogWidth = deviceDimensions.get("width") * 0.75;
+                Double dialogWidth = deviceDimensions.get("width") * 0.7;
                 Double dialogHeight = deviceDimensions.get("height") * 0.9;
 
                 window.setLayout(dialogWidth.intValue(), dialogHeight.intValue());
@@ -266,7 +267,14 @@ public class FoodMenuActivity extends AppCompatActivity {
                 sampleFoodItem.setImgUrl(jsonData.getString("ImageUrl"));
                 sampleFoodItem.setThumbImgUrlOne(jsonData.getString("ThumbImgUrlOne"));
                 sampleFoodItem.setThumbImgUrlTwo(jsonData.getString("ThumbImgUrlTwo"));
-                sampleFoodItem.setPrice(jsonData.getDouble("Price"));
+
+                JSONObject priceJsonObj = jsonData.getJSONObject("Price");
+                Price price = new Price();
+                price.setSmallPrice(priceJsonObj.getDouble("Small"));
+                price.setMediumPrice(priceJsonObj.getDouble("Medium"));
+                price.setLargePrice(priceJsonObj.getDouble("Large"));
+                sampleFoodItem.setItemPrices(price);
+
                 sampleFoodItem.setRating(jsonData.getInt("Rating"));
 
                 allFoodItemList.add(sampleFoodItem);
