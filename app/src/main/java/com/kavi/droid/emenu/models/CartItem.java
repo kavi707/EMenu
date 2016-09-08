@@ -12,6 +12,7 @@ public class CartItem {
     private double amount;
     private int portion;
     private int qty;
+    private FoodItem foodItem;
 
     public String getImageUrl() {
         return imageUrl;
@@ -59,5 +60,13 @@ public class CartItem {
 
     public void setQty(int qty) {
         this.qty = qty;
+    }
+
+    public FoodItem getFoodItem() {
+        return foodItem;
+    }
+
+    public void setFoodItem(FoodItem foodItem) {
+        this.foodItem = foodItem;
     }
 }

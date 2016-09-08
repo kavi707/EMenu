@@ -192,6 +192,7 @@ public class SingleItemDialog extends Dialog {
                 cartItem.setImageUrl(foodItem.getThumbImgUrlTwo());
                 cartItem.setPortion(itemPortion);
                 cartItem.setQty(qty);
+                cartItem.setFoodItem(foodItem);
 
                 CommonUtils.selectedCartItemList.add(cartItem);
                 mSingleItemDialogResult.addItemToCart(true);

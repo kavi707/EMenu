@@ -21,4 +21,9 @@ public class Constants {
     public static final int ITEM_PORTION_SMALL = 1;
     public static final int ITEM_PORTION_MEDIUM = 2;
     public static final int ITEM_PORTION_LARGE = 3;
+
+    public static final int ANIMATE_STOP = 0;
+    public static final int ANIMATE_START = 1;
+    public static final int LIGHT_TO_DARK = 0;
+    public static final int DARK_TO_LIGHT = 1;
 }

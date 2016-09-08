@@ -38,6 +38,7 @@ public class CartListDialog extends Dialog {
 
     private Context context;
     private CartListItemAdapter cartListItemAdapter;
+    OnCartListDialogResult mCartListDialogResult;
 
     private CommonUtils commonUtils = new CommonUtils();
 
@@ -53,6 +54,15 @@ public class CartListDialog extends Dialog {
         setContentView(R.layout.dialog_cart_list);
 
         setUpViews();
+    }
+
+    // Callback Interface
+    public interface OnCartListDialogResult {
+        void updatedItemCart(boolean isItemCartUpdated);
+    }
+
+    public void setCartListDialogResult (OnCartListDialogResult dialogResult) {
+        mCartListDialogResult = dialogResult;
     }
 
     private void setUpViews() {
@@ -88,6 +98,9 @@ public class CartListDialog extends Dialog {
                                 loadCartItemListView(CommonUtils.selectedCartItemList);
 
                                 totalAmtTextView.setText("Rs. " + String.valueOf((int)commonUtils.getItemTotalAmt()));
+
+                                // Notify cart update
+                                mCartListDialogResult.updatedItemCart(true);
                             }
                         })
                         .setNegativeButton("NO", new OnClickListener() {

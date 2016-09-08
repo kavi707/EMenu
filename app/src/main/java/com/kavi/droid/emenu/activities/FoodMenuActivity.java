@@ -2,8 +2,12 @@ package com.kavi.droid.emenu.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +24,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.kavi.droid.emenu.Constants;
 import com.kavi.droid.emenu.R;
 import com.kavi.droid.emenu.adapters.CategoryListItemAdapter;
 import com.kavi.droid.emenu.adapters.FoodGridItemAdapter;
@@ -62,6 +67,7 @@ public class FoodMenuActivity extends AppCompatActivity {
     private List<FoodItem> allFoodItemList = new ArrayList<>();
     private List<FoodItem> foodItemList = new ArrayList<>(); // showing food items list in the grid
     private CommonUtils commonUtils = new CommonUtils();
+    private boolean colorChangeBool = true;
 
     private FoodGridItemAdapter foodGridItemAdapter;
     private CategoryListItemAdapter categoryListItemAdapter;
@@ -165,8 +171,11 @@ public class FoodMenuActivity extends AppCompatActivity {
                 singleItemDialog.setSingleItemDialogResult(new SingleItemDialog.OnSingleItemDialogResult() {
                     @Override
                     public void addItemToCart(boolean isItemAddedToCart) {
-                        if (isItemAddedToCart)
+                        if (isItemAddedToCart) {
                             orderAmtTextView.setText("NET TOTAL Rs. " + (int) commonUtils.getItemTotalAmt());
+                            // Refresh the grid view
+                            loadFoodItemGridView(foodItemList);
+                        }
                     }
                 });
                 singleItemDialog.show();
@@ -183,6 +192,15 @@ public class FoodMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 CartListDialog cartListDialog = new CartListDialog(context);
+                cartListDialog.setCartListDialogResult(new CartListDialog.OnCartListDialogResult() {
+                    @Override
+                    public void updatedItemCart(boolean isItemCartUpdated) {
+                        if (isItemCartUpdated) {
+                            // Refresh the grid view
+                            loadFoodItemGridView(foodItemList);
+                        }
+                    }
+                });
                 cartListDialog.show();
             }
         });
@@ -326,5 +344,29 @@ public class FoodMenuActivity extends AppCompatActivity {
         }
 
         return jsonString;
+    }
+
+    /**
+     * Change the background color of the place order background
+     * @param fromToColor changing sequence
+     */
+    private void changePlaceOrderLayoutColor(int fromToColor) {
+
+        TransitionDrawable transitionDrawable;
+        if (fromToColor == Constants.LIGHT_TO_DARK) {
+            ColorDrawable[] colorDrawables = {new ColorDrawable(getResources().getColor(R.color.lightGreen)),
+                    new ColorDrawable(getResources().getColor(R.color.darkGreen))};
+
+            transitionDrawable = new TransitionDrawable(colorDrawables);
+            greenRelativeLayout.setBackgroundDrawable(transitionDrawable);
+            transitionDrawable.startTransition(5000);
+        } else if (fromToColor == Constants.DARK_TO_LIGHT) {
+            ColorDrawable[] colorDrawables = {new ColorDrawable(getResources().getColor(R.color.darkGreen)),
+                    new ColorDrawable(getResources().getColor(R.color.lightGreen))};
+
+            transitionDrawable = new TransitionDrawable(colorDrawables);
+            greenRelativeLayout.setBackgroundDrawable(transitionDrawable);
+            transitionDrawable.startTransition(5000);
+        }
     }
 }

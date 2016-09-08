@@ -22,6 +22,7 @@
     <color name="darkPurple">#582C61</color>
     <color name="darkerPurple">#651F78</color>
     <color name="lightGreen">#17A52F</color>
+    <color name="darkGreen">#0f7420</color>
     <color name="categoryBlue">#283345</color>
     <color name="categorySelectedBlue">#182335</color>
 </resources>

@@ -8,8 +8,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.kavi.droid.emenu.R;
+import com.kavi.droid.emenu.models.CartItem;
 import com.kavi.droid.emenu.models.FoodItem;
 import com.kavi.droid.emenu.services.imageLoader.ImageLoadingManager;
+import com.kavi.droid.emenu.utils.CommonUtils;
 
 /**
  * Created by kavi707 on 8/15/16.
@@ -21,6 +23,7 @@ public class FoodGridItemView extends RelativeLayout {
     private TextView foodNameTextView;
     private TextView priceTextView;
     private RatingBar itemRatingBar;
+    private TextView selectIndicateTextView;
 
     private FoodItem foodItem;
     private ImageLoadingManager imageLoadingManager = new ImageLoadingManager();
@@ -37,6 +40,7 @@ public class FoodGridItemView extends RelativeLayout {
         foodNameTextView = (TextView) findViewById(R.id.itemNameTextView);
         itemRatingBar = (RatingBar) findViewById(R.id.itemRatingBar);
         priceTextView = (TextView) findViewById(R.id.itemPriceTextView);
+        selectIndicateTextView = (TextView) findViewById(R.id.selectIndicateTextView);
     }
 
     public FoodItem getFoodItem() {
@@ -49,6 +53,12 @@ public class FoodGridItemView extends RelativeLayout {
         foodNameTextView.setText(foodItem.getName());
         priceTextView.setText("Rs. " + (int)foodItem.getItemPrices().getSmallPrice());
         itemRatingBar.setRating(foodItem.getRating());
+
+        if (isSelectedItem()) {
+            selectIndicateTextView.setVisibility(VISIBLE);
+        } else {
+            selectIndicateTextView.setVisibility(INVISIBLE);
+        }
 
         // TODO - Uncomment this after service integration
         //imageLoadingManager.loadImageToImageView(foodItem.getThumbImgUrlOne(), foodItemImageView);
@@ -98,5 +108,22 @@ public class FoodGridItemView extends RelativeLayout {
             foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_021));
         else
             foodItemImageView.setImageDrawable(null);
+    }
+
+    /**
+     * Check this item is selected Item or not
+     * @return Boolean value
+     */
+    private boolean isSelectedItem() {
+        boolean isSelectedItem = false;
+
+        if (!CommonUtils.selectedCartItemList.isEmpty()) {
+            for (CartItem cartItem : CommonUtils.selectedCartItemList) {
+                if (foodItem.getId().equals(cartItem.getFoodItem().getId())) {
+                    isSelectedItem = true;
+                }
+            }
+        }
+        return isSelectedItem;
     }
 }
