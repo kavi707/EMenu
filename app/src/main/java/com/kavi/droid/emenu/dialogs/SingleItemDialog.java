@@ -18,8 +18,6 @@ import com.kavi.droid.emenu.models.CartItem;
 import com.kavi.droid.emenu.models.FoodItem;
 import com.kavi.droid.emenu.utils.CommonUtils;
 
-import org.w3c.dom.Text;
-
 /**
  * Created by kavi707 on 8/16/16.
  * @author Kavimal Wijewardana <kavi707@gmail.com>
