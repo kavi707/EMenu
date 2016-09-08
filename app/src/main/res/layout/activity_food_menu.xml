@@ -11,11 +11,12 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
+        android:scaleType="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/icon_offers"
+        android:src="@drawable/icon_offers_1"
         app:backgroundTint="@color/lightRed"/>
 
 </android.support.design.widget.CoordinatorLayout>
