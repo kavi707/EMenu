@@ -355,5 +355,243 @@
     "ThumbImgUrlOne":"img_itm_021",
     "ThumbImgUrlTwo":"img_cart_itm_021",
     "ImageUrl":"img_itm_full_021"
+  },
+  {
+    "ItemCode":"ITM0022",
+    "ItemName":"Chicken Picatta",
+    "Description":"Boneless chicken breast sautéed in a lemon white wine butter sauce with capers, served with fettuccine alfredo. Salad or veggies may be substituted for pasta.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":630,
+      "Medium":900,
+      "Large":1080
+    },
+    "MainCategoryId":"MCAT003",
+    "SubcategoryId":"SCAT003",
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_022",
+    "ThumbImgUrlTwo":"img_cart_itm_022",
+    "ImageUrl":"img_itm_full_022"
+  },
+  {
+    "ItemCode":"ITM0023",
+    "ItemName":"Cajun Chicken Penne",
+    "Description":"Blackened chicken breast diced and sautéed with bell peppers and red onions,  tossed together with a spicy cajun cream sauce and penne pasta. Salad or veggies may be substituted for pasta.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":665,
+      "Medium":950,
+      "Large":1140
+    },
+    "MainCategoryId":"MCAT003",
+    "SubcategoryId":"SCAT003",
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_023",
+    "ThumbImgUrlTwo":"img_cart_itm_023",
+    "ImageUrl":"img_itm_full_023"
+  },
+  {
+    "ItemCode":"ITM0024",
+    "ItemName":"Shrimp Picatta",
+    "Description":"Eight tiger shrimp sautéed in a lemon white wine butter sauce with capers, served with fettuccine alfredo. Salad or veggies may be substituted for pasta.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":840,
+      "Medium":1200,
+      "Large":1440
+    },
+    "MainCategoryId":"MCAT003",
+    "SubcategoryId":"SCAT006",
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_024",
+    "ThumbImgUrlTwo":"img_cart_itm_024",
+    "ImageUrl":"img_itm_full_024"
+  },
+  {
+    "ItemCode":"ITM0025",
+    "ItemName":"Chicken Parmigiana",
+    "Description":"Boneless chicken breast breaded and fried,  topped with tomato sauce and mozzarella, served with penne marinara. Salad or veggies may be substituted for pasta.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":595,
+      "Medium":850,
+      "Large":1020
+    },
+    "MainCategoryId":"MCAT003",
+    "SubcategoryId":"SCAT003",
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_025",
+    "ThumbImgUrlTwo":"img_cart_itm_025",
+    "ImageUrl":"img_itm_full_025"
+  },
+  {
+    "ItemCode":"ITM0026",
+    "ItemName":"Shrimp Parmigiana",
+    "Description":"Eight medium tiger shrimp breaded and fried, topped with tomato sauce and mozzarella, served with penne marinara. Salad or veggies may be substituted for pasta.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":784,
+      "Medium":1120,
+      "Large":1344
+    },
+    "MainCategoryId":"MCAT003",
+    "SubcategoryId":"SCAT006",
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_026",
+    "ThumbImgUrlTwo":"img_cart_itm_026",
+    "ImageUrl":"img_itm_full_026"
+  },
+  {
+    "ItemCode":"ITM0027",
+    "ItemName":"Eggplant Parmigiana",
+    "Description":"Baked eggplant layered with tomato sauce,  mozzarella and Romano cheese, served with penne marinara. Salad or veggies may be substituted for pasta.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":588,
+      "Medium":840,
+      "Large":1008
+    },
+    "MainCategoryId":"MCAT003",
+    "SubcategoryId":"SCAT001",
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_027",
+    "ThumbImgUrlTwo":"img_cart_itm_027",
+    "ImageUrl":"img_itm_full_027"
+  },
+  {
+    "ItemCode":"ITM0028",
+    "ItemName":"Meat Lasagna",
+    "Description":"Layers of soft mozzarella cheese, meat, and tomato sauce between golden noodles",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":910,
+      "Medium":1300,
+      "Large":1560
+    },
+    "MainCategoryId":"MCAT003",
+    "SubcategoryId":"SCAT003",
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_028",
+    "ThumbImgUrlTwo":"img_cart_itm_028",
+    "ImageUrl":"img_itm_full_028"
+  },
+  {
+    "ItemCode":"ITM0029",
+    "ItemName":"Shrimp Scampi",
+    "Description":"Eight medium tiger shrimp sautéed in lemon, wine and garlic, served with fettuccine alfredo. Salad or veggies may be substituted for pasta.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":875,
+      "Medium":1250,
+      "Large":1500
+    },
+    "MainCategoryId":"MCAT003",
+    "SubcategoryId":"SCAT007",
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_029",
+    "ThumbImgUrlTwo":"img_cart_itm_029",
+    "ImageUrl":"img_itm_full_029"
+  },
+  {
+    "ItemCode":"ITM0030",
+    "ItemName":"Chicken Marsala",
+    "Description":"Boneless chicken breast sautéed in sweet marsala wine with mushrooms, served with fettuccine alfredo. Salad or veggies may be substituted for pasta.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":693,
+      "Medium":990,
+      "Large":1188
+    },
+    "MainCategoryId":"MCAT003",
+    "SubcategoryId":"SCAT003",
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_030",
+    "ThumbImgUrlTwo":"img_cart_itm_030",
+    "ImageUrl":"img_itm_full_030"
+  },
+  {
+    "ItemCode":"ITM0031",
+    "ItemName":"Caesar Salad",
+    "Description":"Crisp lettuce topped with freshly grated parmesan cheese and tossed in creamy caesar dressing. GF- order without croutons!",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":400,
+      "Medium":400,
+      "Large":400
+    },
+    "MainCategoryId":"MCAT001",
+    "SubcategoryId":"SCAT001",
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_031",
+    "ThumbImgUrlTwo":"img_cart_itm_031",
+    "ImageUrl":"img_itm_full_031"
+  },
+  {
+    "ItemCode":"ITM0032",
+    "ItemName":"Garden Salad",
+    "Description":"Crisp lettuce topped with fresh cucumbers, carrots, and mushrooms. Choice of salad dressing: Ranch, Creamy Italian, Bleu Cheese, Vinaigrette, Non-Fat Italian, Raspberry Vinaigrette. GF- order without croutons! Add Chicken: *Grilled- $2.29 Crispy- $2.29",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":460,
+      "Medium":460,
+      "Large":460
+    },
+    "MainCategoryId":"MCAT001",
+    "SubcategoryId":"SCAT001",
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_032",
+    "ThumbImgUrlTwo":"img_cart_itm_032",
+    "ImageUrl":"img_itm_full_032"
+  },
+  {
+    "ItemCode":"ITM0033",
+    "ItemName":"Tuscan Wedge Salad",
+    "Description":"Iceberg lettuce topped with our famous Caesar dressing, crumbled gorgonzola cheese, crispy prosciutto and grape tomatoes and chicken",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":500,
+      "Medium":500,
+      "Large":500
+    },
+    "MainCategoryId":"MCAT001",
+    "SubcategoryId":"SCAT003",
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_033",
+    "ThumbImgUrlTwo":"img_cart_itm_033",
+    "ImageUrl":"img_itm_full_033"
+  },
+  {
+    "ItemCode":"ITM0034",
+    "ItemName":"Greek Salad",
+    "Description":"Risp lettuce topped with juicy grape tomatoes, Greek olives, sliced red onions, and fresh cucumbers. GF- order without croutons! and Chicken",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":380,
+      "Medium":380,
+      "Large":380
+    },
+    "MainCategoryId":"MCAT001",
+    "SubcategoryId":"SCAT003",
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_034",
+    "ThumbImgUrlTwo":"img_cart_itm_034",
+    "ImageUrl":"img_itm_full_034"
+  },
+  {
+    "ItemCode":"ITM0035",
+    "ItemName":"Garlic Bread",
+    "Description":"Crispy toast brushed with garlic, butter, and herbs.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":250,
+      "Medium":250,
+      "Large":250
+    },
+    "MainCategoryId":"MCAT001",
+    "SubcategoryId":"SCAT001",
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_035",
+    "ThumbImgUrlTwo":"img_cart_itm_035",
+    "ImageUrl":"img_itm_full_035"
   }
 ]
