@@ -171,6 +171,34 @@ public class SingleItemDialog extends Dialog {
             singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_020));
         else if (foodItem.getImgUrl().equals("img_itm_full_021"))
             singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_021));
+        else if (foodItem.getImgUrl().equals("img_itm_full_022"))
+            singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_022));
+        else if (foodItem.getImgUrl().equals("img_itm_full_023"))
+            singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_023));
+        else if (foodItem.getImgUrl().equals("img_itm_full_024"))
+            singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_024));
+        else if (foodItem.getImgUrl().equals("img_itm_full_025"))
+            singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_025));
+        else if (foodItem.getImgUrl().equals("img_itm_full_026"))
+            singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_026));
+        else if (foodItem.getImgUrl().equals("img_itm_full_027"))
+            singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_027));
+        else if (foodItem.getImgUrl().equals("img_itm_full_028"))
+            singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_028));
+        else if (foodItem.getImgUrl().equals("img_itm_full_029"))
+            singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_029));
+        else if (foodItem.getImgUrl().equals("img_itm_full_030"))
+            singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_030));
+        else if (foodItem.getImgUrl().equals("img_itm_full_031"))
+            singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_031));
+        else if (foodItem.getImgUrl().equals("img_itm_full_032"))
+            singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_032));
+        else if (foodItem.getImgUrl().equals("img_itm_full_033"))
+            singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_033));
+        else if (foodItem.getImgUrl().equals("img_itm_full_034"))
+            singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_034));
+        else if (foodItem.getImgUrl().equals("img_itm_full_035"))
+            singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_035));
         else
             singleItemImageView.setImageDrawable(null);
 
