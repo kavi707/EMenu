@@ -18,6 +18,9 @@ import com.kavi.droid.emenu.models.CartItem;
 import com.kavi.droid.emenu.models.FoodItem;
 import com.kavi.droid.emenu.utils.CommonUtils;
 
+import java.math.BigInteger;
+import java.security.SecureRandom;
+
 /**
  * Created by kavi707 on 8/16/16.
  * @author Kavimal Wijewardana <kavi707@gmail.com>
@@ -47,6 +50,7 @@ public class SingleItemDialog extends Dialog {
 
     private int qty = 1;
     private int itemPortion = Constants.ITEM_PORTION_SMALL;
+    private CommonUtils commonUtils = new CommonUtils();
 
     public SingleItemDialog(Context context) {
         super(context);
@@ -215,11 +219,13 @@ public class SingleItemDialog extends Dialog {
             public void onClick(View view) {
 
                 CartItem cartItem = new CartItem();
+                cartItem.setTempHashId(createTempCartId());
                 cartItem.setName(foodItem.getName());
                 cartItem.setAmount(foodItem.getItemPrices().getSmallPrice() * qty);
                 cartItem.setImageUrl(foodItem.getThumbImgUrlTwo());
                 cartItem.setPortion(itemPortion);
                 cartItem.setQty(qty);
+                cartItem.setState(Constants.CART_ITEM_STATE_NEW);
                 cartItem.setFoodItem(foodItem);
 
                 CommonUtils.selectedCartItemList.add(cartItem);
@@ -264,5 +270,10 @@ public class SingleItemDialog extends Dialog {
 
     public void setFoodItem(FoodItem foodItem) {
         this.foodItem = foodItem;
+    }
+
+    private String createTempCartId() {
+        SecureRandom random = new SecureRandom();
+        return new BigInteger(130, random).toString(32);
     }
 }
