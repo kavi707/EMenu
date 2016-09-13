@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.kavi.droid.emenu.R;
 import com.kavi.droid.emenu.adapters.CartListItemAdapter;
@@ -117,6 +118,7 @@ public class CartListDialog extends Dialog {
         placeOrderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(context, "YOU HAVE SUCCESSFULLY PLACED THE ORDER", Toast.LENGTH_LONG).show();
                 dismiss();
             }
         });
