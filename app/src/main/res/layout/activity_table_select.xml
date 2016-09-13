@@ -41,42 +41,23 @@
             android:id="@+id/recycleRelativeLayout"
             android:layout_below="@+id/headerRelativeLayout">
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:background="@drawable/background_table_select_box"
-                android:layout_above="@+id/midTextView"
-                android:layout_centerHorizontal="true">
-
-                <TextView
-                    android:id="@+id/selectedNumberTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="01"
-                    android:textStyle="normal"
-                    android:textSize="100dp"
-                    android:textColor="@color/lightPurple"
-                    android:gravity="center"/>
-            </LinearLayout>
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/numberPicker"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_below="@+id/midTextView"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-            <TextView
+            <GridView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/midTextView"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true" />
-
+                android:id="@+id/tableSelectGridView"
+                android:layout_centerHorizontal="true"
+                android:columnWidth="150dp"
+                android:gravity="center"
+                android:numColumns="auto_fit"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="20dp"
+                android:horizontalSpacing="20dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true" />
         </RelativeLayout>
 
         <Button
@@ -84,7 +65,7 @@
             android:layout_height="60dp"
             android:text="Continue"
             android:id="@+id/continueBtn"
-            android:background="@drawable/style_em_btn_round_corner"
+            android:background="@drawable/style_em_green_btn_round_corner"
             android:textColor="@color/white"
             android:textSize="23dp"
             android:layout_marginBottom="30dp"
