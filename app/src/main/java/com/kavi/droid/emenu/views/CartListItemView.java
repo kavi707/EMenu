@@ -23,6 +23,7 @@ public class CartListItemView extends RelativeLayout {
     private TextView cartItemDescriptionTextView;
     private TextView cartItemAmountTextView;
     private TextView cartItemPortionTextView;
+    private TextView alphaLabelTextView;
 
     private CartItem cartItem;
     private ImageLoadingManager imageLoadingManager = new ImageLoadingManager();
@@ -41,6 +42,7 @@ public class CartListItemView extends RelativeLayout {
         cartItemDescriptionTextView = (TextView) findViewById(R.id.cartItemDescriptionTextView);
         cartItemAmountTextView = (TextView) findViewById(R.id.cartItemAmountTextView);
         cartItemPortionTextView = (TextView) findViewById(R.id.cartItemPortionTextView);
+        alphaLabelTextView = (TextView) findViewById(R.id.alphaLabelTextView);
     }
 
     public CartItem getCartItem() {
@@ -66,6 +68,24 @@ public class CartListItemView extends RelativeLayout {
             cartItemPortionTextView.setText("MEDIUM");
         } else if (cartItem.getPortion() == Constants.ITEM_PORTION_LARGE) {
             cartItemPortionTextView.setText("LARGE");
+        }
+
+        switch (cartItem.getState()) {
+            case Constants.CART_ITEM_STATE_NEW:
+                alphaLabelTextView.setVisibility(INVISIBLE);
+                break;
+            case Constants.CART_ITEM_STATE_ORDERED:
+                alphaLabelTextView.setText("PREPARING");
+                alphaLabelTextView.setVisibility(VISIBLE);
+                break;
+            case Constants.CART_ITEM_STATE_READY:
+                alphaLabelTextView.setText("READY");
+                alphaLabelTextView.setVisibility(VISIBLE);
+                break;
+            case Constants.CART_ITEM_STATE_DELIVERED:
+                alphaLabelTextView.setText("ENJOYING");
+                alphaLabelTextView.setVisibility(VISIBLE);
+                break;
         }
 
         // TODO - Uncomment this after service integration

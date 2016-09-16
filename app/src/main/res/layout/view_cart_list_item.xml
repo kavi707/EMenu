@@ -148,5 +148,20 @@
             android:layout_centerVertical="true"
             android:layout_alignRight="@+id/itemPriceLinearLayout"
             android:layout_alignEnd="@+id/itemPriceLinearLayout" />
+
+        <TextView
+            android:textSize="26dp"
+            android:textColor="@color/black"
+            android:textStyle="bold|italic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:gravity="center"
+            android:background="@color/lighterPurple"
+            android:alpha="0.15"
+            android:visibility="invisible"
+            android:id="@+id/alphaLabelTextView" />
     </RelativeLayout>
 </com.kavi.droid.emenu.views.CartListItemView>

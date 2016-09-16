@@ -136,10 +136,13 @@ public class CartListDialog extends Dialog {
      */
     public void changeCartItemStatus() {
 
-        for (CartItem selectedCartItem: CommonUtils.selectedCartItemList) {
-            CommonUtils.selectedCartItemList.remove(selectedCartItem);
-            selectedCartItem.setState(Constants.CART_ITEM_STATE_ORDERED);
-            CommonUtils.selectedCartItemList.add(selectedCartItem);
+        CartItem selectedCartItem;
+        for (int i = 0; i < CommonUtils.selectedCartItemList.size(); i++) {
+            selectedCartItem = CommonUtils.selectedCartItemList.get(i);
+            if (selectedCartItem.getState() == Constants.CART_ITEM_STATE_NEW) {
+                selectedCartItem.setState(Constants.CART_ITEM_STATE_ORDERED);
+                CommonUtils.selectedCartItemList.set(i, selectedCartItem);
+            }
         }
     }
 }
