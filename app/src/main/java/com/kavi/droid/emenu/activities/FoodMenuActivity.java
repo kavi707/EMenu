@@ -245,7 +245,7 @@ public class FoodMenuActivity extends AppCompatActivity {
     private void loadCategoryItems() {
 
         // TODO - Replace with server values
-        String jsonString = loadJsonStringFromAssets("category_items.json");
+        String jsonString = loadJsonStringFromAssets("category_items_v2.json");
         try {
             JSONArray jsonArray = new JSONArray(jsonString);
             Category sampleCategory;

@@ -63,6 +63,8 @@ public class CategoryListItemView extends RelativeLayout {
             categoryImageView.setImageDrawable(getResources().getDrawable(R.drawable.icon_category_dessert));
         else if (category.getCategoryImageUrl().equals("icon_category_burger"))
             categoryImageView.setImageDrawable(getResources().getDrawable(R.drawable.icon_category_burger));
+        else if (category.getCategoryImageUrl().equals("icon_category_beverage"))
+            categoryImageView.setImageDrawable(getResources().getDrawable(R.drawable.icon_category_beverage));
         else
             categoryImageView.setImageDrawable(null);
     }
