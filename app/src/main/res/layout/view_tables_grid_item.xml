@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.kavi.droid.emenu.views.TableNumberGridItemView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/tableNumberRelativeLayout"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:background="@drawable/background_table_item">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/tableNumberTextView"
+            android:textSize="45dp"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+</com.kavi.droid.emenu.views.TableNumberGridItemView>

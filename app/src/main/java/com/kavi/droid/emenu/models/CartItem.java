@@ -6,13 +6,23 @@ package com.kavi.droid.emenu.models;
  */
 public class CartItem {
 
+    private String tempHashId;
     private String imageUrl;
     private String name;
     private String comments;
     private double amount;
     private int portion;
     private int qty;
+    private int state;
     private FoodItem foodItem;
+
+    public String getTempHashId() {
+        return tempHashId;
+    }
+
+    public void setTempHashId(String tempHashId) {
+        this.tempHashId = tempHashId;
+    }
 
     public String getImageUrl() {
         return imageUrl;
@@ -60,6 +70,14 @@ public class CartItem {
 
     public void setQty(int qty) {
         this.qty = qty;
+    }
+
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
     }
 
     public FoodItem getFoodItem() {

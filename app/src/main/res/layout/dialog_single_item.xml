@@ -119,7 +119,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_alignParentStart="true"
                     android:background="@color/lightGreen"
-                    android:text="SELECT THE DISH"
+                    android:text="TAP TO SELECT"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
 

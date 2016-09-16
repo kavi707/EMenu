@@ -13,7 +13,9 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.kavi.droid.emenu.Constants;
 import com.kavi.droid.emenu.R;
 import com.kavi.droid.emenu.adapters.CartListItemAdapter;
 import com.kavi.droid.emenu.adapters.CategoryListItemAdapter;
@@ -117,6 +119,8 @@ public class CartListDialog extends Dialog {
         placeOrderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(context, "YOU HAVE SUCCESSFULLY PLACED THE ORDER", Toast.LENGTH_LONG).show();
+                changeCartItemStatus();
                 dismiss();
             }
         });
@@ -125,5 +129,17 @@ public class CartListDialog extends Dialog {
     private void loadCartItemListView(List<CartItem> cartItemList) {
         cartListItemAdapter = new CartListItemAdapter(cartItemList, context);
         cartListView.setAdapter(cartListItemAdapter);
+    }
+
+    /**
+     * Change the cart items status according to the event
+     */
+    public void changeCartItemStatus() {
+
+        for (CartItem selectedCartItem: CommonUtils.selectedCartItemList) {
+            CommonUtils.selectedCartItemList.remove(selectedCartItem);
+            selectedCartItem.setState(Constants.CART_ITEM_STATE_ORDERED);
+            CommonUtils.selectedCartItemList.add(selectedCartItem);
+        }
     }
 }

@@ -4,17 +4,18 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.kavi.droid.emenu.R;
-import com.kavi.droid.emenu.adapters.NumberPickerItemAdapter;
+import com.kavi.droid.emenu.adapters.TableNumberGridItemAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by kavi707 on 8/4/16.
@@ -23,10 +24,13 @@ import java.util.ArrayList;
 public class TableSelectActivity extends Activity {
 
     private Button continueBtn;
-    private RecyclerView horizontalRecycleView;
-    private TextView selectedNumberTextView;
+    private GridView tableSelectGridView;
+
+    private TableNumberGridItemAdapter tableNumberGridItemAdapter;
+    private String selectedTableNumber = null;
 
     private Context context = this;
+    List<String> horizontalList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,19 +43,32 @@ public class TableSelectActivity extends Activity {
     private void setUpViews() {
 
         continueBtn = (Button) findViewById(R.id.continueBtn);
-        horizontalRecycleView = (RecyclerView) findViewById(R.id.numberPicker);
-        selectedNumberTextView = (TextView) findViewById(R.id.selectedNumberTextView);
+        tableSelectGridView = (GridView) findViewById(R.id.tableSelectGridView);
+
+        loadTables();
+
+        tableSelectGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                selectedTableNumber = horizontalList.get(position);
+            }
+        });
 
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent menuIntent = new Intent(TableSelectActivity.this, FoodMenuActivity.class);
-                menuIntent.putExtra("SELECTED_TABLE_NUMBER", selectedNumberTextView.getText().toString());
-                startActivity(menuIntent);
+                if (selectedTableNumber != null) {
+                    Intent menuIntent = new Intent(TableSelectActivity.this, FoodMenuActivity.class);
+                    menuIntent.putExtra("SELECTED_TABLE_NUMBER", selectedTableNumber);
+                    startActivity(menuIntent);
+                } else {
+                    Toast.makeText(context, "Please select table to continue", Toast.LENGTH_LONG).show();
+                }
             }
         });
+    }
 
-        final ArrayList<String> horizontalList= new ArrayList<>();
+    private void loadTables() {
 
         horizontalList.add("01");
         horizontalList.add("02");
@@ -74,17 +91,7 @@ public class TableSelectActivity extends Activity {
         horizontalList.add("19");
         horizontalList.add("20");
 
-        NumberPickerItemAdapter numberPickerItemAdapter = new NumberPickerItemAdapter(horizontalList, context);
-
-        LinearLayoutManager horizontalLayoutManager
-                = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
-        horizontalRecycleView.setLayoutManager(horizontalLayoutManager);
-        horizontalRecycleView.setAdapter(numberPickerItemAdapter);
-        numberPickerItemAdapter.SetOnItemClickListener(new NumberPickerItemAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                selectedNumberTextView.setText(horizontalList.get(position));
-            }
-        });
+        tableNumberGridItemAdapter = new TableNumberGridItemAdapter(horizontalList, context);
+        tableSelectGridView.setAdapter(tableNumberGridItemAdapter);
     }
 }

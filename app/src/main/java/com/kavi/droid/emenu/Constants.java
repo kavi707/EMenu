@@ -22,6 +22,11 @@ public class Constants {
     public static final int ITEM_PORTION_MEDIUM = 2;
     public static final int ITEM_PORTION_LARGE = 3;
 
+    public static final int CART_ITEM_STATE_NEW = 1;
+    public static final int CART_ITEM_STATE_ORDERED = 2;
+    public static final int CART_ITEM_STATE_READY = 3;
+    public static final int CART_ITEM_STATE_DELIVERED = 4;
+
     public static final int ANIMATE_STOP = 0;
     public static final int ANIMATE_START = 1;
     public static final int LIGHT_TO_DARK = 0;

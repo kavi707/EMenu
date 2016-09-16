@@ -106,6 +106,34 @@ public class FoodGridItemView extends RelativeLayout {
             foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_020));
         else if (foodItem.getThumbImgUrlOne().equals("img_itm_021"))
             foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_021));
+        else if (foodItem.getThumbImgUrlOne().equals("img_itm_022"))
+            foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_022));
+        else if (foodItem.getThumbImgUrlOne().equals("img_itm_023"))
+            foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_023));
+        else if (foodItem.getThumbImgUrlOne().equals("img_itm_024"))
+            foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_024));
+        else if (foodItem.getThumbImgUrlOne().equals("img_itm_025"))
+            foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_025));
+        else if (foodItem.getThumbImgUrlOne().equals("img_itm_026"))
+            foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_026));
+        else if (foodItem.getThumbImgUrlOne().equals("img_itm_027"))
+            foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_027));
+        else if (foodItem.getThumbImgUrlOne().equals("img_itm_028"))
+            foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_028));
+        else if (foodItem.getThumbImgUrlOne().equals("img_itm_029"))
+            foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_029));
+        else if (foodItem.getThumbImgUrlOne().equals("img_itm_030"))
+            foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_030));
+        else if (foodItem.getThumbImgUrlOne().equals("img_itm_031"))
+            foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_031));
+        else if (foodItem.getThumbImgUrlOne().equals("img_itm_032"))
+            foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_032));
+        else if (foodItem.getThumbImgUrlOne().equals("img_itm_033"))
+            foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_033));
+        else if (foodItem.getThumbImgUrlOne().equals("img_itm_034"))
+            foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_034));
+        else if (foodItem.getThumbImgUrlOne().equals("img_itm_035"))
+            foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_035));
         else
             foodItemImageView.setImageDrawable(null);
     }
