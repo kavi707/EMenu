@@ -19,11 +19,14 @@ import com.kavi.droid.emenu.utils.CommonUtils;
  */
 public class FoodGridItemView extends RelativeLayout {
 
+    private RelativeLayout gridItemRelativeLayout;
     private ImageView foodItemImageView;
+    private ImageView selectedRightImageView;
     private TextView foodNameTextView;
     private TextView priceTextView;
-    private RatingBar itemRatingBar;
-    private TextView selectIndicateTextView;
+    private RatingBar itemPurpleRatingBar;
+    private RatingBar itemWhiteRatingBar;
+    private TextView separatorTextView;
 
     private FoodItem foodItem;
     private ImageLoadingManager imageLoadingManager = new ImageLoadingManager();
@@ -36,11 +39,14 @@ public class FoodGridItemView extends RelativeLayout {
     protected void onFinishInflate() {
         super.onFinishInflate();
 
+        gridItemRelativeLayout = (RelativeLayout) findViewById(R.id.gridItemRelativeLayout);
         foodItemImageView = (ImageView) findViewById(R.id.foodItemImageView);
+        selectedRightImageView = (ImageView) findViewById(R.id.selectedRightImageView);
         foodNameTextView = (TextView) findViewById(R.id.itemNameTextView);
-        itemRatingBar = (RatingBar) findViewById(R.id.itemRatingBar);
+        itemPurpleRatingBar = (RatingBar) findViewById(R.id.itemPurpleRatingBar);
+        itemWhiteRatingBar = (RatingBar) findViewById(R.id.itemWhiteRatingBar);
         priceTextView = (TextView) findViewById(R.id.itemPriceTextView);
-        selectIndicateTextView = (TextView) findViewById(R.id.selectIndicateTextView);
+        separatorTextView = (TextView) findViewById(R.id.separatorTextView);
     }
 
     public FoodItem getFoodItem() {
@@ -52,12 +58,13 @@ public class FoodGridItemView extends RelativeLayout {
 
         foodNameTextView.setText(foodItem.getName());
         priceTextView.setText("Rs. " + (int)foodItem.getItemPrices().getSmallPrice());
-        itemRatingBar.setRating(foodItem.getRating());
+        itemPurpleRatingBar.setRating(foodItem.getRating());
+        itemWhiteRatingBar.setRating(foodItem.getRating());
 
         if (isSelectedItem()) {
-            selectIndicateTextView.setVisibility(VISIBLE);
+            changeView(true);
         } else {
-            selectIndicateTextView.setVisibility(INVISIBLE);
+            changeView(false);
         }
 
         // TODO - Uncomment this after service integration
@@ -153,5 +160,26 @@ public class FoodGridItemView extends RelativeLayout {
             }
         }
         return isSelectedItem;
+    }
+
+    private void changeView(boolean isSelected) {
+
+        if (isSelected) {
+            selectedRightImageView.setVisibility(VISIBLE);
+            gridItemRelativeLayout.setBackgroundColor(getResources().getColor(R.color.lighterPurple));
+            foodNameTextView.setTextColor(getResources().getColor(R.color.white));
+            priceTextView.setTextColor(getResources().getColor(R.color.white));
+            separatorTextView.setBackgroundColor(getResources().getColor(R.color.white));
+            itemPurpleRatingBar.setVisibility(INVISIBLE);
+            itemWhiteRatingBar.setVisibility(VISIBLE);
+        } else {
+            selectedRightImageView.setVisibility(INVISIBLE);
+            gridItemRelativeLayout.setBackgroundColor(getResources().getColor(R.color.white));
+            foodNameTextView.setTextColor(getResources().getColor(R.color.colorDarkGrey));
+            priceTextView.setTextColor(getResources().getColor(R.color.lightOrange));
+            separatorTextView.setBackgroundColor(getResources().getColor(R.color.colorGrey));
+            itemPurpleRatingBar.setVisibility(VISIBLE);
+            itemWhiteRatingBar.setVisibility(INVISIBLE);
+        }
     }
 }
