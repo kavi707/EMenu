@@ -8,7 +8,10 @@ import android.util.Log;
 import android.view.Display;
 
 import com.kavi.droid.emenu.models.CartItem;
+import com.kavi.droid.emenu.models.Category;
 import com.kavi.droid.emenu.models.FoodItem;
+import com.kavi.droid.emenu.models.Price;
+import com.kavi.droid.emenu.models.SubCategory;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -82,5 +85,96 @@ public class CommonUtils {
         }
 
         return totalAmt;
+    }
+
+    /**
+     * Generate Category object from given json string
+     * @param jsonString Json string
+     * @return Category Object
+     */
+    public Category getCategoryFromJsonString(String jsonString) {
+
+        Category category = null;
+
+        if (jsonString != null) {
+            try {
+                JSONObject categoryJsonObj = new JSONObject(jsonString);
+
+                category = new Category();
+                category.setId(categoryJsonObj.getString("CategoryId"));
+                category.setCategoryName(categoryJsonObj.getString("CategoryName"));
+                category.setCategoryImageUrl(categoryJsonObj.getString("iconUrl"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return category;
+    }
+
+    /**
+     * Generate SubCategory object from given json string
+     * @param jsonString Json string
+     * @return SubCategory Object
+     */
+    public SubCategory getSubCategoryFromJsonString(String jsonString) {
+
+        SubCategory subCategory = null;
+        if (jsonString != null) {
+            try {
+                JSONObject subCategoryJsonObj = new JSONObject(jsonString);
+
+                subCategory = new SubCategory();
+                subCategory.setId(subCategoryJsonObj.getString("SubCategoryId"));
+                subCategory.setSubCategoryName(subCategoryJsonObj.getString("SubCatName"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return subCategory;
+    }
+
+    /**
+     * Generate FoodItem Object from given json string
+     * @param jsonString Json string
+     * @return FoodItem Object
+     */
+    public FoodItem getFoodItemFromJsonString(String jsonString) {
+
+        FoodItem sampleFoodItem = null;
+        if (jsonString != null) {
+            try {
+                JSONObject jsonData = new JSONObject(jsonString);
+
+                sampleFoodItem = new FoodItem();
+                sampleFoodItem.setId(jsonData.getString("ItemCode"));
+                sampleFoodItem.setName(jsonData.getString("ItemName"));
+                sampleFoodItem.setDescription(jsonData.getString("Description"));
+
+                sampleFoodItem.setCategoryId(jsonData.getString("MainCategoryId"));
+                String categoryJsonString = jsonData.getString("MainCategory");
+                sampleFoodItem.setCategory(getCategoryFromJsonString(categoryJsonString));
+
+                sampleFoodItem.setSubCategoryId(jsonData.getString("SubcategoryId"));
+                String subCategoryJsonString = jsonData.getString("Subcategory");
+                sampleFoodItem.setSubCategory(getSubCategoryFromJsonString(subCategoryJsonString));
+
+                sampleFoodItem.setImgUrl(jsonData.getString("ImageUrl"));
+                sampleFoodItem.setThumbImgUrlOne(jsonData.getString("ThumbImgUrlOne"));
+                sampleFoodItem.setThumbImgUrlTwo(jsonData.getString("ThumbImgUrlTwo"));
+
+                JSONObject priceJsonObj = jsonData.getJSONObject("Price");
+                Price price = new Price();
+                price.setSmallPrice(priceJsonObj.getDouble("Small"));
+                price.setMediumPrice(priceJsonObj.getDouble("Medium"));
+                price.setLargePrice(priceJsonObj.getDouble("Large"));
+                sampleFoodItem.setItemPrices(price);
+
+                sampleFoodItem.setRating(jsonData.getInt("Rating"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return sampleFoodItem;
     }
 }

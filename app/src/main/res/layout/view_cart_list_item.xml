@@ -123,17 +123,35 @@
                 android:textSize="18dp" />
 
             <TextView
-                android:id="@+id/cartItemDescriptionTextView"
+                android:id="@+id/cartItemCategoryTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/cartItemNameTextView"
                 android:layout_marginTop="5dp"
-                android:text="Item Comments"
-                android:textSize="14dp" />
+                android:text="CATEGORY"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:padding="1dp"
+                android:background="@color/alphaLightPurple"/>
+
+            <TextView
+                android:text="SUB-CATEGORY"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:padding="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/alphaLightPurple"
+                android:id="@+id/cartItemSubCategoryTextView"
+                android:layout_marginLeft="5dp"
+                android:layout_alignBaseline="@+id/cartItemCategoryTextView"
+                android:layout_alignBottom="@+id/cartItemCategoryTextView"
+                android:layout_toRightOf="@+id/cartItemCategoryTextView"
+                android:layout_toEndOf="@+id/cartItemCategoryTextView" />
 
         </RelativeLayout>
 

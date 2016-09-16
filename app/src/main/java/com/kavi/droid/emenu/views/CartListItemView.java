@@ -20,7 +20,8 @@ public class CartListItemView extends RelativeLayout {
     private ImageView cartListItemImageView;
     private TextView cartListItemQtyTextView;
     private TextView cartItemNameTextView;
-    private TextView cartItemDescriptionTextView;
+    private TextView cartItemCategoryTextView;
+    private TextView cartItemSubCategoryTextView;
     private TextView cartItemAmountTextView;
     private TextView cartItemPortionTextView;
     private TextView alphaLabelTextView;
@@ -39,7 +40,8 @@ public class CartListItemView extends RelativeLayout {
         cartListItemImageView = (ImageView) findViewById(R.id.cartListItemImageView);
         cartListItemQtyTextView = (TextView) findViewById(R.id.cartListItemQtyTextView);
         cartItemNameTextView = (TextView) findViewById(R.id.cartItemNameTextView);
-        cartItemDescriptionTextView = (TextView) findViewById(R.id.cartItemDescriptionTextView);
+        cartItemCategoryTextView = (TextView) findViewById(R.id.cartItemCategoryTextView);
+        cartItemSubCategoryTextView = (TextView) findViewById(R.id.cartItemSubCategoryTextView);
         cartItemAmountTextView = (TextView) findViewById(R.id.cartItemAmountTextView);
         cartItemPortionTextView = (TextView) findViewById(R.id.cartItemPortionTextView);
         alphaLabelTextView = (TextView) findViewById(R.id.alphaLabelTextView);
@@ -53,12 +55,8 @@ public class CartListItemView extends RelativeLayout {
         this.cartItem = cartItem;
 
         cartItemNameTextView.setText(cartItem.getName());
-        if (cartItem.getComments() != null && !cartItem.getComments().equals("")) {
-            cartItemDescriptionTextView.setVisibility(VISIBLE);
-            cartItemDescriptionTextView.setText(cartItem.getComments());
-        } else {
-            cartItemDescriptionTextView.setVisibility(INVISIBLE);
-        }
+        cartItemCategoryTextView.setText(cartItem.getFoodItem().getCategory().getCategoryName());
+        cartItemSubCategoryTextView.setText(cartItem.getFoodItem().getSubCategory().getSubCategoryName());
         cartListItemQtyTextView.setText("x" + String.valueOf(cartItem.getQty()));
         cartItemAmountTextView.setText(String.valueOf((int)cartItem.getAmount()));
 

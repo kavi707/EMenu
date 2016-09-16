@@ -248,16 +248,9 @@ public class FoodMenuActivity extends AppCompatActivity {
         String jsonString = loadJsonStringFromAssets("category_items.json");
         try {
             JSONArray jsonArray = new JSONArray(jsonString);
-            JSONObject jsonData;
             Category sampleCategory;
             for (int i = 0; i < jsonArray.length(); i++) {
-                jsonData = jsonArray.getJSONObject(i);
-
-                sampleCategory = new Category();
-                sampleCategory.setId(jsonData.getString("CategoryId"));
-                sampleCategory.setCategoryName(jsonData.getString("CategoryName"));
-                sampleCategory.setCategoryImageUrl(jsonData.getString("iconUrl"));
-
+                sampleCategory = commonUtils.getCategoryFromJsonString(jsonArray.getString(i));
                 allCategoryList.add(sampleCategory);
             }
 
@@ -272,28 +265,9 @@ public class FoodMenuActivity extends AppCompatActivity {
         String jsonString = loadJsonStringFromAssets("food_items.json");
         try {
             JSONArray jsonArray = new JSONArray(jsonString);
-            JSONObject jsonData;
             FoodItem sampleFoodItem;
             for (int i = 0; i < jsonArray.length(); i++) {
-                jsonData = jsonArray.getJSONObject(i);
-
-                sampleFoodItem = new FoodItem();
-                sampleFoodItem.setId(jsonData.getString("ItemCode"));
-                sampleFoodItem.setName(jsonData.getString("ItemName"));
-                sampleFoodItem.setDescription(jsonData.getString("Description"));
-                sampleFoodItem.setCategoryId(jsonData.getString("MainCategoryId"));
-                sampleFoodItem.setImgUrl(jsonData.getString("ImageUrl"));
-                sampleFoodItem.setThumbImgUrlOne(jsonData.getString("ThumbImgUrlOne"));
-                sampleFoodItem.setThumbImgUrlTwo(jsonData.getString("ThumbImgUrlTwo"));
-
-                JSONObject priceJsonObj = jsonData.getJSONObject("Price");
-                Price price = new Price();
-                price.setSmallPrice(priceJsonObj.getDouble("Small"));
-                price.setMediumPrice(priceJsonObj.getDouble("Medium"));
-                price.setLargePrice(priceJsonObj.getDouble("Large"));
-                sampleFoodItem.setItemPrices(price);
-
-                sampleFoodItem.setRating(jsonData.getInt("Rating"));
+                sampleFoodItem = commonUtils.getFoodItemFromJsonString(jsonArray.getString(i));
 
                 allFoodItemList.add(sampleFoodItem);
             }

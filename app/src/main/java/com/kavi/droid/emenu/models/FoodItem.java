@@ -11,7 +11,9 @@ public class FoodItem {
     private String description;
     private int rating;
     private String categoryId;
-    private String option; // VEG/CHICKEN/FISH
+    private Category category;
+    private String subCategoryId;
+    private SubCategory subCategory;
     private Price itemPrices;
     private String thumbImgUrlOne;
     private String thumbImgUrlTwo;
@@ -58,12 +60,28 @@ public class FoodItem {
         this.categoryId = categoryId;
     }
 
-    public String getOption() {
-        return option;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setOption(String option) {
-        this.option = option;
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public String getSubCategoryId() {
+        return subCategoryId;
+    }
+
+    public void setSubCategoryId(String subCategoryId) {
+        this.subCategoryId = subCategoryId;
+    }
+
+    public SubCategory getSubCategory() {
+        return subCategory;
+    }
+
+    public void setSubCategory(SubCategory subCategory) {
+        this.subCategory = subCategory;
     }
 
     public Price getItemPrices() {
