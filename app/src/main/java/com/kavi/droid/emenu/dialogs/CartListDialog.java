@@ -60,7 +60,7 @@ public class CartListDialog extends Dialog {
 
     // Callback Interface
     public interface OnCartListDialogResult {
-        void updatedItemCart(boolean isItemCartUpdated);
+        void updatedItemCart(boolean isItemCartUpdated, boolean isPlacedOrder);
     }
 
     public void setCartListDialogResult (OnCartListDialogResult dialogResult) {
@@ -102,7 +102,7 @@ public class CartListDialog extends Dialog {
                                 totalAmtTextView.setText("Rs. " + String.valueOf((int)commonUtils.getItemTotalAmt()));
 
                                 // Notify cart update
-                                mCartListDialogResult.updatedItemCart(true);
+                                mCartListDialogResult.updatedItemCart(true, false);
                             }
                         })
                         .setNegativeButton("NO", new OnClickListener() {
@@ -119,8 +119,14 @@ public class CartListDialog extends Dialog {
         placeOrderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "YOU HAVE SUCCESSFULLY PLACED THE ORDER", Toast.LENGTH_LONG).show();
-                changeCartItemStatus();
+                if (!CommonUtils.selectedCartItemList.isEmpty()) {
+                    Toast.makeText(context, "YOU HAVE SUCCESSFULLY PLACED THE ORDER", Toast.LENGTH_LONG).show();
+                    changeCartItemStatus();
+                    // Notify cart update
+                    mCartListDialogResult.updatedItemCart(true, true);
+                } else {
+                    Toast.makeText(context, "PLEASE SELECT ITEMS FROM MENU TO PLACE AN ORDER", Toast.LENGTH_LONG).show();
+                }
                 dismiss();
             }
         });

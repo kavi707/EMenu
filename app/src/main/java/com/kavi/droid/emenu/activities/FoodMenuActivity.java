@@ -1,5 +1,6 @@
 package com.kavi.droid.emenu.activities;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -15,12 +16,18 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -59,6 +66,9 @@ public class FoodMenuActivity extends AppCompatActivity {
     private TextView tableNumTextView;
     private TextView seatedTextView;
     private TextView orderAmtTextView;
+    private SeekBar rightArrowSeekBar;
+    private LinearLayout orderConfirmLinearLayout;
+    private ImageView viewOrderArrowImageView;
 
     private Context context = this;
 
@@ -68,6 +78,9 @@ public class FoodMenuActivity extends AppCompatActivity {
     private List<FoodItem> foodItemList = new ArrayList<>(); // showing food items list in the grid
     private CommonUtils commonUtils = new CommonUtils();
     private boolean colorChangeBool = true;
+    private int animatorInterval = 5000;
+    private Handler mAnimationHandler;
+    private boolean isAnimatorRunning = false;
 
     private FoodGridItemAdapter foodGridItemAdapter;
     private CategoryListItemAdapter categoryListItemAdapter;
@@ -85,10 +98,31 @@ public class FoodMenuActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        if (!CommonUtils.selectedCartItemList.isEmpty()) {
+            orderConfirmLinearLayout.setVisibility(View.INVISIBLE);
+            viewOrderArrowImageView.setVisibility(View.INVISIBLE);
+            startShowCartAnimation();
+        } else {
+            orderConfirmLinearLayout.setVisibility(View.VISIBLE);
+            viewOrderArrowImageView.setVisibility(View.VISIBLE);
+            rightArrowSeekBar.setVisibility(View.INVISIBLE);
+            stopShowCartAnimation();
+        }
+    }
+
+    @Override
     protected void onStop() {
         super.onStop();
         if (newTimer != null)
             newTimer.cancel();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        stopShowCartAnimation();
     }
 
     private void extractIntentExtras(Bundle savedInstanceState) {
@@ -125,9 +159,15 @@ public class FoodMenuActivity extends AppCompatActivity {
         tableNumTextView = (TextView) findViewById(R.id.tableNumTextView);
         seatedTextView = (TextView) findViewById(R.id.seatedTextView);
         orderAmtTextView = (TextView) findViewById(R.id.orderAmtTextView);
+        rightArrowSeekBar = (SeekBar) findViewById(R.id.rightArrowSeekBar);
+        orderConfirmLinearLayout = (LinearLayout) findViewById(R.id.orderConfirmLinearLayout);
+        viewOrderArrowImageView = (ImageView) findViewById(R.id.viewOrderArrowImageView);
 
         tableNumTextView.setText("TABLE " + selectedTableNumber);
         showsCurrentTime();
+
+        // Initiate animation handler
+        mAnimationHandler = new Handler();
 
         deviceDimensions = commonUtils.getDeviceWidthAndHeight(FoodMenuActivity.this);
         Log.d("Width", String.valueOf(deviceDimensions.get("width")));
@@ -141,6 +181,9 @@ public class FoodMenuActivity extends AppCompatActivity {
 
         // Initiate first load food grid view
         initFoodItemGrid();
+
+        orderConfirmLinearLayout.setVisibility(View.INVISIBLE);
+        rightArrowSeekBar.setEnabled(false);
 
         categoryListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -175,6 +218,17 @@ public class FoodMenuActivity extends AppCompatActivity {
                             orderAmtTextView.setText("NET TOTAL Rs. " + (int) commonUtils.getItemTotalAmt());
                             // Refresh the grid view
                             loadFoodItemGridView(foodItemList);
+
+                            if (!CommonUtils.selectedCartItemList.isEmpty()) {
+                                orderConfirmLinearLayout.setVisibility(View.INVISIBLE);
+                                viewOrderArrowImageView.setVisibility(View.INVISIBLE);
+                                startShowCartAnimation();
+                            } else {
+                                orderConfirmLinearLayout.setVisibility(View.VISIBLE);
+                                viewOrderArrowImageView.setVisibility(View.VISIBLE);
+                                rightArrowSeekBar.setVisibility(View.INVISIBLE);
+                                stopShowCartAnimation();
+                            }
                         }
                     }
                 });
@@ -194,10 +248,17 @@ public class FoodMenuActivity extends AppCompatActivity {
                 CartListDialog cartListDialog = new CartListDialog(context);
                 cartListDialog.setCartListDialogResult(new CartListDialog.OnCartListDialogResult() {
                     @Override
-                    public void updatedItemCart(boolean isItemCartUpdated) {
+                    public void updatedItemCart(boolean isItemCartUpdated, boolean isPlacedOrder) {
                         if (isItemCartUpdated) {
                             // Refresh the grid view
                             loadFoodItemGridView(foodItemList);
+                        }
+
+                        if (isPlacedOrder) {
+                            orderConfirmLinearLayout.setVisibility(View.VISIBLE);
+                            viewOrderArrowImageView.setVisibility(View.VISIBLE);
+                            rightArrowSeekBar.setVisibility(View.INVISIBLE);
+                            stopShowCartAnimation();
                         }
                     }
                 });
@@ -321,26 +382,119 @@ public class FoodMenuActivity extends AppCompatActivity {
     }
 
     /**
-     * Change the background color of the place order background
-     * @param fromToColor changing sequence
+     * Repeat the animation after given interval
      */
-    private void changePlaceOrderLayoutColor(int fromToColor) {
-
-        TransitionDrawable transitionDrawable;
-        if (fromToColor == Constants.LIGHT_TO_DARK) {
-            ColorDrawable[] colorDrawables = {new ColorDrawable(getResources().getColor(R.color.lightGreen)),
-                    new ColorDrawable(getResources().getColor(R.color.darkGreen))};
-
-            transitionDrawable = new TransitionDrawable(colorDrawables);
-            greenRelativeLayout.setBackgroundDrawable(transitionDrawable);
-            transitionDrawable.startTransition(5000);
-        } else if (fromToColor == Constants.DARK_TO_LIGHT) {
-            ColorDrawable[] colorDrawables = {new ColorDrawable(getResources().getColor(R.color.darkGreen)),
-                    new ColorDrawable(getResources().getColor(R.color.lightGreen))};
-
-            transitionDrawable = new TransitionDrawable(colorDrawables);
-            greenRelativeLayout.setBackgroundDrawable(transitionDrawable);
-            transitionDrawable.startTransition(5000);
+    private Runnable animationRunnable = new Runnable() {
+        @Override
+        public void run() {
+            try {
+                isAnimatorRunning = true;
+                seekBarAnimation();
+                fadeInAndShow();
+            } catch (Exception e) {
+                isAnimatorRunning = false;
+            } finally {
+                mAnimationHandler.postDelayed(animationRunnable, animatorInterval);
+            }
         }
+    };
+
+    /**
+     * Start the animation
+     */
+    private void startShowCartAnimation() {
+        if (!isAnimatorRunning) {
+            animationRunnable.run();
+        }
+    }
+
+    /**
+     * Stop the animation
+     */
+    private void stopShowCartAnimation() {
+        if (isAnimatorRunning) {
+            mAnimationHandler.removeCallbacks(animationRunnable);
+        }
+        isAnimatorRunning = false;
+    }
+
+    /**
+     * Do the animation from left to right
+     */
+    private void seekBarAnimation() {
+
+        rightArrowSeekBar.setVisibility(View.VISIBLE);
+
+        ValueAnimator anim = ValueAnimator.ofInt(-500, 1000);
+        anim.setDuration(2000);
+        final SeekBar givenSeekBar = rightArrowSeekBar;
+        anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                int animProgress = (Integer) animation.getAnimatedValue();
+                givenSeekBar.setProgress(animProgress);
+            }
+        });
+        anim.start();
+    }
+
+    /**
+     * Fade In and show the Order Confirmation Label
+     */
+    private void fadeInAndShow() {
+        Animation fadeIn = new AlphaAnimation(0, 1);
+        fadeIn.setInterpolator(new AccelerateInterpolator());
+        fadeIn.setDuration(2000);
+
+        fadeIn.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                orderConfirmLinearLayout.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                orderConfirmLinearLayout.setVisibility(View.VISIBLE);
+                //fadeOutAndHide();
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // At repeat animation
+            }
+        });
+
+        orderConfirmLinearLayout.startAnimation(fadeIn);
+    }
+
+    /**
+     * Fade out and hide the Order Confirmation Label
+     */
+    private void fadeOutAndHide() {
+
+        Animation fadeOut = new AlphaAnimation(1, 0);
+        fadeOut.setInterpolator(new AccelerateInterpolator());
+        fadeOut.setDuration(1000);
+
+        fadeOut.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                // At start animation
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                rightArrowSeekBar.setVisibility(View.INVISIBLE);
+                orderConfirmLinearLayout.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+                // At repeat animation
+            }
+        });
+
+        rightArrowSeekBar.startAnimation(fadeOut);
+        orderConfirmLinearLayout.startAnimation(fadeOut);
     }
 }

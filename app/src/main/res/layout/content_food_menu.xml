@@ -70,8 +70,10 @@
                         android:layout_alignParentEnd="true">
 
                         <LinearLayout
+                            android:id="@+id/orderConfirmLinearLayout"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:animateLayoutChanges="true"
                             android:gravity="center"
                             android:orientation="horizontal"
                             android:layout_centerVertical="true"
@@ -103,11 +105,26 @@
                             </LinearLayout>
 
                             <ImageView
+                                android:id="@+id/viewOrderArrowImageView"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:src="@drawable/icon_view_order_arrow"
+                                android:src="@drawable/icon_view_order_arrow_small"
                                 android:layout_marginLeft="5dp"/>
                         </LinearLayout>
+
+                        <SeekBar
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_alignLeft="@+id/orderConfirmLinearLayout"
+                            android:layout_alignStart="@+id/orderConfirmLinearLayout"
+                            android:layout_alignTop="@+id/orderConfirmLinearLayout"
+                            android:layout_alignRight="@+id/orderConfirmLinearLayout"
+                            android:layout_alignEnd="@+id/orderConfirmLinearLayout"
+                            android:progressDrawable="@android:color/transparent"
+                            android:thumb="@drawable/icon_view_order_arrow_small"
+                            android:layout_gravity="center_vertical"
+                            android:max="1000"
+                            android:id="@+id/rightArrowSeekBar"/>
                     </RelativeLayout>
 
                     <RelativeLayout
