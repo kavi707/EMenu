@@ -71,6 +71,8 @@ public class CartListItemView extends RelativeLayout {
             cartItemPortionTextView.setText("MEDIUM");
         } else if (cartItem.getPortion() == Constants.ITEM_PORTION_LARGE) {
             cartItemPortionTextView.setText("LARGE");
+        } else if (cartItem.getPortion() == Constants.ITEM_PORTION_NOT_AVAILABLE) {
+            cartItemPortionTextView.setText(null);
         }
 
         switch (cartItem.getState()) {

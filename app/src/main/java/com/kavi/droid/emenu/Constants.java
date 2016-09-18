@@ -20,6 +20,7 @@ public class Constants {
     public static final int CREATE_USER = 102;
     public static final int UPDATE_USER = 103;
 
+    public static final int ITEM_PORTION_NOT_AVAILABLE = 0;
     public static final int ITEM_PORTION_SMALL = 1;
     public static final int ITEM_PORTION_MEDIUM = 2;
     public static final int ITEM_PORTION_LARGE = 3;

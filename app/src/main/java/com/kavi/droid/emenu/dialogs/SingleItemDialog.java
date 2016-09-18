@@ -50,6 +50,7 @@ public class SingleItemDialog extends Dialog {
 
     private int qty = 1;
     private int itemPortion = Constants.ITEM_PORTION_SMALL;
+    private boolean isSizeAvailable = false;
     private CommonUtils commonUtils = new CommonUtils();
 
     public SingleItemDialog(Context context) {
@@ -99,6 +100,17 @@ public class SingleItemDialog extends Dialog {
         itemDescriptionTextView.setText(foodItem.getDescription());
         amountTextView.setText("Rs. " + (int)foodItem.getItemPrices().getSmallPrice());
         qtyTextView.setText(qty + "X");
+
+        if (foodItem.getItemPrices().getSmallPrice() == foodItem.getItemPrices().getMediumPrice()
+                && foodItem.getItemPrices().getMediumPrice() == foodItem.getItemPrices().getLargePrice()) {
+            isSizeAvailable = false;
+
+            smallRadioLinearLayout.setVisibility(View.GONE);
+            mediumRadioLinearLayout.setVisibility(View.GONE);
+            largeRadioLinearLayout.setVisibility(View.GONE);
+        } else {
+            isSizeAvailable = true;
+        }
 
         plusImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -249,7 +261,10 @@ public class SingleItemDialog extends Dialog {
                 cartItem.setName(foodItem.getName());
                 cartItem.setAmount(foodItem.getItemPrices().getSmallPrice() * qty);
                 cartItem.setImageUrl(foodItem.getThumbImgUrlTwo());
-                cartItem.setPortion(itemPortion);
+                if (isSizeAvailable)
+                    cartItem.setPortion(itemPortion);
+                else
+                    cartItem.setPortion(Constants.ITEM_PORTION_NOT_AVAILABLE);
                 cartItem.setQty(qty);
                 cartItem.setState(Constants.CART_ITEM_STATE_NEW);
                 cartItem.setFoodItem(foodItem);
