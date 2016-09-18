@@ -160,6 +160,32 @@ public class CartListItemView extends RelativeLayout {
             cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_034));
         else if (cartItem.getImageUrl().equals("img_cart_itm_035"))
             cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_035));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_036"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_036));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_037"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_037));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_038"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_038));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_039"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_039));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_040"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_040));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_041"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_041));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_042"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_042));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_043"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_043));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_044"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_044));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_045"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_045));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_046"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_046));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_047"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_047));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_048"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_048));
         else
             cartListItemImageView.setImageDrawable(null);
     }

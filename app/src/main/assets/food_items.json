@@ -908,5 +908,343 @@
     "ThumbImgUrlOne":"img_itm_035",
     "ThumbImgUrlTwo":"img_cart_itm_035",
     "ImageUrl":"img_itm_full_035"
+  },
+  {
+    "ItemCode":"ITM0036",
+    "ItemName":"Darjeeling Tea",
+    "Description":"When a legend enters the French Press, things can get exciting. Darjeeling tea is light-bodied with a great floral aroma and subtle hints of spice. Can be served either with milk or lemon.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":320,
+      "Medium":320,
+      "Large":320
+    },
+    "MainCategoryId":"MCAT009",
+    "MainCategory": {
+      "CategoryId":"MCAT009",
+      "CategoryName":"Beverage",
+      "iconUrl":"icon_category_beverage"
+    },
+    "SubcategoryId":"SCAT001",
+    "Subcategory" :{
+      "SubCategoryId":"SCAT001",
+      "SubCatName":"Vegetarian"
+    },
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_036",
+    "ThumbImgUrlTwo":"img_cart_itm_036",
+    "ImageUrl":"img_itm_full_036"
+  },
+  {
+    "ItemCode":"ITM0037",
+    "ItemName":"Aztec",
+    "Description":"A delightful American coffee blend. International gourmet blends. A double shot of espresso brewed from a blend of imported coffee beans topped with steamed and foamed milk.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":670,
+      "Medium":670,
+      "Large":670
+    },
+    "MainCategoryId":"MCAT009",
+    "MainCategory": {
+      "CategoryId":"MCAT009",
+      "CategoryName":"Beverage",
+      "iconUrl":"icon_category_beverage"
+    },
+    "SubcategoryId":"SCAT001",
+    "Subcategory" :{
+      "SubCategoryId":"SCAT001",
+      "SubCatName":"Vegetarian"
+    },
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_037",
+    "ThumbImgUrlTwo":"img_cart_itm_037",
+    "ImageUrl":"img_itm_full_037"
+  },
+  {
+    "ItemCode":"ITM0038",
+    "ItemName":"Strawberry Lemonade",
+    "Description":"Luscious strawberry lemonade with flavourful basil seeds. Refreshing lemon drinks that make for the perfect sip, when you are chillin'.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":550,
+      "Medium":550,
+      "Large":550
+    },
+    "MainCategoryId":"MCAT009",
+    "MainCategory": {
+      "CategoryId":"MCAT009",
+      "CategoryName":"Beverage",
+      "iconUrl":"icon_category_beverage"
+    },
+    "SubcategoryId":"SCAT001",
+    "Subcategory" :{
+      "SubCategoryId":"SCAT001",
+      "SubCatName":"Vegetarian"
+    },
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_038",
+    "ThumbImgUrlTwo":"img_cart_itm_038",
+    "ImageUrl":"img_itm_full_038"
+  },
+  {
+    "ItemCode":"ITM0039",
+    "ItemName":"Strawberry Blast Slush",
+    "Description":"The seduction of strawberries blended with the goodness of pomegranates. Chilled to your idea of perfection.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":560,
+      "Medium":560,
+      "Large":560
+    },
+    "MainCategoryId":"MCAT009",
+    "MainCategory": {
+      "CategoryId":"MCAT009",
+      "CategoryName":"Beverage",
+      "iconUrl":"icon_category_beverage"
+    },
+    "SubcategoryId":"SCAT001",
+    "Subcategory" :{
+      "SubCategoryId":"SCAT001",
+      "SubCatName":"Vegetarian"
+    },
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_039",
+    "ThumbImgUrlTwo":"img_cart_itm_039",
+    "ImageUrl":"img_itm_full_039"
+  },
+  {
+    "ItemCode":"ITM0040",
+    "ItemName":"Hazelnut Cappuccino",
+    "Description":"Go nuts with the rich and smooth essence of hazelnut.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":450,
+      "Medium":450,
+      "Large":450
+    },
+    "MainCategoryId":"MCAT009",
+    "MainCategory": {
+      "CategoryId":"MCAT009",
+      "CategoryName":"Beverage",
+      "iconUrl":"icon_category_beverage"
+    },
+    "SubcategoryId":"SCAT001",
+    "Subcategory" :{
+      "SubCategoryId":"SCAT001",
+      "SubCatName":"Vegetarian"
+    },
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_040",
+    "ThumbImgUrlTwo":"img_cart_itm_040",
+    "ImageUrl":"img_itm_full_040"
+  },
+  {
+    "ItemCode":"ITM0041",
+    "ItemName":"Coka Coka",
+    "Description":"Glass Of Coke",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":200,
+      "Medium":200,
+      "Large":200
+    },
+    "MainCategoryId":"MCAT009",
+    "MainCategory": {
+      "CategoryId":"MCAT009",
+      "CategoryName":"Beverage",
+      "iconUrl":"icon_category_beverage"
+    },
+    "SubcategoryId":"SCAT001",
+    "Subcategory" :{
+      "SubCategoryId":"SCAT001",
+      "SubCatName":"Vegetarian"
+    },
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_041",
+    "ThumbImgUrlTwo":"img_cart_itm_041",
+    "ImageUrl":"img_itm_full_041"
+  },
+  {
+    "ItemCode":"ITM0042",
+    "ItemName":"Fanta",
+    "Description":"Glass Of Fanta",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":200,
+      "Medium":200,
+      "Large":200
+    },
+    "MainCategoryId":"MCAT009",
+    "MainCategory": {
+      "CategoryId":"MCAT009",
+      "CategoryName":"Beverage",
+      "iconUrl":"icon_category_beverage"
+    },
+    "SubcategoryId":"SCAT001",
+    "Subcategory" :{
+      "SubCategoryId":"SCAT001",
+      "SubCatName":"Vegetarian"
+    },
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_042",
+    "ThumbImgUrlTwo":"img_cart_itm_042",
+    "ImageUrl":"img_itm_full_042"
+  },
+  {
+    "ItemCode":"ITM0043",
+    "ItemName":"Sprite",
+    "Description":"Glass Of Sprite",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":200,
+      "Medium":200,
+      "Large":200
+    },
+    "MainCategoryId":"MCAT009",
+    "MainCategory": {
+      "CategoryId":"MCAT009",
+      "CategoryName":"Beverage",
+      "iconUrl":"icon_category_beverage"
+    },
+    "SubcategoryId":"SCAT001",
+    "Subcategory" :{
+      "SubCategoryId":"SCAT001",
+      "SubCatName":"Vegetarian"
+    },
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_043",
+    "ThumbImgUrlTwo":"img_cart_itm_043",
+    "ImageUrl":"img_itm_full_043"
+  },
+  {
+    "ItemCode":"ITM0044",
+    "ItemName":"Classic Vanilla Cheesecake",
+    "Description":"If your sweet tooth deserves a dessert, grab a fork or spoon right now. With 4 different pies including Lemon Meringue, Coconut Cream, Apple and Pecan, not to mention ice-cream sundaes and more, there’s certainly plenty to tempt you.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":780,
+      "Medium":780,
+      "Large":780
+    },
+    "MainCategoryId":"MCAT008",
+    "MainCategory": {
+      "CategoryId":"MCAT008",
+      "CategoryName":"Desserts",
+      "iconUrl":"icon_category_dessert"
+    },
+    "SubcategoryId":"SCAT001",
+    "Subcategory" :{
+      "SubCategoryId":"SCAT001",
+      "SubCatName":"Vegetarian"
+    },
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_044",
+    "ThumbImgUrlTwo":"img_cart_itm_044",
+    "ImageUrl":"img_itm_full_044"
+  },
+  {
+    "ItemCode":"ITM0045",
+    "ItemName":"Fudge Cake",
+    "Description":"Decadent layers of moist cake with smooth fudge icing.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":670,
+      "Medium":670,
+      "Large":670
+    },
+    "MainCategoryId":"MCAT008",
+    "MainCategory": {
+      "CategoryId":"MCAT008",
+      "CategoryName":"Desserts",
+      "iconUrl":"icon_category_dessert"
+    },
+    "SubcategoryId":"SCAT001",
+    "Subcategory" :{
+      "SubCategoryId":"SCAT001",
+      "SubCatName":"Vegetarian"
+    },
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_045",
+    "ThumbImgUrlTwo":"img_cart_itm_045",
+    "ImageUrl":"img_itm_full_045"
+  },
+  {
+    "ItemCode":"ITM0046",
+    "ItemName":"Stuffed Cinnamon Donuts",
+    "Description":"Crispy toast brushed with garlic, butter, and herbs.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":900,
+      "Medium":900,
+      "Large":900
+    },
+    "MainCategoryId":"MCAT008",
+    "MainCategory": {
+      "CategoryId":"MCAT008",
+      "CategoryName":"Desserts",
+      "iconUrl":"icon_category_dessert"
+    },
+    "SubcategoryId":"SCAT001",
+    "Subcategory" :{
+      "SubCategoryId":"SCAT001",
+      "SubCatName":"Vegetarian"
+    },
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_046",
+    "ThumbImgUrlTwo":"img_cart_itm_046",
+    "ImageUrl":"img_itm_full_046"
+  },
+  {
+    "ItemCode":"ITM0047",
+    "ItemName":"Ice Cream",
+    "Description":"Ice Cream! What more do we need to say? Choose between chocolate or vanilla, and you’re ready to rock. Available dine-in only (because our delivery cars don’t have freezers), we’re ready when you are.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":800,
+      "Medium":800,
+      "Large":800
+    },
+    "MainCategoryId":"MCAT008",
+    "MainCategory": {
+      "CategoryId":"MCAT008",
+      "CategoryName":"Desserts",
+      "iconUrl":"icon_category_dessert"
+    },
+    "SubcategoryId":"SCAT001",
+    "Subcategory" :{
+      "SubCategoryId":"SCAT001",
+      "SubCatName":"Vegetarian"
+    },
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_047",
+    "ThumbImgUrlTwo":"img_cart_itm_047",
+    "ImageUrl":"img_itm_full_047"
+  },
+  {
+    "ItemCode":"ITM0048",
+    "ItemName":"Coconut Cream Pie",
+    "Description":"Sometimes you just have to have pie. Not that mathematical type, but light, fluffy Coconut Cream Pie. And we can help you with that. It's the least we could do.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":990,
+      "Medium":990,
+      "Large":990
+    },
+    "MainCategoryId":"MCAT008",
+    "MainCategory": {
+      "CategoryId":"MCAT008",
+      "CategoryName":"Desserts",
+      "iconUrl":"icon_category_dessert"
+    },
+    "SubcategoryId":"SCAT001",
+    "Subcategory" :{
+      "SubCategoryId":"SCAT001",
+      "SubCatName":"Vegetarian"
+    },
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_048",
+    "ThumbImgUrlTwo":"img_cart_itm_048",
+    "ImageUrl":"img_itm_full_048"
   }
 ]
