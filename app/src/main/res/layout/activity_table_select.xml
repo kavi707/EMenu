@@ -21,7 +21,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Select Table Number"
+                android:text="Please Select Your Table Number"
                 android:textColor="@color/white"
                 android:textSize="30dp"
                 android:layout_marginLeft="30dp"
@@ -33,10 +33,9 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_above="@+id/continueBtn"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="20dp"
+            android:layout_alignParentBottom="true"
             android:gravity="center"
             android:id="@+id/recycleRelativeLayout"
             android:layout_below="@+id/headerRelativeLayout">
@@ -52,24 +51,9 @@
                 android:stretchMode="columnWidth"
                 android:verticalSpacing="20dp"
                 android:horizontalSpacing="20dp"
-                android:layout_marginTop="80dp"
                 android:layout_marginLeft="100dp"
                 android:layout_marginRight="100dp"
-                android:layout_marginBottom="10dp"
-                android:layout_alignParentBottom="true"
                 android:layout_alignParentTop="true" />
         </RelativeLayout>
-
-        <Button
-            android:layout_width="200dp"
-            android:layout_height="60dp"
-            android:text="Continue"
-            android:id="@+id/continueBtn"
-            android:background="@drawable/style_em_green_btn_round_corner"
-            android:textColor="@color/white"
-            android:textSize="23dp"
-            android:layout_marginBottom="30dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
     </RelativeLayout>
 </LinearLayout>

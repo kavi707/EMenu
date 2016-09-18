@@ -23,7 +23,6 @@ import java.util.List;
  */
 public class TableSelectActivity extends Activity {
 
-    private Button continueBtn;
     private GridView tableSelectGridView;
 
     private TableNumberGridItemAdapter tableNumberGridItemAdapter;
@@ -42,7 +41,6 @@ public class TableSelectActivity extends Activity {
 
     private void setUpViews() {
 
-        continueBtn = (Button) findViewById(R.id.continueBtn);
         tableSelectGridView = (GridView) findViewById(R.id.tableSelectGridView);
 
         loadTables();
@@ -51,12 +49,6 @@ public class TableSelectActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 selectedTableNumber = horizontalList.get(position);
-            }
-        });
-
-        continueBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
                 if (selectedTableNumber != null) {
                     Intent menuIntent = new Intent(TableSelectActivity.this, FoodMenuActivity.class);
                     menuIntent.putExtra("SELECTED_TABLE_NUMBER", selectedTableNumber);
@@ -88,8 +80,8 @@ public class TableSelectActivity extends Activity {
         horizontalList.add("16");
         horizontalList.add("17");
         horizontalList.add("18");
-        horizontalList.add("19");
-        horizontalList.add("20");
+        /*horizontalList.add("19");
+        horizontalList.add("20");*/
 
         tableNumberGridItemAdapter = new TableNumberGridItemAdapter(horizontalList, context);
         tableSelectGridView.setAdapter(tableNumberGridItemAdapter);
