@@ -56,7 +56,12 @@ public class CartListItemView extends RelativeLayout {
 
         cartItemNameTextView.setText(cartItem.getName());
         cartItemCategoryTextView.setText(cartItem.getFoodItem().getCategory().getCategoryName());
-        cartItemSubCategoryTextView.setText(cartItem.getFoodItem().getSubCategory().getSubCategoryName());
+        if (cartItem.getFoodItem().getSubCategory() != null) {
+            cartItemSubCategoryTextView.setVisibility(VISIBLE);
+            cartItemSubCategoryTextView.setText(cartItem.getFoodItem().getSubCategory().getSubCategoryName());
+        } else {
+            cartItemSubCategoryTextView.setVisibility(INVISIBLE);
+        }
         cartListItemQtyTextView.setText("x" + String.valueOf(cartItem.getQty()));
         cartItemAmountTextView.setText(String.valueOf((int)cartItem.getAmount()));
 

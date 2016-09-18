@@ -925,11 +925,8 @@
       "CategoryName":"Beverage",
       "iconUrl":"icon_category_beverage"
     },
-    "SubcategoryId":"SCAT001",
-    "Subcategory" :{
-      "SubCategoryId":"SCAT001",
-      "SubCatName":"Vegetarian"
-    },
+    "SubcategoryId":null,
+    "Subcategory" :null,
     "Rating":5,
     "ThumbImgUrlOne":"img_itm_036",
     "ThumbImgUrlTwo":"img_cart_itm_036",
@@ -951,11 +948,8 @@
       "CategoryName":"Beverage",
       "iconUrl":"icon_category_beverage"
     },
-    "SubcategoryId":"SCAT001",
-    "Subcategory" :{
-      "SubCategoryId":"SCAT001",
-      "SubCatName":"Vegetarian"
-    },
+    "SubcategoryId":null,
+    "Subcategory" :null,
     "Rating":5,
     "ThumbImgUrlOne":"img_itm_037",
     "ThumbImgUrlTwo":"img_cart_itm_037",
@@ -977,11 +971,8 @@
       "CategoryName":"Beverage",
       "iconUrl":"icon_category_beverage"
     },
-    "SubcategoryId":"SCAT001",
-    "Subcategory" :{
-      "SubCategoryId":"SCAT001",
-      "SubCatName":"Vegetarian"
-    },
+    "SubcategoryId":null,
+    "Subcategory" :null,
     "Rating":5,
     "ThumbImgUrlOne":"img_itm_038",
     "ThumbImgUrlTwo":"img_cart_itm_038",
@@ -1003,11 +994,8 @@
       "CategoryName":"Beverage",
       "iconUrl":"icon_category_beverage"
     },
-    "SubcategoryId":"SCAT001",
-    "Subcategory" :{
-      "SubCategoryId":"SCAT001",
-      "SubCatName":"Vegetarian"
-    },
+    "SubcategoryId":null,
+    "Subcategory" :null,
     "Rating":5,
     "ThumbImgUrlOne":"img_itm_039",
     "ThumbImgUrlTwo":"img_cart_itm_039",
@@ -1029,11 +1017,8 @@
       "CategoryName":"Beverage",
       "iconUrl":"icon_category_beverage"
     },
-    "SubcategoryId":"SCAT001",
-    "Subcategory" :{
-      "SubCategoryId":"SCAT001",
-      "SubCatName":"Vegetarian"
-    },
+    "SubcategoryId":null,
+    "Subcategory" :null,
     "Rating":5,
     "ThumbImgUrlOne":"img_itm_040",
     "ThumbImgUrlTwo":"img_cart_itm_040",
@@ -1055,11 +1040,8 @@
       "CategoryName":"Beverage",
       "iconUrl":"icon_category_beverage"
     },
-    "SubcategoryId":"SCAT001",
-    "Subcategory" :{
-      "SubCategoryId":"SCAT001",
-      "SubCatName":"Vegetarian"
-    },
+    "SubcategoryId":null,
+    "Subcategory" :null,
     "Rating":5,
     "ThumbImgUrlOne":"img_itm_041",
     "ThumbImgUrlTwo":"img_cart_itm_041",
@@ -1081,11 +1063,8 @@
       "CategoryName":"Beverage",
       "iconUrl":"icon_category_beverage"
     },
-    "SubcategoryId":"SCAT001",
-    "Subcategory" :{
-      "SubCategoryId":"SCAT001",
-      "SubCatName":"Vegetarian"
-    },
+    "SubcategoryId":null,
+    "Subcategory" :null,
     "Rating":5,
     "ThumbImgUrlOne":"img_itm_042",
     "ThumbImgUrlTwo":"img_cart_itm_042",
@@ -1107,11 +1086,8 @@
       "CategoryName":"Beverage",
       "iconUrl":"icon_category_beverage"
     },
-    "SubcategoryId":"SCAT001",
-    "Subcategory" :{
-      "SubCategoryId":"SCAT001",
-      "SubCatName":"Vegetarian"
-    },
+    "SubcategoryId":null,
+    "Subcategory" :null,
     "Rating":5,
     "ThumbImgUrlOne":"img_itm_043",
     "ThumbImgUrlTwo":"img_cart_itm_043",
@@ -1133,11 +1109,8 @@
       "CategoryName":"Desserts",
       "iconUrl":"icon_category_dessert"
     },
-    "SubcategoryId":"SCAT001",
-    "Subcategory" :{
-      "SubCategoryId":"SCAT001",
-      "SubCatName":"Vegetarian"
-    },
+    "SubcategoryId":null,
+    "Subcategory" :null,
     "Rating":5,
     "ThumbImgUrlOne":"img_itm_044",
     "ThumbImgUrlTwo":"img_cart_itm_044",
@@ -1159,11 +1132,8 @@
       "CategoryName":"Desserts",
       "iconUrl":"icon_category_dessert"
     },
-    "SubcategoryId":"SCAT001",
-    "Subcategory" :{
-      "SubCategoryId":"SCAT001",
-      "SubCatName":"Vegetarian"
-    },
+    "SubcategoryId":null,
+    "Subcategory" :null,
     "Rating":5,
     "ThumbImgUrlOne":"img_itm_045",
     "ThumbImgUrlTwo":"img_cart_itm_045",
@@ -1185,11 +1155,8 @@
       "CategoryName":"Desserts",
       "iconUrl":"icon_category_dessert"
     },
-    "SubcategoryId":"SCAT001",
-    "Subcategory" :{
-      "SubCategoryId":"SCAT001",
-      "SubCatName":"Vegetarian"
-    },
+    "SubcategoryId":null,
+    "Subcategory" :null,
     "Rating":5,
     "ThumbImgUrlOne":"img_itm_046",
     "ThumbImgUrlTwo":"img_cart_itm_046",
@@ -1211,11 +1178,8 @@
       "CategoryName":"Desserts",
       "iconUrl":"icon_category_dessert"
     },
-    "SubcategoryId":"SCAT001",
-    "Subcategory" :{
-      "SubCategoryId":"SCAT001",
-      "SubCatName":"Vegetarian"
-    },
+    "SubcategoryId":null,
+    "Subcategory" :null,
     "Rating":5,
     "ThumbImgUrlOne":"img_itm_047",
     "ThumbImgUrlTwo":"img_cart_itm_047",
@@ -1237,11 +1201,8 @@
       "CategoryName":"Desserts",
       "iconUrl":"icon_category_dessert"
     },
-    "SubcategoryId":"SCAT001",
-    "Subcategory" :{
-      "SubCategoryId":"SCAT001",
-      "SubCatName":"Vegetarian"
-    },
+    "SubcategoryId":null,
+    "Subcategory" :null,
     "Rating":5,
     "ThumbImgUrlOne":"img_itm_048",
     "ThumbImgUrlTwo":"img_cart_itm_048",
