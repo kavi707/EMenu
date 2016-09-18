@@ -2,6 +2,11 @@ package com.kavi.droid.emenu.services.connections;
 
 import android.util.Log;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 import com.loopj.android.http.SyncHttpClient;
@@ -24,8 +29,6 @@ public class SyncApiConnector implements IApiConnector {
     private String requestUrl;
     private String httpCommonResponse  = "NULL";
 
-    private SyncHttpClient syncHttpClient;
-
     /**
      * Method for sending HTTP GET requests to api synchronously
      * @param url End point url (String)
@@ -39,20 +42,27 @@ public class SyncApiConnector implements IApiConnector {
 
         Log.d("SyncApiConnector", "SyncApiConnector:sendHttpGetRequest");
         this.requestUrl = url;
+        final Map<String, String> headers = additionalHeaders;
 
-        syncHttpClient = initSyncClient(true, additionalHeaders);
-
-        syncHttpClient.get(url, new AsyncHttpResponseHandler() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, requestUrl, new Response.Listener<String>() {
             @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                httpCommonResponse = new String(responseBody);
-            }
+            public void onResponse(String response) {
 
-            @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                httpCommonResponse = new String(responseBody);
             }
-        });
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                if (headers != null)
+                    return headers;
+                else
+                    return super.getHeaders();
+            }
+        };
 
         return httpCommonResponse;
     }
@@ -70,20 +80,27 @@ public class SyncApiConnector implements IApiConnector {
 
         Log.d("SyncApiConnector", "SyncApiConnector:sendHttpDeleteRequest");
         this.requestUrl = url;
+        final Map<String, String> headers = additionalHeaders;
 
-        syncHttpClient = initSyncClient(true, additionalHeaders);
-
-        syncHttpClient.delete(requestUrl, new AsyncHttpResponseHandler() {
+        StringRequest stringRequest = new StringRequest(Request.Method.DELETE, requestUrl, new Response.Listener<String>() {
             @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                httpCommonResponse = new String(responseBody);
-            }
+            public void onResponse(String response) {
 
-            @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                httpCommonResponse = new String(responseBody);
             }
-        });
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                if (headers != null)
+                    return headers;
+                else
+                    return super.getHeaders();
+            }
+        };
 
         return httpCommonResponse;
     }
@@ -102,20 +119,32 @@ public class SyncApiConnector implements IApiConnector {
 
         Log.d("SyncApiConnector", "SyncApiConnector:sendHttpJsonPostRequest");
         this.requestUrl = url;
+        final Map<String, String> headers = additionalHeaders;
 
-        syncHttpClient = initSyncClient(true, additionalHeaders);
-
-        syncHttpClient.post(requestUrl, reqParams, new AsyncHttpResponseHandler() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, requestUrl, new Response.Listener<String>() {
             @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+            public void onResponse(String response) {
 
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                if (headers != null)
+                    return headers;
+                else
+                    return super.getHeaders();
             }
 
             @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-
+            protected Map<String, String> getParams() throws AuthFailureError {
+                return super.getParams();
             }
-        });
+        };
 
         return null;
     }
@@ -134,50 +163,33 @@ public class SyncApiConnector implements IApiConnector {
 
         Log.d("SyncApiConnector", "SyncApiConnector:sendHttpJsonPutRequest");
         this.requestUrl = url;
+        final Map<String, String> headers = additionalHeaders;
 
-        syncHttpClient = initSyncClient(true, additionalHeaders);
-
-        syncHttpClient.put(requestUrl, reqParams, new AsyncHttpResponseHandler() {
+        StringRequest stringRequest = new StringRequest(Request.Method.PUT, requestUrl, new Response.Listener<String>() {
             @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+            public void onResponse(String response) {
 
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                if (headers != null)
+                    return headers;
+                else
+                    return super.getHeaders();
             }
 
             @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-
+            protected Map<String, String> getParams() throws AuthFailureError {
+                return super.getParams();
             }
-        });
+        };
 
         return null;
-    }
-
-    /**
-     * Create and initiate SyncHttpClient
-     * @param isAllHostAllow Boolean parameter as a flag for give access to all host names
-     * @param additionalHeaders Request HTTP headers (Map<String, String> - header key & heade value)
-     * @return SyncHttpClient object
-     */
-    private SyncHttpClient initSyncClient(boolean isAllHostAllow, Map<String, String> additionalHeaders) {
-
-        SyncHttpClient syncHttpClient = new SyncHttpClient();
-
-        // Allow all host name
-        if (isAllHostAllow) {
-            HostnameVerifier hostnameVerifier = SSLSocketFactory.getSocketFactory().ALLOW_ALL_HOSTNAME_VERIFIER;
-            SSLSocketFactory socketFactory = SSLSocketFactory.getSocketFactory();
-            socketFactory.setHostnameVerifier((X509HostnameVerifier) hostnameVerifier);
-            syncHttpClient.setSSLSocketFactory(socketFactory);
-        }
-
-        // Set header to client
-        if (additionalHeaders != null) {
-            Set<String> headerKeys = additionalHeaders.keySet();
-            for (String key : headerKeys) {
-                syncHttpClient.addHeader(key,additionalHeaders.get(key));
-            }
-        }
-
-        return syncHttpClient;
     }
 }
