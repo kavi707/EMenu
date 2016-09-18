@@ -75,6 +75,7 @@ public class FoodMenuActivity extends AppCompatActivity {
     private List<Category> allCategoryList = new ArrayList<>();
     private List<Category> categoryList = new ArrayList<>();
     private List<FoodItem> allFoodItemList = new ArrayList<>();
+    private List<FoodItem> topPicksFoodItemList = new ArrayList<>();
     private List<FoodItem> foodItemList = new ArrayList<>(); // showing food items list in the grid
     private CommonUtils commonUtils = new CommonUtils();
     private boolean colorChangeBool = true;
@@ -179,6 +180,9 @@ public class FoodMenuActivity extends AppCompatActivity {
         // Load all food items from server
         loadFoodItems();
 
+        // Load top picks food items from server
+        loadTopPicksFoodItems();
+
         // Initiate first load food grid view
         initFoodItemGrid();
 
@@ -195,13 +199,17 @@ public class FoodMenuActivity extends AppCompatActivity {
                 Category selectedCat = categoryList.get(position);
 
                 selectedCategoryNameTextView.setText(selectedCat.getCategoryName());
-
                 List<FoodItem> filterFoodItemList = new ArrayList<>();
-                for (FoodItem foodItem: allFoodItemList) {
-                    if (foodItem.getCategoryId().equals(selectedCat.getId())) {
-                        filterFoodItemList.add(foodItem);
+                if (selectedCat.getId().equals(Constants.TOP_PICKS_CATEGORY_ID)) {
+                    filterFoodItemList = topPicksFoodItemList;
+                } else {
+                    for (FoodItem foodItem : allFoodItemList) {
+                        if (foodItem.getCategoryId().equals(selectedCat.getId())) {
+                            filterFoodItemList.add(foodItem);
+                        }
                     }
                 }
+
                 loadFoodItemGridView(filterFoodItemList);
             }
         });
@@ -337,6 +345,22 @@ public class FoodMenuActivity extends AppCompatActivity {
         }
     }
 
+    private void loadTopPicksFoodItems() {
+        // TODO - Replace with server values
+        String jsonString = loadJsonStringFromAssets("top_picks.json");
+        try {
+            JSONArray jsonArray = new JSONArray(jsonString);
+            FoodItem sampleFoodItem;
+            for (int i = 0; i < jsonArray.length(); i++) {
+                sampleFoodItem = commonUtils.getFoodItemFromJsonString(jsonArray.getString(i));
+
+                topPicksFoodItemList.add(sampleFoodItem);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void initFoodItemGrid() {
 
         CategoryListItemAdapter.selectedItemPosition = 0;
@@ -347,11 +371,16 @@ public class FoodMenuActivity extends AppCompatActivity {
         selectedCategoryNameTextView.setText(selectedCat.getCategoryName());
 
         List<FoodItem> filterFoodItemList = new ArrayList<>();
-        for (FoodItem foodItem: allFoodItemList) {
-            if (foodItem.getCategoryId().equals(selectedCat.getId())) {
-                filterFoodItemList.add(foodItem);
+        if (selectedCat.getId().equals(Constants.TOP_PICKS_CATEGORY_ID)) {
+            filterFoodItemList = topPicksFoodItemList;
+        } else {
+            for (FoodItem foodItem : allFoodItemList) {
+                if (foodItem.getCategoryId().equals(selectedCat.getId())) {
+                    filterFoodItemList.add(foodItem);
+                }
             }
         }
+
         loadFoodItemGridView(filterFoodItemList);
     }
 

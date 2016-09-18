@@ -1,0 +1,158 @@
+[
+  {
+    "ItemCode":"ITM0013",
+    "ItemName":"Vegetable Spring Roll With Plum Sauce",
+    "Description":"4 Pieces - Serves 2.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":210,
+      "Medium":300,
+      "Large":360
+    },
+    "MainCategoryId":"MCAT001",
+    "MainCategory": {
+      "CategoryId":"MCAT001",
+      "CategoryName":"Appetizers & Side Dishes",
+      "iconUrl":"icon_category_appitizer"
+    },
+    "SubcategoryId":"SCAT001",
+    "Subcategory" :{
+      "SubCategoryId":"SCAT001",
+      "SubCatName":"Vegetarian"
+    },
+    "Rating":3,
+    "ThumbImgUrlOne":"img_itm_013",
+    "ThumbImgUrlTwo":"img_cart_itm_013",
+    "ImageUrl":"img_itm_full_013"
+  },
+  {
+    "ItemCode":"ITM0016",
+    "ItemName":"Margherita",
+    "Description":"Pizza with Basil & Mozzarella, Small - 9, Regular - 10, Large - 14",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":630,
+      "Medium":900,
+      "Large":1080
+    },
+    "MainCategoryId":"MCAT002",
+    "MainCategory": {
+      "CategoryId":"MCAT002",
+      "CategoryName":"Pizza",
+      "iconUrl":"icon_category_pizza"
+    },
+    "SubcategoryId":"SCAT001",
+    "Subcategory" :{
+      "SubCategoryId":"SCAT001",
+      "SubCatName":"Vegetarian"
+    },
+    "Rating":3,
+    "ThumbImgUrlOne":"img_itm_016",
+    "ThumbImgUrlTwo":"img_cart_itm_016",
+    "ImageUrl":"img_itm_full_016"
+  },
+  {
+    "ItemCode":"ITM0022",
+    "ItemName":"Chicken Picatta",
+    "Description":"Boneless chicken breast sautéed in a lemon white wine butter sauce with capers, served with fettuccine alfredo. Salad or veggies may be substituted for pasta.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":630,
+      "Medium":900,
+      "Large":1080
+    },
+    "MainCategoryId":"MCAT003",
+    "MainCategory": {
+      "CategoryId":"MCAT003",
+      "CategoryName":"Pasta",
+      "iconUrl":"icon_category_pasta"
+    },
+    "SubcategoryId":"SCAT003",
+    "Subcategory" :{
+      "SubCategoryId":"SCAT003",
+      "SubCatName":"Chicken"
+    },
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_022",
+    "ThumbImgUrlTwo":"img_cart_itm_022",
+    "ImageUrl":"img_itm_full_022"
+  },
+  {
+    "ItemCode":"ITM0001",
+    "ItemName":"Special Nasi Goreng with Fried Chicken",
+    "Description":"Fried rice with pappadum, fried chicken, sambal and fried egg.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":840,
+      "Medium":1200,
+      "Large":1440
+    },
+    "MainCategoryId":"MCAT004",
+    "MainCategory": {
+      "CategoryId":"MCAT004",
+      "CategoryName":"Rice",
+      "iconUrl":"icon_category_rice"
+    },
+    "SubcategoryId":"SCAT003",
+    "Subcategory" :{
+      "SubCategoryId":"SCAT003",
+      "SubCatName":"Chicken"
+    },
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_001",
+    "ThumbImgUrlTwo":"img_cart_itm_001",
+    "ImageUrl":"img_itm_full_001"
+  },
+  {
+    "ItemCode":"ITM0007",
+    "ItemName":"Pan Mee Noodle Soup",
+    "Description":"Flour noodles in freshly boiled  anchovy based soup. Served with minced seafood, fried anchovies, mushrooms, spinach and topped with half boiled egg (pan mee soup chilli on the side).",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":420,
+      "Medium":600,
+      "Large":720
+    },
+    "MainCategoryId":"MCAT005",
+    "MainCategory": {
+      "CategoryId":"MCAT005",
+      "CategoryName":"Noodles",
+      "iconUrl":"icon_category_noodle"
+    },
+    "SubcategoryId":"SCAT006",
+    "Subcategory" :{
+      "SubCategoryId":"SCAT006",
+      "SubCatName":"Seafood"
+    },
+    "Rating":3,
+    "ThumbImgUrlOne":"img_itm_007",
+    "ThumbImgUrlTwo":"img_cart_itm_007",
+    "ImageUrl":"img_itm_full_007"
+  },
+  {
+    "ItemCode":"ITM0002",
+    "ItemName":"Hainan Curry Chicken Chop",
+    "Description":"Deep-fried chicken coated with curry sauce, served with chicken rice, fried egg and sliced cucumbers.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":1015,
+      "Medium":14501740,
+      "Large":1440
+    },
+    "MainCategoryId":"MCAT004",
+    "MainCategory": {
+      "CategoryId":"MCAT004",
+      "CategoryName":"Rice",
+      "iconUrl":"icon_category_rice"
+    },
+    "SubcategoryId":"SCAT003",
+    "Subcategory" :{
+      "SubCategoryId":"SCAT003",
+      "SubCatName":"Chicken"
+    },
+    "Rating":3,
+    "ThumbImgUrlOne":"img_itm_002",
+    "ThumbImgUrlTwo":"img_cart_itm_002",
+    "ImageUrl":"img_itm_full_002"
+  }
+]
