@@ -1,7 +1,5 @@
 package com.kavi.droid.emenu.services.connections;
 
-import com.loopj.android.http.RequestParams;
-
 import java.util.Map;
 
 /**
@@ -33,19 +31,19 @@ public interface IApiConnector {
      * Method for sending HTTP POST requests to api
      * @param url End point url (String)
      * @param additionalHeaders Request HTTP headers (Map<String, String> - header key & header value)
-     * @param reqParams Request body params (RequestParams - header key & header value)
+     * @param reqParams Request body params (Map<String, String> - header key & header value)
      * @param responseHandlerType If this is an async call then type of the response handler
      * @return Json String object
      */
-    String sendHttpJsonPostRequest(String url, Map<String, String> additionalHeaders, RequestParams reqParams, int responseHandlerType);
+    String sendHttpJsonPostRequest(String url, Map<String, String> additionalHeaders, Map<String, String> reqParams, int responseHandlerType);
 
     /**
      * Method for sending HTTP PUT  requests to api
      * @param url End point url (String)
      * @param additionalHeaders Request HTTP headers (Map<String, String> - header key & header value)
-     * @param reqParams Request body params (RequestParams - header key & header value)
+     * @param reqParams Request body params (Map<String, String> - header key & header value)
      * @param responseHandlerType If this is an async call then type of the response handler
      * @return Json String object
      */
-    String sendHttpJsonPutRequest(String url, Map<String, String> additionalHeaders, RequestParams reqParams, int responseHandlerType);
+    String sendHttpJsonPutRequest(String url, Map<String, String> additionalHeaders, Map<String, String> reqParams, int responseHandlerType);
 }

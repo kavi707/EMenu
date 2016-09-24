@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 import com.kavi.droid.emenu.R;
+import com.kavi.droid.emenu.models.Table;
 import com.kavi.droid.emenu.views.TableNumberGridItemView;
 
 import java.util.List;
@@ -16,10 +17,10 @@ import java.util.List;
  */
 public class TableNumberGridItemAdapter extends BaseAdapter {
 
-    private List<String> tableNumList;
+    private List<Table> tableNumList;
     private Context context;
 
-    public TableNumberGridItemAdapter(List<String> tableNumList, Context context) {
+    public TableNumberGridItemAdapter(List<Table> tableNumList, Context context) {
         this.tableNumList = tableNumList;
         this.context = context;
     }
@@ -48,7 +49,7 @@ public class TableNumberGridItemAdapter extends BaseAdapter {
             tableNumberGridItemView = (TableNumberGridItemView) convertView;
         }
 
-        tableNumberGridItemView.setTableNumber(tableNumList.get(position));
+        tableNumberGridItemView.setTableNumber(tableNumList.get(position).getNumber());
         return tableNumberGridItemView;
     }
 }
