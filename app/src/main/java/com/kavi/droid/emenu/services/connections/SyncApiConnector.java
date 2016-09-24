@@ -177,14 +177,10 @@ public class SyncApiConnector implements IApiConnector {
         StringRequest stringRequest = new StringRequest(Request.Method.PUT, requestUrl, requestFuture, requestFuture) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
-                /*if (headers != null)
+                if (headers != null)
                     return headers;
                 else
-                    return super.getHeaders();*/
-                Map<String, String> requestHeaders = new HashMap<>();
-                requestHeaders.put("Content-Type", "application/json");
-                requestHeaders.put("Authorization", headers.get("Authorization"));
-                return requestHeaders;
+                    return super.getHeaders();
             }
 
             @Override

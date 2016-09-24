@@ -123,7 +123,7 @@ public class ApiCalls {
 
         Map<String, String> requestHeaders = new HashMap<>();
         requestHeaders.put("Content-Type", "application/json");
-        requestHeaders.put("Authorization", "Bearer " + accessToken);
+        requestHeaders.put("Authorization", String.format("Bearer %s", accessToken));
 
         String url = Constants.BASE_URL + Constants.UPDATE_TABLE_STATUS_URL +
                 tableUUID;
