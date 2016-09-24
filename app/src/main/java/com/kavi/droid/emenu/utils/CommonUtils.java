@@ -12,6 +12,7 @@ import com.kavi.droid.emenu.models.Category;
 import com.kavi.droid.emenu.models.FoodItem;
 import com.kavi.droid.emenu.models.Price;
 import com.kavi.droid.emenu.models.SubCategory;
+import com.kavi.droid.emenu.models.Table;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,6 +33,11 @@ public class CommonUtils {
      * Selected food item list added to cart
      */
     public static List<CartItem> selectedCartItemList = new ArrayList<>();
+
+    /**
+     * Selected table
+     */
+    public static Table selectedTable;
 
     /**
      * check the internet connection in the device for running application
@@ -120,7 +126,7 @@ public class CommonUtils {
     public SubCategory getSubCategoryFromJsonString(String jsonString) {
 
         SubCategory subCategory = null;
-        if (jsonString != null) {
+        if (jsonString != null && !jsonString.equals("null")) {
             try {
                 JSONObject subCategoryJsonObj = new JSONObject(jsonString);
 
