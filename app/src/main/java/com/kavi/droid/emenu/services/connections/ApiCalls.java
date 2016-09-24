@@ -3,6 +3,9 @@ package com.kavi.droid.emenu.services.connections;
 import com.kavi.droid.emenu.Constants;
 import com.loopj.android.http.RequestParams;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by kavi707 on 9/3/16.
  * @author Kavimal Wijewardana <kavi707@gmail.com>
@@ -84,15 +87,19 @@ public class ApiCalls {
         RequestParams requestParams = new RequestParams();
         requestParams.put("Status", tableStatus);
 
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Content-Type", "application/json");
+        headers.put("Authorization", "Bearer " + accessToken);
+
         String url = Constants.BASE_URL + Constants.UPDATE_TABLE_STATUS_URL +
-                tableUUID + "?access_token=" + accessToken;
+                tableUUID;
 
         if (taskMethod.equals(Constants.ASYNC_METHOD)) {
             apiConnector = new AsyncApiConnector();
-            response = apiConnector.sendHttpJsonPutRequest(url, null, requestParams, Constants.UPDATE_TABLE_STATUS);
+            response = apiConnector.sendHttpJsonPutRequest(url, headers, requestParams, Constants.UPDATE_TABLE_STATUS);
         } else if (taskMethod.equals(Constants.SYNC_METHOD)) {
             apiConnector = new SyncApiConnector();
-            response = apiConnector.sendHttpJsonPutRequest(url, null, requestParams, Constants.UPDATE_TABLE_STATUS);
+            response = apiConnector.sendHttpJsonPutRequest(url, headers, requestParams, Constants.UPDATE_TABLE_STATUS);
         }
 
         return response;
