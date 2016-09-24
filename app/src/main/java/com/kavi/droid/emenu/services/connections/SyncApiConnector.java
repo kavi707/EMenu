@@ -4,10 +4,13 @@ import android.util.Log;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.RequestFuture;
 import com.android.volley.toolbox.StringRequest;
 import com.kavi.droid.emenu.EMenuApplication;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
@@ -174,10 +177,14 @@ public class SyncApiConnector implements IApiConnector {
         StringRequest stringRequest = new StringRequest(Request.Method.PUT, requestUrl, requestFuture, requestFuture) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
-                if (headers != null)
+                /*if (headers != null)
                     return headers;
                 else
-                    return super.getHeaders();
+                    return super.getHeaders();*/
+                Map<String, String> requestHeaders = new HashMap<>();
+                requestHeaders.put("Content-Type", "application/json");
+                requestHeaders.put("Authorization", headers.get("Authorization"));
+                return requestHeaders;
             }
 
             @Override

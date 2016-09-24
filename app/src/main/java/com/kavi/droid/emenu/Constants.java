@@ -21,6 +21,7 @@ public class Constants {
     public static final int GET_TOKEN = 104;
     public static final int GET_TABLES = 105;
     public static final int UPDATE_TABLE_STATUS = 106;
+    public static final int ADD_NEW_ACTIVE_TABLE = 107;
 
     public static final int ITEM_PORTION_NOT_AVAILABLE = 0;
     public static final int ITEM_PORTION_SMALL = 1;
@@ -32,14 +33,10 @@ public class Constants {
     public static final int CART_ITEM_STATE_READY = 3;
     public static final int CART_ITEM_STATE_DELIVERED = 4;
 
-    public static final int ANIMATE_STOP = 0;
-    public static final int ANIMATE_START = 1;
-    public static final int LIGHT_TO_DARK = 0;
-    public static final int DARK_TO_LIGHT = 1;
-
     public static final String BASE_URL = "https://api.usergrid.com";
     public static final String GET_TOKEN_URL = "/kavi707/carrot/token";
     public static final String GET_TABLES_URL = "/kavi707/carrot/tables";
     public static final int ENTITY_LIMIT_TABLES = 50;
     public static final String UPDATE_TABLE_STATUS_URL = "/kavi707/carrot/tables/";
+    public static final String ADD_NEW_ACTIVE_TABLE_URL = "/kavi707/carrot/active_tables";
 }

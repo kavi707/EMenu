@@ -60,6 +60,9 @@ public class TableSelectActivity extends Activity {
         tableSelectGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Set selected table
+                CommonUtils.selectedTable = tableList.get(position);
+
                 selectedTableNumber = tableList.get(position).getNumber();
                 if (selectedTableNumber != null) {
                     Intent menuIntent = new Intent(TableSelectActivity.this, FoodMenuActivity.class);

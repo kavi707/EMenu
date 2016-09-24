@@ -1,7 +1,9 @@
 package com.kavi.droid.emenu.dialogs;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -22,6 +24,8 @@ import com.kavi.droid.emenu.adapters.CategoryListItemAdapter;
 import com.kavi.droid.emenu.models.CartItem;
 import com.kavi.droid.emenu.models.Category;
 import com.kavi.droid.emenu.models.FoodItem;
+import com.kavi.droid.emenu.services.connections.ApiCalls;
+import com.kavi.droid.emenu.services.sharedPreferences.SharedPreferenceManager;
 import com.kavi.droid.emenu.utils.CommonUtils;
 
 import java.util.ArrayList;
@@ -37,16 +41,20 @@ public class CartListDialog extends Dialog {
     private RelativeLayout drinksRelativeLayout;
     private TextView totalAmtTextView;
     private Button placeOrderBtn;
+    private ProgressDialog progress;
 
     private Context context;
+    private Activity ownerActivity;
     private CartListItemAdapter cartListItemAdapter;
     OnCartListDialogResult mCartListDialogResult;
 
+    private ApiCalls apiCalls = new ApiCalls();
     private CommonUtils commonUtils = new CommonUtils();
 
     public CartListDialog(Context context) {
         super(context);
         this.context = context;
+        ownerActivity = (context instanceof Activity)? (Activity)context: null;
     }
 
     @Override
@@ -120,6 +128,7 @@ public class CartListDialog extends Dialog {
             @Override
             public void onClick(View view) {
                 if (!CommonUtils.selectedCartItemList.isEmpty()) {
+                    placeOrder();
                     Toast.makeText(context, "YOU HAVE SUCCESSFULLY PLACED THE ORDER", Toast.LENGTH_LONG).show();
                     changeCartItemStatus();
                     // Notify cart update
@@ -149,6 +158,39 @@ public class CartListDialog extends Dialog {
                 selectedCartItem.setState(Constants.CART_ITEM_STATE_ORDERED);
                 CommonUtils.selectedCartItemList.set(i, selectedCartItem);
             }
+        }
+    }
+
+    private void placeOrder() {
+
+        // TODO - This is only demo purpose to update the server with table number
+        if (commonUtils.isOnline(context)) {
+            if (progress == null) {
+                progress = LoadingProgressBarDialog.createProgressDialog(context);
+            }
+            progress.show();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    String response = apiCalls.updateTableStatus(Constants.SYNC_METHOD,
+                            SharedPreferenceManager.getCurrentUserToken(context),
+                            CommonUtils.selectedTable.getTableUUID(), 1);
+
+                    /*CommonUtils.selectedTable.setStatus(1);
+                    String response = apiCalls.addNewActiveTable(Constants.SYNC_METHOD,
+                            SharedPreferenceManager.getCurrentUserToken(context),
+                            CommonUtils.selectedTable);*/
+
+                    ownerActivity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            progress.dismiss();
+                        }
+                    });
+                }
+            }).start();
+        } else {
+            Toast.makeText(context, "Please check device Internet connection.", Toast.LENGTH_SHORT).show();
         }
     }
 }
