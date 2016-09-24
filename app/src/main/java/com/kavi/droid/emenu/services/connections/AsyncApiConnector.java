@@ -2,6 +2,12 @@ package com.kavi.droid.emenu.services.connections;
 
 import android.util.Log;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.kavi.droid.emenu.EMenuApplication;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -40,21 +46,31 @@ public class AsyncApiConnector implements IApiConnector {
 
         Log.d("AsyncApiConnector", "AsyncApiConnector:sendHttpGetRequest");
         this.requestUrl = url;
+        final Map<String, String> headers = additionalHeaders;
 
-        asyncHttpClient = initAsyncClient(true, additionalHeaders);
-
-        asyncHttpClient.get(requestUrl, new AsyncHttpResponseHandler() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, requestUrl, new Response.Listener<String>() {
             @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                httpCommonResponse = new String(responseBody);
+            public void onResponse(String response) {
+                httpCommonResponse = response;
                 asyncResponseHandler.apiResponseHandler(responseHandlerType, httpCommonResponse);
             }
-
+        }, new Response.ErrorListener() {
             @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                httpCommonResponse = new String(responseBody);
+            public void onErrorResponse(VolleyError error) {
+
             }
-        });
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                if (headers != null)
+                    return headers;
+                else
+                    return super.getHeaders();
+            }
+        };
+
+        // Adding request to request queue
+        EMenuApplication.getEMenuApplicationInstance().addToRequestQueue(stringRequest);
 
         return httpCommonResponse;
     }
@@ -72,21 +88,31 @@ public class AsyncApiConnector implements IApiConnector {
 
         Log.d("AsyncApiConnector", "AsyncApiConnector:sendHttpDeleteRequest");
         this.requestUrl = url;
+        final Map<String, String> headers = additionalHeaders;
 
-        asyncHttpClient = initAsyncClient(true, additionalHeaders);
-
-        asyncHttpClient.delete(requestUrl, new AsyncHttpResponseHandler() {
+        StringRequest stringRequest = new StringRequest(Request.Method.DELETE, requestUrl, new Response.Listener<String>() {
             @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                httpCommonResponse = new String(responseBody);
+            public void onResponse(String response) {
+                httpCommonResponse = response;
                 asyncResponseHandler.apiResponseHandler(responseHandlerType, httpCommonResponse);
             }
-
+        }, new Response.ErrorListener() {
             @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+            public void onErrorResponse(VolleyError error) {
 
             }
-        });
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                if (headers != null)
+                    return headers;
+                else
+                    return super.getHeaders();
+            }
+        };
+
+        // Adding request to request queue
+        EMenuApplication.getEMenuApplicationInstance().addToRequestQueue(stringRequest);
 
         return httpCommonResponse;
     }
@@ -101,27 +127,46 @@ public class AsyncApiConnector implements IApiConnector {
      */
     @Override
     public String sendHttpJsonPostRequest(String url, Map<String, String> additionalHeaders,
-                                          RequestParams reqParams, final int responseHandlerType) {
+                                          Map<String, String> reqParams, final int responseHandlerType) {
 
         Log.d("AsyncApiConnector", "AsyncApiConnector:sendHttpJsonPostRequest");
         this.requestUrl = url;
+        final Map<String, String> headers = additionalHeaders;
+        final Map<String, String> params = reqParams;
 
-        asyncHttpClient = initAsyncClient(true, additionalHeaders);
-
-        asyncHttpClient.post(requestUrl, reqParams, new AsyncHttpResponseHandler() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, requestUrl, new Response.Listener<String>() {
             @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                httpCommonResponse = new String(responseBody);
+            public void onResponse(String response) {
+                httpCommonResponse = response;
                 asyncResponseHandler.apiResponseHandler(responseHandlerType, httpCommonResponse);
             }
-
+        }, new Response.ErrorListener() {
             @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+            public void onErrorResponse(VolleyError error) {
 
             }
-        });
+        }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                if (headers != null)
+                    return headers;
+                else
+                    return super.getHeaders();
+            }
 
-        return null;
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                if (params != null)
+                    return params;
+                else
+                    return super.getParams();
+            }
+        };
+
+        // Adding request to request queue
+        EMenuApplication.getEMenuApplicationInstance().addToRequestQueue(stringRequest);
+
+        return httpCommonResponse;
     }
 
     /**
@@ -134,25 +179,40 @@ public class AsyncApiConnector implements IApiConnector {
      */
     @Override
     public String sendHttpJsonPutRequest(String url, Map<String, String> additionalHeaders,
-                                         RequestParams reqParams, final int responseHandlerType) {
+                                         Map<String, String> reqParams, final int responseHandlerType) {
 
         Log.d("AsyncApiConnector", "AsyncApiConnector:sendHttpJsonPutRequest");
         this.requestUrl = url;
+        final Map<String, String> headers = additionalHeaders;
+        final Map<String, String> params = reqParams;
 
-        asyncHttpClient = initAsyncClient(true, additionalHeaders);
-
-        asyncHttpClient.put(requestUrl, reqParams, new AsyncHttpResponseHandler() {
+        StringRequest stringRequest = new StringRequest(Request.Method.PUT, requestUrl, new Response.Listener<String>() {
             @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                httpCommonResponse = new String(responseBody);
-                asyncResponseHandler.apiResponseHandler(responseHandlerType, httpCommonResponse);
+            public void onResponse(String response) {
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                if (headers != null)
+                    return headers;
+                else
+                    return super.getHeaders();
             }
 
             @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-
+            protected Map<String, String> getParams() throws AuthFailureError {
+                if (params != null)
+                    return params;
+                else
+                    return super.getParams();
             }
-        });
+        };
 
         return null;
     }

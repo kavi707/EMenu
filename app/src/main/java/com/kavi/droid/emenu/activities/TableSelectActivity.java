@@ -1,6 +1,7 @@
 package com.kavi.droid.emenu.activities;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,8 +12,18 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.kavi.droid.emenu.Constants;
 import com.kavi.droid.emenu.R;
 import com.kavi.droid.emenu.adapters.TableNumberGridItemAdapter;
+import com.kavi.droid.emenu.dialogs.LoadingProgressBarDialog;
+import com.kavi.droid.emenu.models.Table;
+import com.kavi.droid.emenu.services.connections.ApiCalls;
+import com.kavi.droid.emenu.services.sharedPreferences.SharedPreferenceManager;
+import com.kavi.droid.emenu.utils.CommonUtils;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,12 +36,15 @@ public class TableSelectActivity extends Activity {
 
     private Button continueBtn;
     private GridView tableSelectGridView;
+    private ProgressDialog progress;
 
     private TableNumberGridItemAdapter tableNumberGridItemAdapter;
     private String selectedTableNumber = null;
 
     private Context context = this;
-    List<String> horizontalList = new ArrayList<>();
+    private ApiCalls apiCalls = new ApiCalls();
+    private CommonUtils commonUtils = new CommonUtils();
+    private List<Table> tableList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +59,10 @@ public class TableSelectActivity extends Activity {
         continueBtn = (Button) findViewById(R.id.continueBtn);
         tableSelectGridView = (GridView) findViewById(R.id.tableSelectGridView);
 
-        loadTables();
-
         tableSelectGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                selectedTableNumber = horizontalList.get(position);
+                selectedTableNumber = tableList.get(position).getNumber();
             }
         });
 
@@ -66,32 +78,91 @@ public class TableSelectActivity extends Activity {
                 }
             }
         });
+
+        getTablesFromServer();
     }
 
-    private void loadTables() {
+    private void getTablesFromServer() {
 
-        horizontalList.add("01");
-        horizontalList.add("02");
-        horizontalList.add("03");
-        horizontalList.add("04");
-        horizontalList.add("05");
-        horizontalList.add("06");
-        horizontalList.add("07");
-        horizontalList.add("08");
-        horizontalList.add("09");
-        horizontalList.add("10");
-        horizontalList.add("11");
-        horizontalList.add("12");
-        horizontalList.add("13");
-        horizontalList.add("14");
-        horizontalList.add("15");
-        horizontalList.add("16");
-        horizontalList.add("17");
-        horizontalList.add("18");
-        horizontalList.add("19");
-        horizontalList.add("20");
+        if (commonUtils.isOnline(context)) {
 
-        tableNumberGridItemAdapter = new TableNumberGridItemAdapter(horizontalList, context);
+            if (progress == null) {
+                progress = LoadingProgressBarDialog.createProgressDialog(context);
+            }
+            progress.show();
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    String accessTokenResponse = apiCalls.getUserGridAccessToken(Constants.SYNC_METHOD,
+                            Constants.USERNAME, Constants.PASSWORD);
+                    String accessToken = processAccessTokenResponse(accessTokenResponse);
+
+                    if (accessToken != null) {
+                        // Save access token in shared preferences
+                        SharedPreferenceManager.setCurrentUserToken(context, accessToken);
+
+                        String tableResponse = apiCalls.getTables(Constants.SYNC_METHOD, accessToken, Constants.ENTITY_LIMIT_TABLES);
+                        processTableList(tableResponse);
+                    }
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            populateTableGrid();
+                            progress.dismiss();
+                        }
+                    });
+                }
+            }).start();
+        } else {
+            Toast.makeText(context, "Please check device Internet connection.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private String processAccessTokenResponse(String jsonString) {
+
+        String accessToken = null;
+        if (jsonString != null) {
+            try {
+                JSONObject jsonData = new JSONObject(jsonString);
+                accessToken = jsonData.getString("access_token");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return accessToken;
+    }
+
+    private void processTableList(String jsonString) {
+
+        if (jsonString != null) {
+
+            try {
+                JSONObject jsonObject = new JSONObject(jsonString);
+                JSONArray jsonArray = jsonObject.getJSONArray("entities");
+                JSONObject jsonData;
+                Table table;
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    jsonData = jsonArray.getJSONObject(i);
+
+                    table = new Table();
+                    table.setTableUUID(jsonData.getString("uuid"));
+                    table.setId(jsonData.getString("TableId"));
+                    table.setNumber(jsonData.getString("TableNumber"));
+                    table.setStatus(jsonData.getInt("Status"));
+
+                    tableList.add(table);
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void populateTableGrid() {
+        tableNumberGridItemAdapter = new TableNumberGridItemAdapter(tableList, context);
         tableSelectGridView.setAdapter(tableNumberGridItemAdapter);
     }
 }
