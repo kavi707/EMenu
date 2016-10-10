@@ -34,8 +34,8 @@ public class WelcomeActivity extends Activity {
         viewMenuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent tableSelectIntent = new Intent(WelcomeActivity.this, TableSelectActivity.class);
-                startActivity(tableSelectIntent);
+                Intent languageSelectIntent = new Intent(WelcomeActivity.this, LanguageSelectActivity.class);
+                startActivity(languageSelectIntent);
                 finish();
             }
         });

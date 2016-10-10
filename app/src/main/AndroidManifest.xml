@@ -23,6 +23,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".activities.LanguageSelectActivity"
+            android:screenOrientation="landscape" />
+        <activity
             android:name=".activities.TableSelectActivity"
             android:screenOrientation="landscape" />
         <activity
