@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tap on the flag to continue"
+            android:text="Tap on the language to continue"
             android:textColor="@color/white"
             android:textSize="30dp"
             android:layout_marginLeft="30dp"
@@ -28,18 +28,20 @@
     </RelativeLayout>
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/icon_language_united_kingdom"
+        android:layout_width="256dp"
+        android:layout_height="256dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/icon_language_english"
         android:background="@android:color/transparent"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/englishImageButton" />
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/icon_language_germany"
+        android:layout_width="256dp"
+        android:layout_height="256dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/icon_language_sinhala"
         android:background="@android:color/transparent"
         android:layout_marginRight="50dp"
         android:layout_centerVertical="true"
@@ -48,55 +50,14 @@
         android:id="@+id/germanImageButton" />
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/icon_language_russia"
+        android:layout_width="256dp"
+        android:layout_height="256dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/icon_language_tamil"
         android:background="@android:color/transparent"
         android:layout_marginLeft="50dp"
         android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/englishImageButton"
         android:layout_toEndOf="@+id/englishImageButton"
         android:id="@+id/russianImageButton" />
-
-    <TextView
-        android:text="English"
-        android:gravity="center"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/englishImageButton"
-        android:layout_alignLeft="@+id/englishImageButton"
-        android:layout_alignStart="@+id/englishImageButton"
-        android:id="@+id/englishTextView"
-        android:layout_toLeftOf="@+id/russianImageButton"
-        android:layout_toStartOf="@+id/russianImageButton" />
-
-    <TextView
-        android:text="German"
-        android:gravity="center"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/germanImageButton"
-        android:layout_alignLeft="@+id/germanImageButton"
-        android:layout_alignStart="@+id/germanImageButton"
-        android:id="@+id/germanTextView"
-        android:layout_alignRight="@+id/germanImageButton"
-        android:layout_alignEnd="@+id/germanImageButton" />
-
-    <TextView
-        android:text="Russian"
-        android:gravity="center"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/russianImageButton"
-        android:layout_alignLeft="@+id/russianImageButton"
-        android:layout_alignStart="@+id/russianImageButton"
-        android:id="@+id/russianTextView"
-        android:layout_alignRight="@+id/russianImageButton"
-        android:layout_alignEnd="@+id/russianImageButton" />
 </RelativeLayout>

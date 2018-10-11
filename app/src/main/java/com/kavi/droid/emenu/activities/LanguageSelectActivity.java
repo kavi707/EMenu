@@ -43,9 +43,13 @@ public class LanguageSelectActivity extends Activity {
         englishImageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent tableSelectIntent = new Intent(LanguageSelectActivity.this, TableSelectActivity.class);
+                /*Intent tableSelectIntent = new Intent(LanguageSelectActivity.this, TableSelectActivity.class);
                 startActivity(tableSelectIntent);
-                finish();
+                finish();*/
+
+                Intent menuIntent = new Intent(LanguageSelectActivity.this, FoodMenuActivity.class);
+                menuIntent.putExtra("SELECTED_TABLE_NUMBER", "01");
+                startActivity(menuIntent);
             }
         });
 
