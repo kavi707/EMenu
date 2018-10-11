@@ -241,6 +241,10 @@ public class SingleItemDialog extends Dialog {
             singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_047));
         else if (foodItem.getImgUrl().equals("img_itm_full_048"))
             singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_048));
+        else if (foodItem.getImgUrl().equals("img_itm_full_049"))
+            singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_049));
+        else if (foodItem.getImgUrl().equals("img_itm_full_050"))
+            singleItemImageView.setImageDrawable(context.getResources().getDrawable(R.drawable.img_itm_full_050));
         else
             singleItemImageView.setImageDrawable(null);
 

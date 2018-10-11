@@ -193,6 +193,10 @@ public class CartListItemView extends RelativeLayout {
             cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_047));
         else if (cartItem.getImageUrl().equals("img_cart_itm_048"))
             cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_048));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_049"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_049));
+        else if (cartItem.getImageUrl().equals("img_cart_itm_050"))
+            cartListItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_cart_itm_050));
         else
             cartListItemImageView.setImageDrawable(null);
     }

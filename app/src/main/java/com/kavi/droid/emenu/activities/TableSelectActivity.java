@@ -74,6 +74,10 @@ public class TableSelectActivity extends Activity {
             }
         });
 
+        Intent menuIntent = new Intent(TableSelectActivity.this, FoodMenuActivity.class);
+        menuIntent.putExtra("SELECTED_TABLE_NUMBER", "01");
+        startActivity(menuIntent);
+
         getTablesFromServer();
     }
 

@@ -167,6 +167,10 @@ public class FoodGridItemView extends RelativeLayout {
             foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_047));
         else if (foodItem.getThumbImgUrlOne().equals("img_itm_048"))
             foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_048));
+        else if (foodItem.getThumbImgUrlOne().equals("img_itm_049"))
+            foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_049));
+        else if (foodItem.getThumbImgUrlOne().equals("img_itm_050"))
+            foodItemImageView.setImageDrawable(getResources().getDrawable(R.drawable.img_itm_050));
         else
             foodItemImageView.setImageDrawable(null);
     }

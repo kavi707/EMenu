@@ -1,0 +1,54 @@
+[
+  {
+    "ItemCode":"ITM0049",
+    "ItemName":"Normal rice with chicken",
+    "Description":"Five Sri Lankan curries with chicken.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":840,
+      "Medium":1200,
+      "Large":1440
+    },
+    "MainCategoryId":"MCAT001",
+    "MainCategory": {
+      "CategoryId":"MCAT001",
+      "CategoryName":"Rice",
+      "iconUrl":"icon_category_rice"
+    },
+    "SubcategoryId":"SCAT003",
+    "Subcategory" :{
+      "SubCategoryId":"SCAT003",
+      "SubCatName":"Chicken"
+    },
+    "Rating":5,
+    "ThumbImgUrlOne":"img_itm_049",
+    "ThumbImgUrlTwo":"img_cart_itm_049",
+    "ImageUrl":"img_itm_full_049"
+  },
+  {
+    "ItemCode":"ITM0050",
+    "ItemName":"Normal rice with fish",
+    "Description":"Five Sri Lankan curries with fish.",
+    "NutritionInfo":"",
+    "Price":{
+      "Small":1015,
+      "Medium":1450,
+      "Large":1740
+    },
+    "MainCategoryId":"MCAT002",
+    "MainCategory": {
+      "CategoryId":"MCAT001",
+      "CategoryName":"Rice",
+      "iconUrl":"icon_category_rice"
+    },
+    "SubcategoryId":"SCAT003",
+    "Subcategory" :{
+      "SubCategoryId":"SCAT003",
+      "SubCatName":"Chicken"
+    },
+    "Rating":3,
+    "ThumbImgUrlOne":"img_itm_050",
+    "ThumbImgUrlTwo":"img_cart_itm_050",
+    "ImageUrl":"img_itm_full_050"
+  }
+]

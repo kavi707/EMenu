@@ -1,0 +1,32 @@
+[
+  {
+    "CategoryId":"MCAT000",
+    "CategoryName":"TOP PICKS",
+    "iconUrl":"icon_category_toppick"
+  },
+  {
+    "CategoryId":"MCAT001",
+    "CategoryName":"Non Veg",
+    "iconUrl":"icon_category_pasta"
+  },
+  {
+    "CategoryId":"MCAT002",
+    "CategoryName":"Sea food",
+    "iconUrl":"icon_category_noodle"
+  },
+  {
+    "CategoryId":"MCAT003",
+    "CategoryName":"Vegetarian",
+    "iconUrl":"icon_category_rice"
+  },
+  {
+    "CategoryId":"MCAT004",
+    "CategoryName":"Desserts",
+    "iconUrl":"icon_category_dessert"
+  },
+  {
+    "CategoryId":"MCAT005",
+    "CategoryName":"Beverage",
+    "iconUrl":"icon_category_beverage"
+  }
+]
