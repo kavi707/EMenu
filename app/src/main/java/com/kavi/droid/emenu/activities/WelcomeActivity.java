@@ -15,7 +15,6 @@ import com.kavi.droid.emenu.R;
  */
 public class WelcomeActivity extends Activity {
 
-    private TextView restaurantNameTextView;
     private Button viewMenuBtn;
 
     @Override
@@ -28,7 +27,6 @@ public class WelcomeActivity extends Activity {
 
     private void setUpView() {
 
-        restaurantNameTextView = (TextView) findViewById(R.id.restaurantNameTextView);
         viewMenuBtn = (Button) findViewById(R.id.viewMenuButton);
 
         viewMenuBtn.setOnClickListener(new View.OnClickListener() {
